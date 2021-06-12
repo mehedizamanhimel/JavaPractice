@@ -4,6 +4,7 @@ public class MainClass implements Runnable{
 	public void run() {
 		System.out.println("Thread has ended");
 	}
+	
 	public static void main(String[] args) {
 	
 	SwitchStatementClass switchClass = new SwitchStatementClass();
@@ -13,14 +14,13 @@ public class MainClass implements Runnable{
 	ConditionalOperator conditionalOperator = new ConditionalOperator();
 	Loop_Class loopClass = new Loop_Class();
 	SampleProgrammingProblems sampleProgram = new SampleProgrammingProblems();
-	
 
 	AbsoluteValue absoluteValue = new AbsoluteValue();
 	arrayTasks arrays = new arrayTasks();
 	FileSystem files = new FileSystem();
 	Loop loop = new Loop();
 	reverseString reverse = new reverseString();
-
+	Regex regx = new Regex();
 
 	/**
 	loop.whileLoopOne();
@@ -35,11 +35,16 @@ public class MainClass implements Runnable{
 
 	reverse.reverStringWithScanner();
 
-	 **/
+	
 
 	arrays.arList();
 	arrays.arList_int();
 	arrays.arList_double();
 	
-}
+	regx.patternMatchesOne();
+	 **/
+	arrays.arrayAdd();
+	
+	
+	}
 }
