@@ -21,6 +21,8 @@ public class MainClass implements Runnable{
 	Loop loop = new Loop();
 	reverseString reverse = new reverseString();
 
+
+	/**
 	loop.whileLoopOne();
 		loop.DoWhileLoop();
 
@@ -33,7 +35,11 @@ public class MainClass implements Runnable{
 
 	reverse.reverStringWithScanner();
 
+	 **/
 
+	arrays.arList();
+	arrays.arList_int();
+	arrays.arList_double();
 	
 }
 }
