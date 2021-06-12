@@ -1,7 +1,10 @@
-import java.util.Scanner;
+public class MainClass implements Runnable{
 
-public class MainClass {
-public static void main(String[] args) {
+	@Override
+	public void run() {
+		System.out.println("Thread has ended");
+	}
+	public static void main(String[] args) {
 	
 	SwitchStatementClass switchClass = new SwitchStatementClass();
 	ConditionalStatement conditionalStatements = new ConditionalStatement();
@@ -9,19 +12,34 @@ public static void main(String[] args) {
 	WhileLoop whileLoop = new WhileLoop();
 	ConditionalOperator conditionalOperator = new ConditionalOperator();
 	Loop_Class loopClass = new Loop_Class();
-	Array_Class arrayClass = new Array_Class();
 	SampleProgrammingProblems sampleProgram = new SampleProgrammingProblems();
 	
-	
-	
-	switchClass.switchStatement();
-	conditionalStatements.ifStatement_marriageRules();
-	//scanner.initialScanner_Test();
-	whileLoop.settingWhile_Int();
 
-	conditionalStatements.NestedIfStatement();
-	conditionalOperator.testing_Conditional_Operator();
-	loopClass.forLoop();
+	AbsoluteValue absoluteValue = new AbsoluteValue();
+	arrayTasks arrays = new arrayTasks();
+	FileSystem files = new FileSystem();
+	Loop loop = new Loop();
+	reverseString reverse = new reverseString();
+
+
+	/**
+	loop.whileLoopOne();
+		loop.DoWhileLoop();
+
+	arrays.listSortStringTwo();
+
+	MainClass main = new MainClass();
+	Thread thread = new Thread(main);
+	thread.start();
+	System.out.println("test");
+
+	reverse.reverStringWithScanner();
+
+	 **/
+
+	arrays.arList();
+	arrays.arList_int();
+	arrays.arList_double();
 	
 }
 }
