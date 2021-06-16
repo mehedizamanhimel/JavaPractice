@@ -46,4 +46,43 @@ public class reverseString {
         System.out.println("The result is: "+reverse);
     }
 
+    public void reverseInt(int a){
+
+        String b = Integer.toString(a);
+        String c= "";
+        int d;
+
+        for(int i = b.length()-1; i >=0;i-- ){
+            c = c+ b.charAt(i);
+        }
+        d = Integer.parseInt(c);
+        System.out.println(d);
+    }
+
+    public void reverseIntTwo(int a){
+/** using a recursion
+        int d = 0;
+        int e=0;
+        if (a<10){
+            d = a%10;
+            reverseIntTwo(a/10);
+           // reverseIntTwo(a/10);
+        }
+        else {
+            System.out.println(a);
+        }
+        System.out.println(d);
+**/
+        int b;
+        int c=0;
+        int d;
+        while (a!=0){
+            b = a%10;
+            c= c*10 + b;
+            a= a/10;
+        }
+
+        System.out.println(c);
+    }
+
 }

@@ -21,6 +21,10 @@ public class MainClass implements Runnable{
 	Loop loop = new Loop();
 	reverseString reverse = new reverseString();
 	Regex regx = new Regex();
+	Fibonacci fibonacci = new Fibonacci();
+	Palindrome palindrome = new Palindrome();
+	Seaching search = new Seaching();
+
 
 	/**
 	loop.whileLoopOne();
@@ -44,7 +48,21 @@ public class MainClass implements Runnable{
 	regx.patternMatchesOne();
 	 **/
 	arrays.arrayAdd();
-	
-	
+
+	reverse.reverseInt(12);
+	reverse.reverseIntTwo(-345);
+
+	fibonacci.fiboTwo();
+
+	palindrome.palin();
+
+	search.LinearSearchOne(new int[]{1, 2, 3, 4, 5, 6, 7, 8}, 4);
+		search.binarySearch();
+
+		arrayTasks.arMerge();
+
 	}
+
+
+
 }

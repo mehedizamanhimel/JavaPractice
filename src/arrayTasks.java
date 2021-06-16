@@ -98,4 +98,21 @@ public class arrayTasks {
         abcde.removeLast();
         System.out.println("the linked list after deleting last item is: "+abcde);
     }
+
+    public static void arMerge(){
+	    int [] fistArray = {1,2,3,4};
+        int [] secondArray = {5,6,7,8};
+        int fal = fistArray.length;
+        int sal = secondArray.length;
+        int[] sumlength = new int[fal+sal];
+        System.arraycopy(fistArray,0,sumlength,0, fal);
+        System.arraycopy(secondArray,0,sumlength,fal, sal);
+
+        System.out.println(Arrays.toString(sumlength));
+
+        int length = sumlength.length;
+        int mid = length/2;
+        System.out.println(sumlength[mid]);
+
+    }
 }
