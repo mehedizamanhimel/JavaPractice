@@ -85,4 +85,13 @@ public class reverseString {
         System.out.println(c);
     }
 
+
+    public void reverseMethod(String value){
+        String ab = "asdfasdfffff";
+        StringBuffer bc = null;
+        StringBuffer cd = new StringBuffer(value);
+        bc = cd.reverse();
+        System.out.println(bc);
+
+    }
 }

@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 public class arrayTasks {
 
-	
+
 	public void arrayAdd() {
 		ArrayList<String> employee = new ArrayList<String>();
 		employee.add("Mehedi");
@@ -25,22 +25,22 @@ public class arrayTasks {
         abcd.add("de");
         abcd.add("cd");
         abcd.add("bd");
-        
+
         System.out.println("The arraylist before sorting"+abcd);
-        
+
         Iterator i = abcd.iterator();
-        
+
         while (i.hasNext()) {
 			System.out.println(i.next());
-			
+
 		}
-        
+
         Collections.sort(abcd);
         System.out.println("The arraylist after sorting"+abcd);
-        
+
         Collections.sort(abcd, Collections.reverseOrder());
         System.out.println("The arraylist after reverse sorting"+abcd);
-        
+
 
     }
 
@@ -50,12 +50,12 @@ public class arrayTasks {
         abcd.add(44);
         abcd.add(33);
         abcd.add(22);
-        
+
    System.out.println("The arraylist before sorting"+abcd);
-        
+
         Collections.sort(abcd);
         System.out.println("The arraylist after sorting"+abcd);
-        
+
         Collections.sort(abcd, Collections.reverseOrder());
         System.out.println("The arraylist after reverse sorting"+abcd);
     }
@@ -67,9 +67,9 @@ public class arrayTasks {
         abcd.add(33.0);
         abcd.add(22.0);
         System.out.println("The list of array before sorting"+abcd);
-        
+
         Collections.sort(abcd);
-        
+
     }
 
 
@@ -115,4 +115,31 @@ public class arrayTasks {
         System.out.println(sumlength[mid]);
 
     }
+
+    public void foundELementLocation(){
+	    int[] a = {1,2,3,4,5,6};
+	    int b = 4;
+
+	    int c = a.length;
+	    int d;
+	    for (int i=0; i >= c; i++){
+	        }
+        }
+
+    public void findSmallestInArray(){
+	    int a[]={23,23,11,24,53,6354, 8, 0};
+	    int b[]={21,12,31231,123213};
+	    Arrays.sort(a);
+	    System.out.println("The smallest array is: "+a[0]);
+    }
+
+    public void SumofTwoArray(){
+        int a[]={23,23,11,24,53,6354, 8, 0};
+        int b[]={21,12,31231,123213};
+        int c = a[0]+b[0]+a[3];
+        System.out.println("The sum of two array element is: "+c);
+
+    }
+
+
 }
