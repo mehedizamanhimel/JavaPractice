@@ -1,3 +1,5 @@
+package problems;
+
 public class Fibonacci {
 
     public void fiboOne(){

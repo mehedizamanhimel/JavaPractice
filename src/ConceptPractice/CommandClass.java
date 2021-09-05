@@ -1,3 +1,5 @@
+package ConceptPractice;
+
 public class CommandClass {
 
     public void commandPrint(String[] args){

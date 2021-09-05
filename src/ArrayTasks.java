@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class arrayTasks {
+public class ArrayTasks {
 
 
 	public void arrayAdd() {
@@ -142,4 +142,59 @@ public class arrayTasks {
     }
 
 
+
+    public void hr_2dArray_for(){
+	    ArrayList<Integer> arrayList = new ArrayList<Integer>();
+	    int[] abcd = {1,2,3,4,5,6};
+        arrayList.add(2);
+	    arrayList.add(3);
+        arrayList.add(4);
+        arrayList.add(5);
+        //arrayList.add(2,5);
+
+        int b = 0;
+        for (int i=0; i<=arrayList.size() ; i++){
+           System.out.println(arrayList);
+
+            break;
+        }
+        System.out.println("the list is"+b);
+    }
+
+    public void hr_2dArray_forEach(){
+        ArrayList<Integer> arrayList = new ArrayList<Integer>();
+
+        arrayList.add(8);
+        arrayList.add(11);
+        arrayList.add(9);
+        arrayList.add(5);
+        arrayList.add(99);
+        arrayList.add(77);
+        arrayList.add(66);
+
+        ArrayList<Integer> arrayList2 = new ArrayList<Integer>();
+        ArrayList<Integer> arrayList3 = new ArrayList<Integer>();
+        //arrayList.add(2,5);
+
+        int b = 0;
+
+        for (int i:arrayList){
+            System.out.println("Result of foreach loop"+i);
+            if (i==5 || i==66){
+                /*
+                b=i;
+                System.out.println("right"+b);
+                */
+                arrayList2.add(i);
+                arrayList3.add(arrayList.indexOf(i));
+                System.out.println("Filtered array values are: "+arrayList2);
+                System.out.println("Index of filtered array values are: "+arrayList3);
+            }
+            else {
+                System.out.println("wrong"+i);
+            }
+        }
+
+
+    }
 }

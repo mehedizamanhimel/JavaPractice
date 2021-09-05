@@ -1,9 +1,20 @@
+import ConceptPractice.*;
+import problems.Fibonacci;
+import problems.ScannerClass;
+
 public class MainClass implements Runnable{
 
 	@Override
 	public void run() {
 		System.out.println("Thread has ended");
 	}
+
+	/*
+	@author Mehedi Zaman Himel
+	@code int a = 5;
+	@link https://www.youtube.com/
+
+	 */
 	
 	public static void main(String[] args) {
 
@@ -16,7 +27,7 @@ public class MainClass implements Runnable{
 		SampleProgrammingProblems sampleProgram = new SampleProgrammingProblems();
 
 		AbsoluteValue absoluteValue = new AbsoluteValue();
-		arrayTasks arrays = new arrayTasks();
+		ArrayTasks arrayTasks = new ArrayTasks();
 		FileSystem files = new FileSystem();
 		Loop loop = new Loop();
 		reverseString reverse = new reverseString();
@@ -27,6 +38,8 @@ public class MainClass implements Runnable{
 		Calculation_OPeration calc = new Calculation_OPeration();
 		CommandClass commandClass = new CommandClass();
 		DataTypes dataTypes = new DataTypes();
+		Variables variables = new Variables();
+		Operators operators = new Operators();
 
 		/**
 		 loop.whileLoopOne();
@@ -49,7 +62,7 @@ public class MainClass implements Runnable{
 
 		 regx.patternMatchesOne();
 		 **/
-		arrays.arrayAdd();
+		arrayTasks.arrayAdd();
 
 		reverse.reverseInt(12);
 		reverse.reverseIntTwo(-345);
@@ -61,17 +74,22 @@ public class MainClass implements Runnable{
 		search.LinearSearchOne(new int[]{1, 2, 3, 4, 5, 6, 7, 8}, 4);
 		search.binarySearch();
 
-		arrayTasks.arMerge();
+		ArrayTasks.arMerge();
 
 		reverse.reverseMethod("asdfasdflll");
-		arrays.findSmallestInArray();
-		arrays.SumofTwoArray();
+		arrayTasks.findSmallestInArray();
+		arrayTasks.SumofTwoArray();
 
 		calc.SumAndMultiply(5, 6);
 
 		//System.out.println("the number of even is"+calc.sendEven());
 
-		dataTypes.byteMethod();
+		dataTypes.allDataTypes();
+		variables.variableOne();
+
+		operators.incrementMethod();
+		arrayTasks.hr_2dArray_for();
+		arrayTasks.hr_2dArray_forEach();
 	}
 
 
