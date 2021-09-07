@@ -90,6 +90,11 @@ public class MainClass implements Runnable{
 		operators.incrementMethod();
 		arrayTasks.hr_2dArray_for();
 		arrayTasks.hr_2dArray_forEach();
+		arrayTasks.arrayDeclare();
+		arrayTasks.TwoDArrayOne();
+		arrayTasks.hr_2dArray_forEach();
+		arrayTasks.arrayTask();
+
 	}
 
 

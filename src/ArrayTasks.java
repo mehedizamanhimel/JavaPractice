@@ -1,8 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.LinkedList;
+import java.util.*;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -178,23 +174,84 @@ public class ArrayTasks {
 
         int b = 0;
 
-        for (int i:arrayList){
-            System.out.println("Result of foreach loop"+i);
-            if (i==5 || i==66){
+        for (int i:arrayList) {
+            System.out.println("Result of foreach loop" + i);
+            if (i == 5 || i == 66) {
                 /*
                 b=i;
                 System.out.println("right"+b);
                 */
                 arrayList2.add(i);
                 arrayList3.add(arrayList.indexOf(i));
-                System.out.println("Filtered array values are: "+arrayList2);
-                System.out.println("Index of filtered array values are: "+arrayList3);
-            }
-            else {
-                System.out.println("wrong"+i);
+                System.out.println("Filtered array values are: " + arrayList2);
+                System.out.println("Index of filtered array values are: " + arrayList3);
+            } else {
+                System.out.println("wrong" + i);
             }
         }
+        System.out.println("Before sorting"+arrayList);
+        //Collections.sort(arrayList, Collections.reverseOrder());
+        Collections.reverse(arrayList);
+        System.out.println("After sorting"+arrayList);
+    }
+
+
+    public void arrayDeclare(){
+
+	    int[] abcd = {1,2,3,4};
+	    int[] abcd2= new int[5];
+	    int abcd3[] = {4,5,6,6,6,7,7,9};
+
+	    //ArrayList<Integer> abcd2 = {1,2,3,5,6};
+
+        System.out.println(abcd3[1]+abcd[2]);
+        System.out.println(abcd2.length);
+        int b = 0;
+
 
 
     }
+
+    public void TwoDArrayOne(){
+
+	    int abcd[][] = {{1,2,3,4,5},{6,7,8,9,0}};
+	    int firstArrayValue = abcd[0][2];
+	    int secondArrayValue = abcd[1][2];
+
+	    int abcd2[][];
+
+        System.out.println("firstArrayValue: "+firstArrayValue);
+        System.out.println("secondArrayValue: "+secondArrayValue);
+
+        for(int i=0; i< abcd.length; i++){
+
+            for (int j=0; j<abcd[i].length;j++){
+
+                System.out.println("The result of the list1 is: "+abcd[i][j]);
+
+            }
+
+        }
+
+    }
+
+    public void arrayTask(){
+
+	    int[] arrayOne = new int[5];
+	    ArrayList<Integer> arrayTwo = new ArrayList<Integer>();
+        arrayTwo.add(1);
+        arrayTwo.add(2);
+        arrayTwo.add(3);
+        arrayTwo.add(4);
+	    arrayOne[0] = 5;
+	    arrayOne[1] = 9;
+        arrayOne[2] = 6;
+        arrayOne[3] = 11;
+        System.out.println(arrayTwo);
+        System.out.println("array list ans: "+ Arrays.toString(arrayOne));
+        Collections.reverse(arrayTwo);
+        System.out.println(arrayTwo);
+
+    }
+
 }
