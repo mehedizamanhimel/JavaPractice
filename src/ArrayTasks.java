@@ -208,8 +208,6 @@ public class ArrayTasks {
         System.out.println(abcd2.length);
         int b = 0;
 
-
-
     }
 
     public void TwoDArrayOne(){
@@ -237,6 +235,7 @@ public class ArrayTasks {
 
     public void arrayTask(){
 
+	    Scanner sc = new Scanner(System.in);
 	    int[] arrayOne = new int[5];
 	    ArrayList<Integer> arrayTwo = new ArrayList<Integer>();
         arrayTwo.add(1);
@@ -251,6 +250,7 @@ public class ArrayTasks {
         System.out.println("array list ans: "+ Arrays.toString(arrayOne));
         Collections.reverse(arrayTwo);
         System.out.println(arrayTwo);
+
 
     }
 
