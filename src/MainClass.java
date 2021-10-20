@@ -15,8 +15,17 @@ public class MainClass implements Runnable{
 	@link https://www.youtube.com/
 
 	 */
-	
+
+	public MainClass (int abcd){
+
+	}
+
 	public static void main(String[] args) {
+
+
+		int age;
+
+		
 
 		SwitchStatementClass switchClass = new SwitchStatementClass();
 		ConditionalStatement conditionalStatements = new ConditionalStatement();
@@ -40,6 +49,10 @@ public class MainClass implements Runnable{
 		DataTypes dataTypes = new DataTypes();
 		Variables variables = new Variables();
 		Operators operators = new Operators();
+
+
+
+
 
 		/**
 		 loop.whileLoopOne();
@@ -94,6 +107,12 @@ public class MainClass implements Runnable{
 		arrayTasks.TwoDArrayOne();
 		arrayTasks.hr_2dArray_forEach();
 		arrayTasks.arrayTask();
+
+		Constructor constructor_int = new Constructor(5);
+		Constructor constructor_string = new Constructor("abc");
+		Constructor constructor_char = new Constructor('c');
+		Constructor constructor_boolean = new Constructor(true);
+		Constructor constructor_combo1 = new Constructor("",666);
 
 	}
 
