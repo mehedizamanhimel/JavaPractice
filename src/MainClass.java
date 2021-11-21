@@ -106,7 +106,7 @@ public class MainClass implements Runnable{
 		arrayTasks.arrayDeclare();
 		arrayTasks.TwoDArrayOne();
 		arrayTasks.hr_2dArray_forEach();
-		arrayTasks.arrayTask();
+
 
 		Constructor constructor_int = new Constructor(5);
 		Constructor constructor_string = new Constructor("abc");
@@ -114,8 +114,9 @@ public class MainClass implements Runnable{
 		Constructor constructor_boolean = new Constructor(true);
 		Constructor constructor_combo1 = new Constructor("",666);
 
+		arrayTasks.array_oct();
+		arrayTasks.arrayTask();
+
 	}
-
-
 
 }

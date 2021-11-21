@@ -237,21 +237,37 @@ public class ArrayTasks {
 
 	    Scanner sc = new Scanner(System.in);
 	    int[] arrayOne = new int[5];
-	    ArrayList<Integer> arrayTwo = new ArrayList<Integer>();
+	    List<Integer> arrayTwo = new ArrayList<Integer>();
         arrayTwo.add(1);
         arrayTwo.add(2);
         arrayTwo.add(3);
         arrayTwo.add(4);
-	    arrayOne[0] = 5;
+	    arrayOne[0] = 5; 
 	    arrayOne[1] = 9;
         arrayOne[2] = 6;
         arrayOne[3] = 11;
-        System.out.println(arrayTwo);
+        System.out.println("Before reverse"+arrayTwo);
         System.out.println("array list ans: "+ Arrays.toString(arrayOne));
         Collections.reverse(arrayTwo);
-        System.out.println(arrayTwo);
+        System.out.println("after reverse"+arrayTwo);
 
 
+    }
+
+    public void array_oct(){
+	    ArrayList<String> stringOne = new ArrayList<>();
+	    stringOne.add("One");
+        stringOne.add("Two");
+        stringOne.add("Three");
+        stringOne.add("Four");
+        stringOne.add("Five");
+        stringOne.add("Six");
+        stringOne.add("Seven");
+        System.out.println(stringOne);
+
+        for(int i=0 ; i<stringOne.size(); i++){
+            System.out.println(stringOne.get(i));
+        }
     }
 
 
