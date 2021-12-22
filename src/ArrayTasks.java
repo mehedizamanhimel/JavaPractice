@@ -270,5 +270,24 @@ public class ArrayTasks {
         }
     }
 
+    public void newMethodDec2021(){
+
+	    ArrayList<Integer> abc = new ArrayList<Integer>();
+        abc.add(3);
+	    abc.add(4);
+        abc.add(5);
+        abc.add(6);
+        abc.add(7);
+        abc.add(8);
+
+        for (int i=0; i <= abc.size(); i++){
+            int number = abc.get(i);
+            if (number % 2 == 0 ) {
+                System.out.println(number);
+
+            }
+        }
+    }
+
 
 }

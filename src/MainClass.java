@@ -74,7 +74,7 @@ public class MainClass implements Runnable{
 		 arrays.arList_double();
 
 		 regx.patternMatchesOne();
-		 **/
+
 		arrayTasks.arrayAdd();
 
 		reverse.reverseInt(12);
@@ -116,6 +116,9 @@ public class MainClass implements Runnable{
 
 		arrayTasks.array_oct();
 		arrayTasks.arrayTask();
+		 **/
+		arrayTasks.newMethodDec2021();
+
 
 	}
 
