@@ -49,7 +49,7 @@ public class MainClass implements Runnable{
 		DataTypes dataTypes = new DataTypes();
 		Variables variables = new Variables();
 		Operators operators = new Operators();
-
+		Switch switchStatement = new Switch();
 
 
 
@@ -116,10 +116,13 @@ public class MainClass implements Runnable{
 
 		arrayTasks.array_oct();
 		arrayTasks.arrayTask();
+
 		 **/
-		arrayTasks.newMethodDec2021();
 
-
+		switchStatement.switchOne(50);
+		arrayTasks.newMethodDec2021(3);
+		arrayTasks.forEachArray();
+		arrayTasks.nestedFor();
 	}
 
 }

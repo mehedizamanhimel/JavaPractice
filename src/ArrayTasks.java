@@ -270,23 +270,69 @@ public class ArrayTasks {
         }
     }
 
-    public void newMethodDec2021(){
+    public void newMethodDec2021(int breakpoint){
 
-	    ArrayList<Integer> abc = new ArrayList<Integer>();
+        int odd=0;
+        int even = 0;
+	    ArrayList<Integer> abc = new ArrayList<Integer>(
+                Arrays.asList(23,24,65,34,78,34,75,
+                        286,296,72107,141,122,
+                        7135,124,7153,176,217,
+                        148,149,2650));
+        /*
         abc.add(3);
 	    abc.add(4);
         abc.add(5);
         abc.add(6);
         abc.add(7);
         abc.add(8);
+        abc.add(11);
+        abc.add(2);
+        abc.add(33);
+        abc.add(44);
+        abc.add(55);
+        abc.add(66);
+        abc.add(77);
+        abc.add(88);
+        abc.add(99);
+        abc.add(101);
+        */
 
-        for (int i=0; i <= abc.size(); i++){
+
+        for (int i=0; i < abc.size(); i+= 1){
+
             int number = abc.get(i);
-            if (number % 2 == 0 ) {
-                System.out.println(number);
 
+            if (number % 2 == 0 ) {
+                System.out.println("The even numbers are: "+number);
+            }
+
+            else if (number % 2 != 0 ) {
+                //number=odd;
+                System.out.println("The odd numbers are: "+number);
             }
         }
+
+
+    }
+
+    public void forEachArray(){
+        int[] arrayOne = {1,2,3,4,5,6,7,8,9};
+
+        for (int i: arrayOne){
+            System.out.println(i);
+        }
+    }
+
+    public void nestedFor(){
+        int a = 3;
+        for(int i=1; i<=a; i++){
+            for (int j=1; j<=a; j++) {
+                System.out.println(i +"   "+j);
+            }
+
+        }
+
     }
 
 
