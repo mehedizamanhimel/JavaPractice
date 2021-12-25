@@ -121,8 +121,9 @@ public class MainClass implements Runnable{
 
 		switchStatement.switchOne(50);
 		arrayTasks.newMethodDec2021(3);
-		arrayTasks.forEachArray();
+		//arrayTasks.forEachArray();
 		arrayTasks.nestedFor();
+		arrayTasks.whileLoopOne();
 	}
 
 }

@@ -325,15 +325,26 @@ public class ArrayTasks {
     }
 
     public void nestedFor(){
+        /*
         int a = 3;
         for(int i=1; i<=a; i++){
-            for (int j=1; j<=a; j++) {
+            for (int j=a; j>=1; j--) {
                 System.out.println(i +"   "+j);
             }
-
         }
+
+         */
+        int[][] a = {{1,2,3,4},{11,22,33,44}};
+        System.out.println("The first array is: "+Arrays.toString(a));
 
     }
 
-
+    public void whileLoopOne(){
+        int a = 10;
+        while (a < 15){
+            System.out.println("this is a test");
+            System.out.println(a);
+            a++;
+        }
+    }
 }
