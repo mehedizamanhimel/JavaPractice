@@ -339,12 +339,61 @@ public class ArrayTasks {
 
     }
 
-    public void whileLoopOne(){
+    public void whileLoopOne() {
         int a = 10;
-        while (a < 15){
+        while (a < 15) {
             System.out.println("this is a test");
             System.out.println(a);
             a++;
         }
+
+        int b = 15;
+        while (b < 20) {
+            System.out.println("this is a test two");
+            b++;
+        }
+
+        // for loop
+        int[] arrayOne = {1, 2, 3, 4, 5, 6};
+        int size = arrayOne.length;
+        System.out.println("the size of the array is: " + size);
+        for (int i : arrayOne
+        ) {
+            System.out.println(i);
+        }
+
+
+        int abc = 10;
+
+        // First do while loop
+        do {
+            System.out.println("This is the do while loop output");
+            abc++;
+        }
+        while (abc < 15);
+
+        // Second do while loop
+        do {
+            System.out.println("This is the do while loop output two");
+            break;
+        }
+        while (abc < 20);
+
+        for (int g = 1; g<= 100; g++){
+            if (g == 11) {
+                break;
+            }
+            System.out.print(g + "]  [");
+            }
+
+        ArrayList<Integer> arrayOne2 = new ArrayList<Integer>(Arrays.asList(5,10,15,20));
+        for (int i=0; i<= arrayOne2.size();  i++){
+            for (int k = 0; k < i; k++) {
+                System.out.println("The result is : " + arrayOne2.get(k));
+            }
+        }
+
+
+
     }
 }
