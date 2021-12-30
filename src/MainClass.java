@@ -117,13 +117,15 @@ public class MainClass implements Runnable{
 		arrayTasks.array_oct();
 		arrayTasks.arrayTask();
 
-		 **/
+
 
 		switchStatement.switchOne(50);
 		arrayTasks.newMethodDec2021(3);
 		//arrayTasks.forEachArray();
 		arrayTasks.nestedFor();
 		arrayTasks.whileLoopOne();
+		**/
+		arrayTasks.E2EArrayPractice();
 	}
 
 }

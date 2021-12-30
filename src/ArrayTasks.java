@@ -396,4 +396,44 @@ public class ArrayTasks {
 
 
     }
+
+    public void E2EArrayPractice(){
+
+        // initializing an arraylist of String
+        ArrayList<String> list1 = new ArrayList<String>(Arrays.asList("Value1","testTwo","Value3","Value4","Value5"));
+        //printing the whole arraylist of String
+        System.out.println("The list of String is: "+list1);
+        //printing a specific value of String arraylist
+        System.out.println("The first value of String is: "+ list1.get(0));
+
+
+        // initializing an arraylist of double
+        ArrayList<Double> list3 = new ArrayList<Double>(Arrays.asList(234.0, 234.34,35.234,456.234));
+        //printing the whole arraylist of double
+        System.out.println("The list of double is: "+ list3);
+        //printing a specific value of double arraylist
+        System.out.println("The first value of of double is: "+ list3.get(0));
+
+
+        // initializing an arraylist of integer
+        ArrayList<Integer> list2 = new ArrayList<Integer>(Arrays.asList(3,4,5,35,345,234));
+        //printing the whole arraylist of integers
+        System.out.println("The list of Integer is: "+ list2);
+        //printing a specific value of integer arraylist
+        System.out.println("The first value of Integer is: "+ list2.get(0));
+
+        for (int i=0; i<=list1.size();  i++){
+            if(list1.get(i).contentEquals("Value1")){
+                System.out.println("The whole data is: "+list1.get(i+1));
+                break;
+            }
+
+        }
+
+        for (int j :list2
+        ) {
+            System.out.println("$$"+j);
+
+        }
+    }
 }
