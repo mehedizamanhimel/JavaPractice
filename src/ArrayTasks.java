@@ -422,6 +422,9 @@ public class ArrayTasks {
         //printing a specific value of integer arraylist
         System.out.println("The first value of Integer is: "+ list2.get(0));
 
+        //declaring a linked list
+        //List<Integer> abcde = new List<Integer>(Integer);
+
         for (int i=0; i<=list1.size();  i++){
             if(list1.get(i).contentEquals("Value1")){
                 System.out.println("The whole data is: "+list1.get(i+1));
@@ -432,8 +435,33 @@ public class ArrayTasks {
 
         for (int j :list2
         ) {
+            if(5==5){
+
+            }
             System.out.println("$$"+j);
 
         }
+
+        ArrayList<Integer> forArray = new ArrayList<>(Arrays.asList(0,1,2,3,4,5,6,7,8,9,10));
+        ArrayList<Integer> evenList = new ArrayList<>();
+        ArrayList<Integer> oddList = new ArrayList<>();
+        int sumEven=0;
+        int sumOdd=0;
+        System.out.println("The array for test is: "+forArray);
+        for (int i = 0; i < forArray.size(); i++) {
+            //for (int p ; forArray)
+            int j = forArray.get(i);
+            if (j % 2 == 0) {
+                sumEven+= j;
+                evenList.add(j);
+            } else {
+                oddList.add(j);
+                sumOdd+= j;
+            }
+        }
+        System.out.println("The even list is: " + evenList);
+        System.out.println("The odd list is: " + oddList);
+        System.out.println("The sum of even is: " + sumEven);
+        System.out.println("The sum of odd is: " + sumOdd);
     }
 }
