@@ -464,5 +464,32 @@ public class ArrayTasks {
         System.out.println("The sum of even is: " + sumEven);
         System.out.println("The sum of odd is: " + sumOdd);
         System.out.println("The sum of odd is: " + sumOdd);
+
+        int[] a = {0,1,2,3,4,5,6,5};
+        int t = 0;
+        int q = 11;
+        int[] bb;
+        System.out.println("The initial array is: " +Arrays.toString(a));
+        for(int i=0; i<a.length-1; i++){
+            t = i+(i+1);
+            System.out.println("result of array is: " +  t );
+            if(t==q){
+                System.out.println("result paisi "+i + (i+1));
+
+            }
+            else{
+                System.out.println("result painai " );
+            }
+
+            /*
+            if(i+i == t){
+                System.out.println("the ressult is: "+i);
+            }
+            */
+
+        }
+
+
+
     }
 }
