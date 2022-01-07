@@ -463,5 +463,6 @@ public class ArrayTasks {
         System.out.println("The odd list is: " + oddList);
         System.out.println("The sum of even is: " + sumEven);
         System.out.println("The sum of odd is: " + sumOdd);
+        System.out.println("The sum of odd is: " + sumOdd);
     }
 }
