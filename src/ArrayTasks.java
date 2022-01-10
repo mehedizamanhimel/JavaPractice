@@ -475,21 +475,50 @@ public class ArrayTasks {
             System.out.println("result of array is: " +  t );
             if(t==q){
                 System.out.println("result paisi "+i + (i+1));
-
             }
             else{
                 System.out.println("result painai " );
             }
-
             /*
             if(i+i == t){
                 System.out.println("the ressult is: "+i);
             }
             */
-
         }
 
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Provide your size of array");
+        int arraysize = sc.nextInt();
 
-
+        int array[] = new int[arraysize];
+        System.out.println("Provide your elements of array");
+        for(int i=0; i<arraysize; i++){
+            array[i]=sc.nextInt();
+        }
+        System.out.println("The elements of the array is: " );
+        for(int j=0; j<arraysize; j++){
+            System.out.print(array[j]+" ");
+        }
+        System.out.println("The final array is: "+Arrays.toString(array) );
     }
+
+    public void arraychangeViaInput(){
+	    int target = 9;
+        int arrayOne[] = {1,2,3,4,5,6,7,8};
+        int arrayTwo[] = {};
+        System.out.println(Arrays.toString(arrayOne));
+        arrayOne[2]=99;
+        System.out.println(Arrays.toString(arrayOne));
+
+        for (int i =0; i<arrayOne.length-1; i++){
+            for (int j=i+1; j< arrayOne.length; j++){
+                System.out.println("... "+i+" ..."+j);
+                if(arrayOne[i]+arrayOne[j] == target){
+                    System.out.println("...// "+i+" //..."+j);
+                }
+            }
+        }
+    }
+
+
 }

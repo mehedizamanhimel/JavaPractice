@@ -17,15 +17,11 @@ public class MainClass implements Runnable{
 	 */
 
 	public MainClass (int abcd){
-
 	}
 
 	public static void main(String[] args) {
 
-
 		int age;
-
-		
 
 		SwitchStatementClass switchClass = new SwitchStatementClass();
 		ConditionalStatement conditionalStatements = new ConditionalStatement();
@@ -50,9 +46,6 @@ public class MainClass implements Runnable{
 		Variables variables = new Variables();
 		Operators operators = new Operators();
 		Switch switchStatement = new Switch();
-
-
-
 
 		/**
 		 loop.whileLoopOne();
@@ -124,8 +117,10 @@ public class MainClass implements Runnable{
 		//arrayTasks.forEachArray();
 		arrayTasks.nestedFor();
 		arrayTasks.whileLoopOne();
-		**/
+
 		arrayTasks.E2EArrayPractice();
+		 **/
+		arrayTasks.arraychangeViaInput();
 	}
 
 }
