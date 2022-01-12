@@ -518,6 +518,23 @@ public class ArrayTasks {
                 }
             }
         }
+
+        int[] arrayThree = new int[5];
+        arrayThree[0] = 1;
+        arrayThree[1] = 1;
+        arrayThree[2] = 1;
+        arrayThree[3] = 1;
+        arrayThree[4] = 1;
+        System.out.println(Arrays.toString(arrayThree));
+        arrayThree[1] = 654;
+        arrayThree[2] = 400;
+        arrayThree[3] = 87;
+        arrayThree[4] = 200;
+        System.out.println(Arrays.toString(arrayThree));
+        Arrays.stream(arrayThree).sorted();
+        System.out.println(Arrays.toString(arrayThree));
+        System.out.println(arrayThree.length);
+
     }
 
 
