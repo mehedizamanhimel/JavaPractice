@@ -520,22 +520,115 @@ public class ArrayTasks {
         }
 
         int[] arrayThree = new int[5];
-        arrayThree[0] = 1;
-        arrayThree[1] = 1;
-        arrayThree[2] = 1;
-        arrayThree[3] = 1;
-        arrayThree[4] = 1;
-        System.out.println(Arrays.toString(arrayThree));
+        int[] arrayFour = new int[5];
+        int j=0;
+        int k=0;
+        arrayThree[0] = 10;
         arrayThree[1] = 654;
         arrayThree[2] = 400;
         arrayThree[3] = 87;
-        arrayThree[4] = 200;
-        System.out.println(Arrays.toString(arrayThree));
-        Arrays.stream(arrayThree).sorted();
+        arrayThree[4] = 800;
         System.out.println(Arrays.toString(arrayThree));
         System.out.println(arrayThree.length);
 
+        /*
+        for (int i =0; i< arrayThree.length; i++) {
+            //System.out.print("___"+arrayThree[i]);
+            if (arrayThree[i] > maxValue) {
+                maxValue = arrayThree[i];
+                //System.out.println("the max value1 is: " + maxValue);
+            }
+            //System.out.println("the max value2 is: " + maxValue);
+        }
+        */
+
+        int maxValue= arrayThree[0];
+        int minValue= arrayThree[0];
+        for (int i =0; i< arrayThree.length; i++) {
+            if (arrayThree[i] < minValue) {
+                minValue = arrayThree[i];
+            }
+            else if(arrayThree[i] > maxValue){
+                maxValue = arrayThree[i];
+            }
+        }
+        System.out.println("the max value3 is: " + maxValue);
+        System.out.println("the min value2 is: " + minValue);
+
+        ArrayList<Integer> arrayListOne = new ArrayList<>(Arrays.asList(32,12,54,23,12));
+        ArrayList<Integer> arrayListTwo = null;
+        System.out.println("The initial arraylist before removing duplicate Item: "+arrayListOne);
+
+        arrayListOne.remove(0);
+        System.out.println("after one manual remove: "+arrayListOne);
+        for (int i =0; i< arrayListOne.size(); i++){
+            int m = arrayListOne.get(i);
+            if(m==arrayListOne.get(i)){
+                //arrayListOne.remove(arrayListOne.get(i));
+                //int index = arrayListOne.get(i);
+                arrayListOne.remove(i);
+            }
+        }
+        System.out.println("The final arraylist after removing duplicate Item: "+arrayListOne);
+
+
     }
 
+    public void rubyTest() {
+
+	    ArrayList<Integer> arrayOne = new ArrayList<>(Arrays.asList(11,12,13,15,14,17,19));
+        System.out.println("The first array is: "+arrayOne);
+
+        ArrayList<Integer> arrayTwo = new ArrayList<>(Arrays.asList(14,15,16,17,13));
+        System.out.println("The second array is: "+arrayTwo);
+
+        //arrayOne.addAll(arrayTwo);
+        //System.out.println("The array after addition is: "+arrayOne);
+
+        ArrayList<Integer> arrayThree= new ArrayList<>();
+
+        int initialValue =  arrayTwo.get(0);
+/*
+        for (int i = 0; i < arrayOne.size(); i++){
+            int j = arrayOne.get(i);
+            if(j==arrayOne.get(i)){
+                arrayOne.remove(i);
+                //arrayOne.remove(j);
+            }
+        }
+
+
+        int j =0;
+        int l =0;
+        for (int i =0; i<arrayOne.size(); i++){
+            j = arrayOne.get(i);
+            for(int k = 0; k<arrayTwo.size(); k++){
+                l =  arrayTwo.get(k);
+                if(j!=l){
+                    arrayThree.add(l);
+                }
+            }
+
+        }
+  */
+
+        for (int i =0; i< arrayOne.size(); i++){
+            if(!arrayTwo.contains(arrayOne.get(i))){
+                arrayThree.add(arrayOne.get(i));
+            }
+
+        }
+
+        for (int i =0; i< arrayTwo.size(); i++){
+            if(!arrayOne.contains(arrayTwo.get(i))){
+                if(!arrayThree.contains(arrayTwo.get(i)))
+                arrayThree.add(arrayTwo.get(i));
+            }
+
+        }
+
+        System.out.println("The final array is: "+arrayThree);
+
+    }
 
 }

@@ -119,8 +119,10 @@ public class MainClass implements Runnable{
 		arrayTasks.whileLoopOne();
 
 		arrayTasks.E2EArrayPractice();
+		 arrayTasks.arraychangeViaInput();
 		 **/
-		arrayTasks.arraychangeViaInput();
+
+		arrayTasks.rubyTest();
 	}
 
 }
