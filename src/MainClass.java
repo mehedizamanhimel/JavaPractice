@@ -120,9 +120,10 @@ public class MainClass implements Runnable{
 
 		arrayTasks.E2EArrayPractice();
 		 arrayTasks.arraychangeViaInput();
+		 arrayTasks.rubyTest();
 		 **/
 
-		arrayTasks.rubyTest();
+		arrayTasks.leetcode_One();
 	}
 
 }

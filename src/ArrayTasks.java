@@ -570,8 +570,6 @@ public class ArrayTasks {
             }
         }
         System.out.println("The final arraylist after removing duplicate Item: "+arrayListOne);
-
-
     }
 
     public void rubyTest() {
@@ -588,6 +586,7 @@ public class ArrayTasks {
         ArrayList<Integer> arrayThree= new ArrayList<>();
 
         int initialValue =  arrayTwo.get(0);
+
 /*
         for (int i = 0; i < arrayOne.size(); i++){
             int j = arrayOne.get(i);
@@ -608,7 +607,6 @@ public class ArrayTasks {
                     arrayThree.add(l);
                 }
             }
-
         }
   */
 
@@ -616,7 +614,6 @@ public class ArrayTasks {
             if(!arrayTwo.contains(arrayOne.get(i))){
                 arrayThree.add(arrayOne.get(i));
             }
-
         }
 
         for (int i =0; i< arrayTwo.size(); i++){
@@ -624,11 +621,39 @@ public class ArrayTasks {
                 if(!arrayThree.contains(arrayTwo.get(i)))
                 arrayThree.add(arrayTwo.get(i));
             }
-
         }
 
         System.out.println("The final array is: "+arrayThree);
 
+    }
+
+
+    public void leetcode_One(){
+	    ArrayList<Integer> arrayListOne = new ArrayList<>(Arrays.asList(1,1,2,2,3,2,3,4,4,5,1,5,1,6,6,7,6,6));
+        System.out.println(arrayListOne);
+        ArrayList<Integer> arrayListTwo = new ArrayList<>();
+
+        int temp =0;
+        int max = arrayListOne.get(0);
+
+        for (int i=0 ; i<arrayListOne.size() ; i++){
+            temp = arrayListOne.get(i);
+
+            if (arrayListOne.contains(temp)){
+                arrayListOne.remove(arrayListOne.get(i));
+            }
+            /*
+            else if (!arrayListOne.contains(temp)){
+                arrayListOne.remove(temp);
+            }
+
+            if (temp==max){
+                arrayListOne.remove(max);
+            }
+            */
+
+        }
+        System.out.println(arrayListOne);
     }
 
 }
