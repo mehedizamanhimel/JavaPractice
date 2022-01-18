@@ -587,7 +587,7 @@ public class ArrayTasks {
 
         int initialValue =  arrayTwo.get(0);
 
-/*
+        /*
         for (int i = 0; i < arrayOne.size(); i++){
             int j = arrayOne.get(i);
             if(j==arrayOne.get(i)){
@@ -608,7 +608,7 @@ public class ArrayTasks {
                 }
             }
         }
-  */
+        */
 
         for (int i =0; i< arrayOne.size(); i++){
             if(!arrayTwo.contains(arrayOne.get(i))){
@@ -629,7 +629,8 @@ public class ArrayTasks {
 
 
     public void leetcode_One(){
-	    ArrayList<Integer> arrayListOne = new ArrayList<>(Arrays.asList(1,1,2,2,3,2,3,4,4,5,1,5,1,6,6,7,6,6));
+	    ArrayList<Integer> arrayListOne = new ArrayList<>
+                (Arrays.asList(1,1,2,2,3,2,3,4,4,5,1,5,1,6,6,7,6,6));
         System.out.println(arrayListOne);
         ArrayList<Integer> arrayListTwo = new ArrayList<>();
 
@@ -638,12 +639,9 @@ public class ArrayTasks {
         int max = arrayListOne.get(0);
 
         for (int i=0 ; i<arrayListOne.size() ; i++){
-            System.out.print("the regular value"+arrayListOne.get(i)+"\n");
-            System.out.print("the +1 value"+arrayListOne.get(i+1));
+            System.out.print(" //the regular value: "+arrayListOne.get(i));
+            System.out.println(" //the +1 value: "+arrayListOne.get(i+1));
 
-           if(arrayListOne.get(i)!=arrayListOne.get(i+1)){
-
-           }
 
             /*
             else if (!arrayListOne.contains(temp)){
@@ -659,4 +657,28 @@ public class ArrayTasks {
         System.out.println(arrayListTwo);
     }
 
+    public void fullPhase() {
+	    Scanner sc = new Scanner(System.in);
+	    System.out.print("Enter your arrayLength: ");
+	    int arraySize = sc.nextInt();
+	    int[] arr = new int[arraySize];
+	    int sum =0;
+
+        for (int i=0; i< arraySize; i++){
+            System.out.print("Enter your arraydata: ");
+            int arrayData = sc.nextInt();
+            arr[i] = arrayData;
+        }
+        System.out.println("The first array is : "+ Arrays.toString(arr));
+
+        for (int i: arr){
+            System.out.println("---- The elements of array is: "+i);
+            sum+=i;
+
+        }
+        System.out.println("---- The sum of array is: "+sum);
+        System.out.println("---- The average of array is: "+sum/arraySize);
+
+
+    }
 }

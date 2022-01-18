@@ -119,11 +119,13 @@ public class MainClass implements Runnable{
 		arrayTasks.whileLoopOne();
 
 		arrayTasks.E2EArrayPractice();
-		 arrayTasks.arraychangeViaInput();
-		 arrayTasks.rubyTest();
+		arrayTasks.arraychangeViaInput();
+		arrayTasks.rubyTest();
+		arrayTasks.leetcode_One();
 		 **/
 
-		arrayTasks.leetcode_One();
+
+		arrayTasks.fullPhase();
 	}
 
 }
