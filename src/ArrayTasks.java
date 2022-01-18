@@ -634,14 +634,17 @@ public class ArrayTasks {
         ArrayList<Integer> arrayListTwo = new ArrayList<>();
 
         int temp =0;
+        int temp2 =0;
         int max = arrayListOne.get(0);
 
         for (int i=0 ; i<arrayListOne.size() ; i++){
-            temp = arrayListOne.get(i);
+            System.out.print("the regular value"+arrayListOne.get(i)+"\n");
+            System.out.print("the +1 value"+arrayListOne.get(i+1));
 
-            if (arrayListOne.contains(temp)){
-                arrayListOne.remove(arrayListOne.get(i));
-            }
+           if(arrayListOne.get(i)!=arrayListOne.get(i+1)){
+
+           }
+
             /*
             else if (!arrayListOne.contains(temp)){
                 arrayListOne.remove(temp);
@@ -653,7 +656,7 @@ public class ArrayTasks {
             */
 
         }
-        System.out.println(arrayListOne);
+        System.out.println(arrayListTwo);
     }
 
 }
