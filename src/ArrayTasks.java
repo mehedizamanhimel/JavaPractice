@@ -4,7 +4,6 @@ import java.util.stream.Collectors;
 
 public class ArrayTasks {
 
-
 	public void arrayAdd() {
 		ArrayList<String> employee = new ArrayList<String>();
 		employee.add("Mehedi");
@@ -659,25 +658,80 @@ public class ArrayTasks {
 
     public void fullPhase() {
 	    Scanner sc = new Scanner(System.in);
+
+
+	    /*
 	    System.out.print("Enter your arrayLength: ");
 	    int arraySize = sc.nextInt();
 	    int[] arr = new int[arraySize];
 	    int sum =0;
 
-        for (int i=0; i< arraySize; i++){
+
+
+	    //Inserting array data via scanner input
+	    for (int i=0; i< arraySize; i++){
             System.out.print("Enter your arraydata: ");
             int arrayData = sc.nextInt();
             arr[i] = arrayData;
         }
+
+	    //printing out final array with data
         System.out.println("The first array is : "+ Arrays.toString(arr));
 
+	    //printing
         for (int i: arr){
             System.out.println("---- The elements of array is: "+i);
             sum+=i;
-
         }
         System.out.println("---- The sum of array is: "+sum);
         System.out.println("---- The average of array is: "+sum/arraySize);
+
+        // declaring arrayList1
+        ArrayList<Integer> arrayIntOne = new ArrayList<Integer>();
+        System.out.println("Enter your first arrayListSize: ");
+        int Size_arrayIntOne = sc.nextInt();
+
+        //inserting data via input method
+        System.out.println("Enter your first arrayListdata: ");
+        for (int i=0; i<Size_arrayIntOne ; i++){
+            arrayIntOne.add(sc.nextInt());
+        }
+        System.out.println("Your first arrayList is: "+arrayIntOne);
+
+        //Sorting the array
+        Collections.sort(arrayIntOne);
+        System.out.println("Your sorted array is: "+arrayIntOne);
+
+
+	     */
+        //Create an array and filter different values from that array
+        ArrayList<Integer> wholeList = new ArrayList<>(Arrays.asList
+                (123,432,123,654,324,546,17,19,10, 21,22,25,11,12,16,35,35,11,12,11,12,33,32,5,8,2,1,1,124,123,23));
+        ArrayList<Integer> arrayOf10s = new ArrayList<>();
+        ArrayList<Integer> arrayOf20s = new ArrayList<>();
+        ArrayList<Integer> arrayOf30s = new ArrayList<>();
+        for(int i=0; i< wholeList.size(); i++){
+            if (wholeList.get(i)<20 && wholeList.get(i)>9){
+                arrayOf10s.add(wholeList.get(i));
+                Collections.sort(arrayOf10s);
+            }
+            else if (wholeList.get(i)<30 && wholeList.get(i)>19){
+                arrayOf20s.add(wholeList.get(i));
+                Collections.sort(arrayOf20s);
+            }
+            //else if (wholeList.get(i)<40 && wholeList.get(i)>29){
+            else if (wholeList.get(i)>29){
+                arrayOf30s.add(wholeList.get(i));
+                Collections.sort(arrayOf30s);
+            }
+        }
+        System.out.println(wholeList+ "\n" +"Your sorted array is: "+
+                "\n"+arrayOf10s+"\n"+arrayOf20s+"\n"+arrayOf30s);
+
+        for (int i =0; i < arrayOf20s.size(); i++){
+            System.out.println("The indexes are: "+i);
+            System.out.println("The index based values are: "+arrayOf20s.get(i));
+        }
 
 
     }
