@@ -666,8 +666,6 @@ public class ArrayTasks {
 	    int[] arr = new int[arraySize];
 	    int sum =0;
 
-
-
 	    //Inserting array data via scanner input
 	    for (int i=0; i< arraySize; i++){
             System.out.print("Enter your arraydata: ");
@@ -678,11 +676,13 @@ public class ArrayTasks {
 	    //printing out final array with data
         System.out.println("The first array is : "+ Arrays.toString(arr));
 
-	    //printing
+	    // 02. Write a Java program to sum values of an array
         for (int i: arr){
             System.out.println("---- The elements of array is: "+i);
             sum+=i;
         }
+
+        // 04. Write a Java program to calculate the average value of array elements.
         System.out.println("---- The sum of array is: "+sum);
         System.out.println("---- The average of array is: "+sum/arraySize);
 
@@ -698,15 +698,15 @@ public class ArrayTasks {
         }
         System.out.println("Your first arrayList is: "+arrayIntOne);
 
-        //Sorting the array
+        // 01. Write a Java program to sort a numeric array and a string array
         Collections.sort(arrayIntOne);
         System.out.println("Your sorted array is: "+arrayIntOne);
 
 
-	     */
         //Create an array and filter different values from that array
+
         ArrayList<Integer> wholeList = new ArrayList<>(Arrays.asList
-                (123,432,123,654,324,546,17,19,10, 21,22,25,11,12,16,35,35,11,12,11,12,33,32,5,8,2,1,1,124,123,23));
+                (123,432,123,654,324,546,17,19,10, 21,22,25,11,12,16,35,33,32,5,8,2,1,1,124,123,23));
         ArrayList<Integer> arrayOf10s = new ArrayList<>();
         ArrayList<Integer> arrayOf20s = new ArrayList<>();
         ArrayList<Integer> arrayOf30s = new ArrayList<>();
@@ -725,6 +725,7 @@ public class ArrayTasks {
                 Collections.sort(arrayOf30s);
             }
         }
+
         System.out.println(wholeList+ "\n" +"Your sorted array is: "+
                 "\n"+arrayOf10s+"\n"+arrayOf20s+"\n"+arrayOf30s);
 
@@ -734,5 +735,111 @@ public class ArrayTasks {
         }
 
 
+	     */
+
+        // 3. Write a Java program to print the following grid.
+
+        int a = 0;
+        for (int i=0; i<10; i++){
+            System.out.println("    ");
+            for (int j=1; j<=10; j++){
+                System.out.print(" -");
+
+            }
+        }
+
+
+        ArrayList<Integer> arrayOne = new ArrayList<>(Arrays.asList(15,21,32,0,565,4,5,89));
+
+        int max = arrayOne.get(0);
+        int min = arrayOne.get(0);
+
+
+        System.out.println("the first array is: "+ arrayOne);
+
+        // 07. Write a Java program to remove a specific element from an array.
+        for (int i=0; i< arrayOne.size(); i++){
+            if(arrayOne.get(i)==5){
+                arrayOne.remove(arrayOne.get(i));
+            }
+        }
+
+        // 10. Write a Java program to find the maximum and minimum value of an array.
+        for (int i=0; i< arrayOne.size(); i++){
+            if(max< arrayOne.get(i)){
+                max=arrayOne.get(i);
+            }
+            if(min> arrayOne.get(i)){
+                min=arrayOne.get(i);
+            }
+        }
+        System.out.println("the biggest number of array is: "+ max);
+        System.out.println("the smallest number of array is: "+ min);
+        System.out.println("the array after removing element is: "+ arrayOne);
+        // 11. Write a Java program to reverse an array of integer values.
+        Collections.reverse(arrayOne);
+        System.out.println("the array after reversing is: "+ arrayOne);
+
+
+        //13. Write a Java program to find the duplicate values of an array of string values.
+        ArrayList<String> arrayString = new ArrayList<>(Arrays.asList
+        ("Rony", "Mony", "Tony", "Jony", "Bini", "Rony", "Jony","abc","abc"));
+
+        ArrayList<String> arrayStringWithDuplicate = new ArrayList<>();
+        System.out.println("The string arraylist is: "+ arrayString);
+
+        String duplicate = "";
+
+        for (int i=0; i< arrayString.size()-1; i++){
+            for (int j=i+1; j< arrayString.size(); j++){
+                //System.out.println("the duplicate strings are: " + arrayString.get(j));
+                if (arrayString.get(i) == arrayString.get(j) && (i != j)) {
+                    System.out.println("the duplicate strings are: " + arrayString.get(j));
+                    arrayStringWithDuplicate.add(arrayString.get(j));
+                }
+            }
+        }
+        System.out.println("The arraylist with duplicate values are: "+ arrayStringWithDuplicate);
+
+        // 14.  Write a Java program to find the common elements between two arrays (string values).
+        ArrayList<String> commonArr1 = new ArrayList<>(Arrays.asList("aa","bb","cc","ee"));
+        ArrayList<String> commonArr2 = new ArrayList<>(Arrays.asList("bb","cc","dd","ee"));
+        ArrayList<String> finalarr = new ArrayList<>();
+
+        HashSet<String> hash = new HashSet<>();
+
+        for (int i=0; i< commonArr1.size(); i++){
+            for (int j=0; j< commonArr2.size(); j++){
+                if(commonArr1.get(i).equals(commonArr2.get(j))){
+                    finalarr.add(commonArr1.get(i));
+                }
+            }
+        }
+        System.out.println("The arraylist of common String values are: "+ finalarr);
+
+        // 15. Write a Java program to find the common elements between two arrays of integers.
+        ArrayList<Integer> intarr1 = new ArrayList<>(Arrays.asList(11,22,33,44));
+        ArrayList<Integer> intarr2 = new ArrayList<>(Arrays.asList(33,44,55,66,77));
+        ArrayList<Integer> intarr3 = new ArrayList<>();
+        for (int i =0; i< intarr1.size(); i++) {
+            for (int j = 0; j < intarr2.size(); j++) {
+                if (intarr1.get(i) == intarr2.get(j)) {
+                    intarr3.add(intarr1.get(i));
+                }
+            }
+        }
+        System.out.println("The arraylist of two common int arrays are: " + intarr3);
+
+        // 16. Write a Java program to remove duplicate elements from an array.
+        ArrayList<Integer> intarr4 = new ArrayList<>(Arrays.asList(11,22,33,44,55,55,11,66,22,77));
+        Collections.sort(intarr4);
+        for (int i =0; i< intarr4.size(); i++) {
+            for (int j = i+1; j < intarr4.size(); j++) {
+                if (intarr4.get(i) == intarr4.get(j)) {
+                    intarr4.remove(i);
+                }
+            }
+        }
+        System.out.println("The arraylist after removing duplicate elements: " + intarr4);
     }
 }
