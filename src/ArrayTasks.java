@@ -841,5 +841,104 @@ public class ArrayTasks {
             }
         }
         System.out.println("The arraylist after removing duplicate elements: " + intarr4);
+
+        // 17. Write a Java program to find the second largest element in an array
+
+        ArrayList<Integer> intarr5 = new ArrayList<>(Arrays.asList(1,2,3,4,123,345,112,5,6,7,8,9));
+        Collections.sort(intarr5);
+        int largestNum = 0;
+        int secondLargestNum = 0;
+        for(int i=0; i< intarr5.size()-1 ; i++){
+            for(int j= i+1; j<intarr5.size(); j++){
+                    if(intarr5.get(i)!=intarr5.get(j)){
+                        largestNum =    intarr5.get(j);
+                        secondLargestNum =    intarr5.get(i);
+                    }
+            }
+        }
+        System.out.println("The Largest number is: " + largestNum);
+        System.out.println("The second Largest number is: "+ secondLargestNum);
+
+        // 18. Write a Java program to find the second smallest element in an array.
+        Collections.reverse(intarr5);
+        System.out.println("The Reverse array is: " + intarr5);
+
+        int smallestNum = 0;
+        int secondSmallestNum = 0;
+        for(int i=0; i< intarr5.size()-1 ; i++){
+            for(int j= i+1; j<intarr5.size(); j++){
+                if(intarr5.get(i)!=intarr5.get(j)){
+                    smallestNum =    intarr5.get(j);
+                    secondSmallestNum =    intarr5.get(i);
+                }
+            }
+        }
+        System.out.println("The smallest number is: " + smallestNum);
+        System.out.println("The second smallest number is: "+ secondSmallestNum);
+
+        // 19. Write a Java program to add two matrices of the same size
+        // 20. Write a Java program to convert an array to ArrayList.
+
+        ArrayList<Integer> intarr6 = new ArrayList<>(Arrays.asList(1,2,3,4,5));
+        System.out.println("The int arrayList before converting to array: "+ intarr6);
+        int[] arr2= new int[5];
+        for (int i =0; i < intarr6.size(); i++){
+            arr2[i] = intarr6.get(i);
+        }
+        System.out.println("The int arraylist after converting to array: "+ Arrays.toString(arr2));
+
+        // 21. Write a Java program to convert an ArrayList to an array.
+        int arr3[] = {1,2,3,4,5,6};
+        ArrayList<Integer> intarr7 = new ArrayList<>();
+        System.out.println("The int array before converting to arraylist: "+ Arrays.toString(arr3));
+
+        for (int i=0; i< arr3.length; i++){
+            intarr7.add(arr3[i]);
+        }
+
+        System.out.println("The int array after converting to arraylist: "+ intarr7);
+
+        // 22. Write a Java program to find all pairs of elements in an array whose sum is equal to a specified number.
+
+
+        // 23. Write a Java program to test the equality of two arrays.
+        // 24. Write a Java program to find a missing number in an array.
+        // 25. Write a Java program to find common elements from three sorted (in non-decreasing order) arrays.
+
+        ArrayList<Integer> searchArray1 = new ArrayList<>(Arrays.asList(4,1,5,3,2,6));
+        Collections.sort(searchArray1);
+        ArrayList<Integer> searchArray2 = new ArrayList<>(Arrays.asList(5,6,4,9,7,12));
+        Collections.sort(searchArray2);
+        ArrayList<Integer> searchArray3 = new ArrayList<>(Arrays.asList(12,12,13,14,5,4,21,6));
+        Collections.sort(searchArray3);
+        ArrayList<Integer> searchArray4 = new ArrayList<>();
+
+        for (int i=0; i<searchArray1.size(); i++){
+            for (int j=0; j<searchArray2.size(); j++){
+                if(searchArray1.get(i)==searchArray2.get(j)) {
+                    for (int k = 0; k < searchArray3.size(); k++) {
+                        if (searchArray2.get(j)  == searchArray3.get(k)) {
+                            searchArray4.add(searchArray3.get(k));
+                            //System.out.println("The common elements are : " + searchArray4);
+                        }
+                    }
+                }
+            }
+        }
+        System.out.println("The common elements are : " + searchArray4);
+
+        // 26. Write a Java program to move all 0's to the end of an array. Maintain the relative order of the other (non-zero) array elements.
+        // 27. Write a Java program to find the number of even and odd integers in a given array of integers.
+        // 28. Write a Java program to get the difference between the largest and smallest values in an array of integers. The length of the array must be 1 and above.
+        // 29. Write a Java program to compute the average value of an array of integers except the largest and smallest values.
+        // 30. Write a Java program to check if an array of integers without 0 and -1
+        // 31. Write a Java program to check if the sum of all the 10's in the array is exactly 30. Return false if the condition does not satisfy, otherwise true.
+        // 32. Write a Java program to check if an array of integers contains two specified elements 65 and 77
+        // 33. Write a Java program to remove the duplicate elements of a given array and return the new length of the array. Sample array: [20, 20, 30, 40, 50, 50, 50] After removing the duplicate elements the program should return 4 as the new length of the array.
+        // 34. Write a Java program to find the length of the longest consecutive elements sequence from a given unsorted array of integers. Sample array: [49, 1, 3, 200, 2, 4, 70, 5] The longest consecutive elements sequence is [1, 2, 3, 4, 5], therefore the program will return its length 5.
+        // 35. Write a Java program to find the sum of the two elements of a given array which is equal to a given integer. Sample array: [1,2,4,5,6] Target value: 6.
+
+
+
     }
 }
