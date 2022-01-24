@@ -928,16 +928,42 @@ public class ArrayTasks {
         System.out.println("The common elements are : " + searchArray4);
 
         // 26. Write a Java program to move all 0's to the end of an array. Maintain the relative order of the other (non-zero) array elements.
-        // 27. Write a Java program to find the number of even and odd integers in a given array of integers.
-        // 28. Write a Java program to get the difference between the largest and smallest values in an array of integers. The length of the array must be 1 and above.
-        // 29. Write a Java program to compute the average value of an array of integers except the largest and smallest values.
-        // 30. Write a Java program to check if an array of integers without 0 and -1
-        // 31. Write a Java program to check if the sum of all the 10's in the array is exactly 30. Return false if the condition does not satisfy, otherwise true.
-        // 32. Write a Java program to check if an array of integers contains two specified elements 65 and 77
-        // 33. Write a Java program to remove the duplicate elements of a given array and return the new length of the array. Sample array: [20, 20, 30, 40, 50, 50, 50] After removing the duplicate elements the program should return 4 as the new length of the array.
-        // 34. Write a Java program to find the length of the longest consecutive elements sequence from a given unsorted array of integers. Sample array: [49, 1, 3, 200, 2, 4, 70, 5] The longest consecutive elements sequence is [1, 2, 3, 4, 5], therefore the program will return its length 5.
-        // 35. Write a Java program to find the sum of the two elements of a given array which is equal to a given integer. Sample array: [1,2,4,5,6] Target value: 6.
 
+
+
+
+        // 27. Write a Java program to find the number of even and odd integers in a given array of integers.
+
+        ArrayList<Integer> arrOddEven = new ArrayList<>(Arrays.asList(11,22,33,44,55,66));
+        ArrayList<Integer> arrOdd = new ArrayList<>();
+        ArrayList<Integer> arrEven = new ArrayList<>();
+        for (int i =0; i< arrOddEven.size(); i++){
+            if(arrOddEven.get(i)%2 == 0 && arrOddEven.get(i)!=0){
+                arrEven.add(arrOddEven.get(i));
+            }
+            else {
+                arrOdd.add(arrOddEven.get(i));
+            }
+        }
+        System.out.println("arrOddEven: "+ arrOddEven);
+        System.out.println("arrOdd: "+ arrOdd);
+        System.out.println("arrEven: "+ arrEven);
+
+        // 28. Write a Java program to get the difference between the largest and smallest values in an array of integers. The length of the array must be 1 and above.
+
+        // 29. Write a Java program to compute the average value of an array of integers except the largest and smallest values.
+
+        // 30. Write a Java program to check if an array of integers without 0 and -1
+
+        // 31. Write a Java program to check if the sum of all the 10's in the array is exactly 30. Return false if the condition does not satisfy, otherwise true.
+
+        // 32. Write a Java program to check if an array of integers contains two specified elements 65 and 77
+
+        // 33. Write a Java program to remove the duplicate elements of a given array and return the new length of the array. Sample array: [20, 20, 30, 40, 50, 50, 50] After removing the duplicate elements the program should return 4 as the new length of the array.
+
+        // 34. Write a Java program to find the length of the longest consecutive elements sequence from a given unsorted array of integers. Sample array: [49, 1, 3, 200, 2, 4, 70, 5] The longest consecutive elements sequence is [1, 2, 3, 4, 5], therefore the program will return its length 5.
+
+        // 35. Write a Java program to find the sum of the two elements of a given array which is equal to a given integer. Sample array: [1,2,4,5,6] Target value: 6.
 
 
     }
