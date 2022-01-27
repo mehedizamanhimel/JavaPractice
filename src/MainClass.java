@@ -126,6 +126,7 @@ public class MainClass implements Runnable{
 
 
 		arrayTasks.fullPhase();
+		arrayTasks.problem30();
 	}
 
 }

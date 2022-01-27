@@ -4,159 +4,158 @@ import java.util.stream.Collectors;
 
 public class ArrayTasks {
 
-	public void arrayAdd() {
-		ArrayList<String> employee = new ArrayList<String>();
-		employee.add("Mehedi");
-		employee.add("Zaman");
-		employee.add("Himel");
-		System.out.println("after adding full name"+employee);
-		employee.remove(1);
-		System.out.println("after removing 2nd string"+employee);
-	}
+    public void arrayAdd() {
+        ArrayList<String> employee = new ArrayList<String>();
+        employee.add("Mehedi");
+        employee.add("Zaman");
+        employee.add("Himel");
+        System.out.println("after adding full name" + employee);
+        employee.remove(1);
+        System.out.println("after removing 2nd string" + employee);
+    }
 
-    public void arList(){
+    public void arList() {
         ArrayList<String> abcd = new ArrayList<String>();
         abcd.add("ab");
         abcd.add("de");
         abcd.add("cd");
         abcd.add("bd");
 
-        System.out.println("The arraylist before sorting"+abcd);
+        System.out.println("The arraylist before sorting" + abcd);
 
         Iterator i = abcd.iterator();
 
         while (i.hasNext()) {
-			System.out.println(i.next());
+            System.out.println(i.next());
 
-		}
+        }
 
         Collections.sort(abcd);
-        System.out.println("The arraylist after sorting"+abcd);
+        System.out.println("The arraylist after sorting" + abcd);
 
         Collections.sort(abcd, Collections.reverseOrder());
-        System.out.println("The arraylist after reverse sorting"+abcd);
+        System.out.println("The arraylist after reverse sorting" + abcd);
 
 
     }
 
-    public void arList_int(){
+    public void arList_int() {
         ArrayList<Integer> abcd = new ArrayList<Integer>();
         abcd.add(11);
         abcd.add(44);
         abcd.add(33);
         abcd.add(22);
 
-   System.out.println("The arraylist before sorting"+abcd);
+        System.out.println("The arraylist before sorting" + abcd);
 
         Collections.sort(abcd);
-        System.out.println("The arraylist after sorting"+abcd);
+        System.out.println("The arraylist after sorting" + abcd);
 
         Collections.sort(abcd, Collections.reverseOrder());
-        System.out.println("The arraylist after reverse sorting"+abcd);
+        System.out.println("The arraylist after reverse sorting" + abcd);
     }
 
-    public void arList_double(){
+    public void arList_double() {
         ArrayList<Double> abcd = new ArrayList<Double>();
         abcd.add(11.0);
         abcd.add(44.0);
         abcd.add(33.0);
         abcd.add(22.0);
-        System.out.println("The list of array before sorting"+abcd);
+        System.out.println("The list of array before sorting" + abcd);
 
         Collections.sort(abcd);
 
     }
 
 
-    public void listSortStrint(){
+    public void listSortStrint() {
         List<String> slist = Arrays.asList("Tanu", "Kamal", "Suman", "Lucky", "Bunty", "Amit");
         List<String> sortedList = slist.stream().sorted().collect(Collectors.toList());
         sortedList.forEach(System.out::println);
     }
 
-    public void listSortStringTwo(){
+    public void listSortStringTwo() {
         List<String> slist = Arrays.asList("Tanu", "Kamal", "Suman", "Lucky", "Bunty", "Amit");
         List<String> sortedList = slist.stream().sorted().collect(Collectors.toList());
         sortedList.forEach(System.out::println);
     }
 
-    public void arrayoperations(){
-        String abcd[] = {"mehedi","zaman","himel"};
+    public void arrayoperations() {
+        String abcd[] = {"mehedi", "zaman", "himel"};
         LinkedList<String> abcde = new LinkedList<String>();
         abcde.add("Mohammad");
         abcde.add("Mehedi");
         abcde.add("Zaman");
         abcde.add("Himel");
-        System.out.println("the linked list item is: "+abcde);
+        System.out.println("the linked list item is: " + abcde);
         abcde.removeFirst();
-        System.out.println("the linked list after deleting first item is: "+abcde);
+        System.out.println("the linked list after deleting first item is: " + abcde);
         abcde.removeLast();
-        System.out.println("the linked list after deleting last item is: "+abcde);
+        System.out.println("the linked list after deleting last item is: " + abcde);
     }
 
-    public static void arMerge(){
-	    int [] fistArray = {1,2,3,4};
-        int [] secondArray = {5,6,7,8};
+    public static void arMerge() {
+        int[] fistArray = {1, 2, 3, 4};
+        int[] secondArray = {5, 6, 7, 8};
         int fal = fistArray.length;
         int sal = secondArray.length;
-        int[] sumlength = new int[fal+sal];
-        System.arraycopy(fistArray,0,sumlength,0, fal);
-        System.arraycopy(secondArray,0,sumlength,fal, sal);
+        int[] sumlength = new int[fal + sal];
+        System.arraycopy(fistArray, 0, sumlength, 0, fal);
+        System.arraycopy(secondArray, 0, sumlength, fal, sal);
 
         System.out.println(Arrays.toString(sumlength));
 
         int length = sumlength.length;
-        int mid = length/2;
+        int mid = length / 2;
         System.out.println(sumlength[mid]);
 
     }
 
-    public void foundELementLocation(){
-	    int[] a = {1,2,3,4,5,6};
-	    int b = 4;
+    public void foundELementLocation() {
+        int[] a = {1, 2, 3, 4, 5, 6};
+        int b = 4;
 
-	    int c = a.length;
-	    int d;
-	    for (int i=0; i >= c; i++){
-	        }
+        int c = a.length;
+        int d;
+        for (int i = 0; i >= c; i++) {
         }
-
-    public void findSmallestInArray(){
-	    int a[]={23,23,11,24,53,6354, 8, 0};
-	    int b[]={21,12,31231,123213};
-	    Arrays.sort(a);
-	    System.out.println("The smallest array is: "+a[0]);
     }
 
-    public void SumofTwoArray(){
-        int a[]={23,23,11,24,53,6354, 8, 0};
-        int b[]={21,12,31231,123213};
-        int c = a[0]+b[0]+a[3];
-        System.out.println("The sum of two array element is: "+c);
+    public void findSmallestInArray() {
+        int a[] = {23, 23, 11, 24, 53, 6354, 8, 0};
+        int b[] = {21, 12, 31231, 123213};
+        Arrays.sort(a);
+        System.out.println("The smallest array is: " + a[0]);
+    }
+
+    public void SumofTwoArray() {
+        int a[] = {23, 23, 11, 24, 53, 6354, 8, 0};
+        int b[] = {21, 12, 31231, 123213};
+        int c = a[0] + b[0] + a[3];
+        System.out.println("The sum of two array element is: " + c);
 
     }
 
 
-
-    public void hr_2dArray_for(){
-	    ArrayList<Integer> arrayList = new ArrayList<Integer>();
-	    int[] abcd = {1,2,3,4,5,6};
+    public void hr_2dArray_for() {
+        ArrayList<Integer> arrayList = new ArrayList<Integer>();
+        int[] abcd = {1, 2, 3, 4, 5, 6};
         arrayList.add(2);
-	    arrayList.add(3);
+        arrayList.add(3);
         arrayList.add(4);
         arrayList.add(5);
         //arrayList.add(2,5);
 
         int b = 0;
-        for (int i=0; i<=arrayList.size() ; i++){
-           System.out.println(arrayList);
+        for (int i = 0; i <= arrayList.size(); i++) {
+            System.out.println(arrayList);
 
             break;
         }
-        System.out.println("the list is"+b);
+        System.out.println("the list is" + b);
     }
 
-    public void hr_2dArray_forEach(){
+    public void hr_2dArray_forEach() {
         ArrayList<Integer> arrayList = new ArrayList<Integer>();
 
         arrayList.add(8);
@@ -173,7 +172,7 @@ public class ArrayTasks {
 
         int b = 0;
 
-        for (int i:arrayList) {
+        for (int i : arrayList) {
             System.out.println("Result of foreach loop" + i);
             if (i == 5 || i == 66) {
                 /*
@@ -188,43 +187,43 @@ public class ArrayTasks {
                 System.out.println("wrong" + i);
             }
         }
-        System.out.println("Before sorting"+arrayList);
+        System.out.println("Before sorting" + arrayList);
         //Collections.sort(arrayList, Collections.reverseOrder());
         Collections.reverse(arrayList);
-        System.out.println("After sorting"+arrayList);
+        System.out.println("After sorting" + arrayList);
     }
 
 
-    public void arrayDeclare(){
+    public void arrayDeclare() {
 
-	    int[] abcd = {1,2,3,4};
-	    int[] abcd2= new int[5];
-	    int abcd3[] = {4,5,6,6,6,7,7,9};
+        int[] abcd = {1, 2, 3, 4};
+        int[] abcd2 = new int[5];
+        int abcd3[] = {4, 5, 6, 6, 6, 7, 7, 9};
 
-	    //ArrayList<Integer> abcd2 = {1,2,3,5,6};
+        //ArrayList<Integer> abcd2 = {1,2,3,5,6};
 
-        System.out.println(abcd3[1]+abcd[2]);
+        System.out.println(abcd3[1] + abcd[2]);
         System.out.println(abcd2.length);
         int b = 0;
 
     }
 
-    public void TwoDArrayOne(){
+    public void TwoDArrayOne() {
 
-	    int abcd[][] = {{1,2,3,4,5},{6,7,8,9,0}};
-	    int firstArrayValue = abcd[0][2];
-	    int secondArrayValue = abcd[1][2];
+        int abcd[][] = {{1, 2, 3, 4, 5}, {6, 7, 8, 9, 0}};
+        int firstArrayValue = abcd[0][2];
+        int secondArrayValue = abcd[1][2];
 
-	    int abcd2[][];
+        int abcd2[][];
 
-        System.out.println("firstArrayValue: "+firstArrayValue);
-        System.out.println("secondArrayValue: "+secondArrayValue);
+        System.out.println("firstArrayValue: " + firstArrayValue);
+        System.out.println("secondArrayValue: " + secondArrayValue);
 
-        for(int i=0; i< abcd.length; i++){
+        for (int i = 0; i < abcd.length; i++) {
 
-            for (int j=0; j<abcd[i].length;j++){
+            for (int j = 0; j < abcd[i].length; j++) {
 
-                System.out.println("The result of the list1 is: "+abcd[i][j]);
+                System.out.println("The result of the list1 is: " + abcd[i][j]);
 
             }
 
@@ -232,30 +231,30 @@ public class ArrayTasks {
 
     }
 
-    public void arrayTask(){
+    public void arrayTask() {
 
-	    Scanner sc = new Scanner(System.in);
-	    int[] arrayOne = new int[5];
-	    List<Integer> arrayTwo = new ArrayList<Integer>();
+        Scanner sc = new Scanner(System.in);
+        int[] arrayOne = new int[5];
+        List<Integer> arrayTwo = new ArrayList<Integer>();
         arrayTwo.add(1);
         arrayTwo.add(2);
         arrayTwo.add(3);
         arrayTwo.add(4);
-	    arrayOne[0] = 5; 
-	    arrayOne[1] = 9;
+        arrayOne[0] = 5;
+        arrayOne[1] = 9;
         arrayOne[2] = 6;
         arrayOne[3] = 11;
-        System.out.println("Before reverse"+arrayTwo);
-        System.out.println("array list ans: "+ Arrays.toString(arrayOne));
+        System.out.println("Before reverse" + arrayTwo);
+        System.out.println("array list ans: " + Arrays.toString(arrayOne));
         Collections.reverse(arrayTwo);
-        System.out.println("after reverse"+arrayTwo);
+        System.out.println("after reverse" + arrayTwo);
 
 
     }
 
-    public void array_oct(){
-	    ArrayList<String> stringOne = new ArrayList<>();
-	    stringOne.add("One");
+    public void array_oct() {
+        ArrayList<String> stringOne = new ArrayList<>();
+        stringOne.add("One");
         stringOne.add("Two");
         stringOne.add("Three");
         stringOne.add("Four");
@@ -264,20 +263,20 @@ public class ArrayTasks {
         stringOne.add("Seven");
         System.out.println(stringOne);
 
-        for(int i=0 ; i<stringOne.size(); i++){
+        for (int i = 0; i < stringOne.size(); i++) {
             System.out.println(stringOne.get(i));
         }
     }
 
-    public void newMethodDec2021(int breakpoint){
+    public void newMethodDec2021(int breakpoint) {
 
-        int odd=0;
+        int odd = 0;
         int even = 0;
-	    ArrayList<Integer> abc = new ArrayList<Integer>(
-                Arrays.asList(23,24,65,34,78,34,75,
-                        286,296,72107,141,122,
-                        7135,124,7153,176,217,
-                        148,149,2650));
+        ArrayList<Integer> abc = new ArrayList<Integer>(
+                Arrays.asList(23, 24, 65, 34, 78, 34, 75,
+                        286, 296, 72107, 141, 122,
+                        7135, 124, 7153, 176, 217,
+                        148, 149, 2650));
         /*
         abc.add(3);
 	    abc.add(4);
@@ -298,32 +297,30 @@ public class ArrayTasks {
         */
 
 
-        for (int i=0; i < abc.size(); i+= 1){
+        for (int i = 0; i < abc.size(); i += 1) {
 
             int number = abc.get(i);
 
-            if (number % 2 == 0 ) {
-                System.out.println("The even numbers are: "+number);
-            }
-
-            else if (number % 2 != 0 ) {
+            if (number % 2 == 0) {
+                System.out.println("The even numbers are: " + number);
+            } else if (number % 2 != 0) {
                 //number=odd;
-                System.out.println("The odd numbers are: "+number);
+                System.out.println("The odd numbers are: " + number);
             }
         }
 
 
     }
 
-    public void forEachArray(){
-        int[] arrayOne = {1,2,3,4,5,6,7,8,9};
+    public void forEachArray() {
+        int[] arrayOne = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-        for (int i: arrayOne){
+        for (int i : arrayOne) {
             System.out.println(i);
         }
     }
 
-    public void nestedFor(){
+    public void nestedFor() {
         /*
         int a = 3;
         for(int i=1; i<=a; i++){
@@ -333,8 +330,8 @@ public class ArrayTasks {
         }
 
          */
-        int[][] a = {{1,2,3,4},{11,22,33,44}};
-        System.out.println("The first array is: "+Arrays.toString(a));
+        int[][] a = {{1, 2, 3, 4}, {11, 22, 33, 44}};
+        System.out.println("The first array is: " + Arrays.toString(a));
 
     }
 
@@ -378,84 +375,83 @@ public class ArrayTasks {
         }
         while (abc < 20);
 
-        for (int g = 1; g<= 100; g++){
+        for (int g = 1; g <= 100; g++) {
             if (g == 11) {
                 break;
             }
             System.out.print(g + "]  [");
-            }
+        }
 
-        ArrayList<Integer> arrayOne2 = new ArrayList<Integer>(Arrays.asList(5,10,15,20));
-        for (int i=0; i<= arrayOne2.size();  i++){
+        ArrayList<Integer> arrayOne2 = new ArrayList<Integer>(Arrays.asList(5, 10, 15, 20));
+        for (int i = 0; i <= arrayOne2.size(); i++) {
             for (int k = 0; k < i; k++) {
                 System.out.println("The result is : " + arrayOne2.get(k));
             }
         }
 
 
-
     }
 
-    public void E2EArrayPractice(){
+    public void E2EArrayPractice() {
 
         // initializing an arraylist of String
-        ArrayList<String> list1 = new ArrayList<String>(Arrays.asList("Value1","testTwo","Value3","Value4","Value5"));
+        ArrayList<String> list1 = new ArrayList<String>(Arrays.asList("Value1", "testTwo", "Value3", "Value4", "Value5"));
         //printing the whole arraylist of String
-        System.out.println("The list of String is: "+list1);
+        System.out.println("The list of String is: " + list1);
         //printing a specific value of String arraylist
-        System.out.println("The first value of String is: "+ list1.get(0));
+        System.out.println("The first value of String is: " + list1.get(0));
 
 
         // initializing an arraylist of double
-        ArrayList<Double> list3 = new ArrayList<Double>(Arrays.asList(234.0, 234.34,35.234,456.234));
+        ArrayList<Double> list3 = new ArrayList<Double>(Arrays.asList(234.0, 234.34, 35.234, 456.234));
         //printing the whole arraylist of double
-        System.out.println("The list of double is: "+ list3);
+        System.out.println("The list of double is: " + list3);
         //printing a specific value of double arraylist
-        System.out.println("The first value of of double is: "+ list3.get(0));
+        System.out.println("The first value of of double is: " + list3.get(0));
 
 
         // initializing an arraylist of integer
-        ArrayList<Integer> list2 = new ArrayList<Integer>(Arrays.asList(3,4,5,35,345,234));
+        ArrayList<Integer> list2 = new ArrayList<Integer>(Arrays.asList(3, 4, 5, 35, 345, 234));
         //printing the whole arraylist of integers
-        System.out.println("The list of Integer is: "+ list2);
+        System.out.println("The list of Integer is: " + list2);
         //printing a specific value of integer arraylist
-        System.out.println("The first value of Integer is: "+ list2.get(0));
+        System.out.println("The first value of Integer is: " + list2.get(0));
 
         //declaring a linked list
         //List<Integer> abcde = new List<Integer>(Integer);
 
-        for (int i=0; i<=list1.size();  i++){
-            if(list1.get(i).contentEquals("Value1")){
-                System.out.println("The whole data is: "+list1.get(i+1));
+        for (int i = 0; i <= list1.size(); i++) {
+            if (list1.get(i).contentEquals("Value1")) {
+                System.out.println("The whole data is: " + list1.get(i + 1));
                 break;
             }
 
         }
 
-        for (int j :list2
+        for (int j : list2
         ) {
-            if(5==5){
+            if (5 == 5) {
 
             }
-            System.out.println("$$"+j);
+            System.out.println("$$" + j);
 
         }
 
-        ArrayList<Integer> forArray = new ArrayList<>(Arrays.asList(0,1,2,3,4,5,6,7,8,9,10));
+        ArrayList<Integer> forArray = new ArrayList<>(Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
         ArrayList<Integer> evenList = new ArrayList<>();
         ArrayList<Integer> oddList = new ArrayList<>();
-        int sumEven=0;
-        int sumOdd=0;
-        System.out.println("The array for test is: "+forArray);
+        int sumEven = 0;
+        int sumOdd = 0;
+        System.out.println("The array for test is: " + forArray);
         for (int i = 0; i < forArray.size(); i++) {
             //for (int p ; forArray)
             int j = forArray.get(i);
             if (j % 2 == 0) {
-                sumEven+= j;
+                sumEven += j;
                 evenList.add(j);
             } else {
                 oddList.add(j);
-                sumOdd+= j;
+                sumOdd += j;
             }
         }
         System.out.println("The even list is: " + evenList);
@@ -464,19 +460,18 @@ public class ArrayTasks {
         System.out.println("The sum of odd is: " + sumOdd);
         System.out.println("The sum of odd is: " + sumOdd);
 
-        int[] a = {0,1,2,3,4,5,6,5};
+        int[] a = {0, 1, 2, 3, 4, 5, 6, 5};
         int t = 0;
         int q = 11;
         int[] bb;
-        System.out.println("The initial array is: " +Arrays.toString(a));
-        for(int i=0; i<a.length-1; i++){
-            t = i+(i+1);
-            System.out.println("result of array is: " +  t );
-            if(t==q){
-                System.out.println("result paisi "+i + (i+1));
-            }
-            else{
-                System.out.println("result painai " );
+        System.out.println("The initial array is: " + Arrays.toString(a));
+        for (int i = 0; i < a.length - 1; i++) {
+            t = i + (i + 1);
+            System.out.println("result of array is: " + t);
+            if (t == q) {
+                System.out.println("result paisi " + i + (i + 1));
+            } else {
+                System.out.println("result painai ");
             }
             /*
             if(i+i == t){
@@ -491,37 +486,37 @@ public class ArrayTasks {
 
         int array[] = new int[arraysize];
         System.out.println("Provide your elements of array");
-        for(int i=0; i<arraysize; i++){
-            array[i]=sc.nextInt();
+        for (int i = 0; i < arraysize; i++) {
+            array[i] = sc.nextInt();
         }
-        System.out.println("The elements of the array is: " );
-        for(int j=0; j<arraysize; j++){
-            System.out.print(array[j]+" ");
+        System.out.println("The elements of the array is: ");
+        for (int j = 0; j < arraysize; j++) {
+            System.out.print(array[j] + " ");
         }
-        System.out.println("The final array is: "+Arrays.toString(array) );
+        System.out.println("The final array is: " + Arrays.toString(array));
     }
 
-    public void arraychangeViaInput(){
-	    int target = 9;
-        int arrayOne[] = {1,2,3,4,5,6,7,8};
+    public void arraychangeViaInput() {
+        int target = 9;
+        int arrayOne[] = {1, 2, 3, 4, 5, 6, 7, 8};
         int arrayTwo[] = {};
         System.out.println(Arrays.toString(arrayOne));
-        arrayOne[2]=99;
+        arrayOne[2] = 99;
         System.out.println(Arrays.toString(arrayOne));
 
-        for (int i =0; i<arrayOne.length-1; i++){
-            for (int j=i+1; j< arrayOne.length; j++){
-                System.out.println("... "+i+" ..."+j);
-                if(arrayOne[i]+arrayOne[j] == target){
-                    System.out.println("...// "+i+" //..."+j);
+        for (int i = 0; i < arrayOne.length - 1; i++) {
+            for (int j = i + 1; j < arrayOne.length; j++) {
+                System.out.println("... " + i + " ..." + j);
+                if (arrayOne[i] + arrayOne[j] == target) {
+                    System.out.println("...// " + i + " //..." + j);
                 }
             }
         }
 
         int[] arrayThree = new int[5];
         int[] arrayFour = new int[5];
-        int j=0;
-        int k=0;
+        int j = 0;
+        int k = 0;
         arrayThree[0] = 10;
         arrayThree[1] = 654;
         arrayThree[2] = 400;
@@ -541,50 +536,49 @@ public class ArrayTasks {
         }
         */
 
-        int maxValue= arrayThree[0];
-        int minValue= arrayThree[0];
-        for (int i =0; i< arrayThree.length; i++) {
+        int maxValue = arrayThree[0];
+        int minValue = arrayThree[0];
+        for (int i = 0; i < arrayThree.length; i++) {
             if (arrayThree[i] < minValue) {
                 minValue = arrayThree[i];
-            }
-            else if(arrayThree[i] > maxValue){
+            } else if (arrayThree[i] > maxValue) {
                 maxValue = arrayThree[i];
             }
         }
         System.out.println("the max value3 is: " + maxValue);
         System.out.println("the min value2 is: " + minValue);
 
-        ArrayList<Integer> arrayListOne = new ArrayList<>(Arrays.asList(32,12,54,23,12));
+        ArrayList<Integer> arrayListOne = new ArrayList<>(Arrays.asList(32, 12, 54, 23, 12));
         ArrayList<Integer> arrayListTwo = null;
-        System.out.println("The initial arraylist before removing duplicate Item: "+arrayListOne);
+        System.out.println("The initial arraylist before removing duplicate Item: " + arrayListOne);
 
         arrayListOne.remove(0);
-        System.out.println("after one manual remove: "+arrayListOne);
-        for (int i =0; i< arrayListOne.size(); i++){
+        System.out.println("after one manual remove: " + arrayListOne);
+        for (int i = 0; i < arrayListOne.size(); i++) {
             int m = arrayListOne.get(i);
-            if(m==arrayListOne.get(i)){
+            if (m == arrayListOne.get(i)) {
                 //arrayListOne.remove(arrayListOne.get(i));
                 //int index = arrayListOne.get(i);
                 arrayListOne.remove(i);
             }
         }
-        System.out.println("The final arraylist after removing duplicate Item: "+arrayListOne);
+        System.out.println("The final arraylist after removing duplicate Item: " + arrayListOne);
     }
 
     public void rubyTest() {
 
-	    ArrayList<Integer> arrayOne = new ArrayList<>(Arrays.asList(11,12,13,15,14,17,19));
-        System.out.println("The first array is: "+arrayOne);
+        ArrayList<Integer> arrayOne = new ArrayList<>(Arrays.asList(11, 12, 13, 15, 14, 17, 19));
+        System.out.println("The first array is: " + arrayOne);
 
-        ArrayList<Integer> arrayTwo = new ArrayList<>(Arrays.asList(14,15,16,17,13));
-        System.out.println("The second array is: "+arrayTwo);
+        ArrayList<Integer> arrayTwo = new ArrayList<>(Arrays.asList(14, 15, 16, 17, 13));
+        System.out.println("The second array is: " + arrayTwo);
 
         //arrayOne.addAll(arrayTwo);
         //System.out.println("The array after addition is: "+arrayOne);
 
-        ArrayList<Integer> arrayThree= new ArrayList<>();
+        ArrayList<Integer> arrayThree = new ArrayList<>();
 
-        int initialValue =  arrayTwo.get(0);
+        int initialValue = arrayTwo.get(0);
 
         /*
         for (int i = 0; i < arrayOne.size(); i++){
@@ -609,37 +603,37 @@ public class ArrayTasks {
         }
         */
 
-        for (int i =0; i< arrayOne.size(); i++){
-            if(!arrayTwo.contains(arrayOne.get(i))){
+        for (int i = 0; i < arrayOne.size(); i++) {
+            if (!arrayTwo.contains(arrayOne.get(i))) {
                 arrayThree.add(arrayOne.get(i));
             }
         }
 
-        for (int i =0; i< arrayTwo.size(); i++){
-            if(!arrayOne.contains(arrayTwo.get(i))){
-                if(!arrayThree.contains(arrayTwo.get(i)))
-                arrayThree.add(arrayTwo.get(i));
+        for (int i = 0; i < arrayTwo.size(); i++) {
+            if (!arrayOne.contains(arrayTwo.get(i))) {
+                if (!arrayThree.contains(arrayTwo.get(i)))
+                    arrayThree.add(arrayTwo.get(i));
             }
         }
 
-        System.out.println("The final array is: "+arrayThree);
+        System.out.println("The final array is: " + arrayThree);
 
     }
 
 
-    public void leetcode_One(){
-	    ArrayList<Integer> arrayListOne = new ArrayList<>
-                (Arrays.asList(1,1,2,2,3,2,3,4,4,5,1,5,1,6,6,7,6,6));
+    public void leetcode_One() {
+        ArrayList<Integer> arrayListOne = new ArrayList<>
+                (Arrays.asList(1, 1, 2, 2, 3, 2, 3, 4, 4, 5, 1, 5, 1, 6, 6, 7, 6, 6));
         System.out.println(arrayListOne);
         ArrayList<Integer> arrayListTwo = new ArrayList<>();
 
-        int temp =0;
-        int temp2 =0;
+        int temp = 0;
+        int temp2 = 0;
         int max = arrayListOne.get(0);
 
-        for (int i=0 ; i<arrayListOne.size() ; i++){
-            System.out.print(" //the regular value: "+arrayListOne.get(i));
-            System.out.println(" //the +1 value: "+arrayListOne.get(i+1));
+        for (int i = 0; i < arrayListOne.size(); i++) {
+            System.out.print(" //the regular value: " + arrayListOne.get(i));
+            System.out.println(" //the +1 value: " + arrayListOne.get(i + 1));
 
 
             /*
@@ -657,7 +651,7 @@ public class ArrayTasks {
     }
 
     public void fullPhase() {
-	    Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
 
 	    /*
@@ -740,58 +734,58 @@ public class ArrayTasks {
         // 3. Write a Java program to print the following grid.
 
         int a = 0;
-        for (int i=0; i<10; i++){
+        for (int i = 0; i < 10; i++) {
             System.out.println("    ");
-            for (int j=1; j<=10; j++){
+            for (int j = 1; j <= 10; j++) {
                 System.out.print(" -");
 
             }
         }
 
 
-        ArrayList<Integer> arrayOne = new ArrayList<>(Arrays.asList(15,21,32,0,565,4,5,89));
+        ArrayList<Integer> arrayOne = new ArrayList<>(Arrays.asList(15, 21, 32, 0, 565, 4, 5, 89));
 
         int max = arrayOne.get(0);
         int min = arrayOne.get(0);
 
 
-        System.out.println("the first array is: "+ arrayOne);
+        System.out.println("the first array is: " + arrayOne);
 
         // 07. Write a Java program to remove a specific element from an array.
-        for (int i=0; i< arrayOne.size(); i++){
-            if(arrayOne.get(i)==5){
+        for (int i = 0; i < arrayOne.size(); i++) {
+            if (arrayOne.get(i) == 5) {
                 arrayOne.remove(arrayOne.get(i));
             }
         }
 
         // 10. Write a Java program to find the maximum and minimum value of an array.
-        for (int i=0; i< arrayOne.size(); i++){
-            if(max< arrayOne.get(i)){
-                max=arrayOne.get(i);
+        for (int i = 0; i < arrayOne.size(); i++) {
+            if (max < arrayOne.get(i)) {
+                max = arrayOne.get(i);
             }
-            if(min> arrayOne.get(i)){
-                min=arrayOne.get(i);
+            if (min > arrayOne.get(i)) {
+                min = arrayOne.get(i);
             }
         }
-        System.out.println("the biggest number of array is: "+ max);
-        System.out.println("the smallest number of array is: "+ min);
-        System.out.println("the array after removing element is: "+ arrayOne);
+        System.out.println("the biggest number of array is: " + max);
+        System.out.println("the smallest number of array is: " + min);
+        System.out.println("the array after removing element is: " + arrayOne);
         // 11. Write a Java program to reverse an array of integer values.
         Collections.reverse(arrayOne);
-        System.out.println("the array after reversing is: "+ arrayOne);
+        System.out.println("the array after reversing is: " + arrayOne);
 
 
         //13. Write a Java program to find the duplicate values of an array of string values.
         ArrayList<String> arrayString = new ArrayList<>(Arrays.asList
-        ("Rony", "Mony", "Tony", "Jony", "Bini", "Rony", "Jony","abc","abc"));
+                ("Rony", "Mony", "Tony", "Jony", "Bini", "Rony", "Jony", "abc", "abc"));
 
         ArrayList<String> arrayStringWithDuplicate = new ArrayList<>();
-        System.out.println("The string arraylist is: "+ arrayString);
+        System.out.println("The string arraylist is: " + arrayString);
 
         String duplicate = "";
 
-        for (int i=0; i< arrayString.size()-1; i++){
-            for (int j=i+1; j< arrayString.size(); j++){
+        for (int i = 0; i < arrayString.size() - 1; i++) {
+            for (int j = i + 1; j < arrayString.size(); j++) {
                 //System.out.println("the duplicate strings are: " + arrayString.get(j));
                 if (arrayString.get(i) == arrayString.get(j) && (i != j)) {
                     System.out.println("the duplicate strings are: " + arrayString.get(j));
@@ -799,29 +793,29 @@ public class ArrayTasks {
                 }
             }
         }
-        System.out.println("The arraylist with duplicate values are: "+ arrayStringWithDuplicate);
+        System.out.println("The arraylist with duplicate values are: " + arrayStringWithDuplicate);
 
         // 14.  Write a Java program to find the common elements between two arrays (string values).
-        ArrayList<String> commonArr1 = new ArrayList<>(Arrays.asList("aa","bb","cc","ee"));
-        ArrayList<String> commonArr2 = new ArrayList<>(Arrays.asList("bb","cc","dd","ee"));
+        ArrayList<String> commonArr1 = new ArrayList<>(Arrays.asList("aa", "bb", "cc", "ee"));
+        ArrayList<String> commonArr2 = new ArrayList<>(Arrays.asList("bb", "cc", "dd", "ee"));
         ArrayList<String> finalarr = new ArrayList<>();
 
         HashSet<String> hash = new HashSet<>();
 
-        for (int i=0; i< commonArr1.size(); i++){
-            for (int j=0; j< commonArr2.size(); j++){
-                if(commonArr1.get(i).equals(commonArr2.get(j))){
+        for (int i = 0; i < commonArr1.size(); i++) {
+            for (int j = 0; j < commonArr2.size(); j++) {
+                if (commonArr1.get(i).equals(commonArr2.get(j))) {
                     finalarr.add(commonArr1.get(i));
                 }
             }
         }
-        System.out.println("The arraylist of common String values are: "+ finalarr);
+        System.out.println("The arraylist of common String values are: " + finalarr);
 
         // 15. Write a Java program to find the common elements between two arrays of integers.
-        ArrayList<Integer> intarr1 = new ArrayList<>(Arrays.asList(11,22,33,44));
-        ArrayList<Integer> intarr2 = new ArrayList<>(Arrays.asList(33,44,55,66,77));
+        ArrayList<Integer> intarr1 = new ArrayList<>(Arrays.asList(11, 22, 33, 44));
+        ArrayList<Integer> intarr2 = new ArrayList<>(Arrays.asList(33, 44, 55, 66, 77));
         ArrayList<Integer> intarr3 = new ArrayList<>();
-        for (int i =0; i< intarr1.size(); i++) {
+        for (int i = 0; i < intarr1.size(); i++) {
             for (int j = 0; j < intarr2.size(); j++) {
                 if (intarr1.get(i) == intarr2.get(j)) {
                     intarr3.add(intarr1.get(i));
@@ -831,10 +825,10 @@ public class ArrayTasks {
         System.out.println("The arraylist of two common int arrays are: " + intarr3);
 
         // 16. Write a Java program to remove duplicate elements from an array.
-        ArrayList<Integer> intarr4 = new ArrayList<>(Arrays.asList(11,22,33,44,55,55,11,66,22,77));
+        ArrayList<Integer> intarr4 = new ArrayList<>(Arrays.asList(11, 22, 33, 44, 55, 55, 11, 66, 22, 77));
         Collections.sort(intarr4);
-        for (int i =0; i< intarr4.size(); i++) {
-            for (int j = i+1; j < intarr4.size(); j++) {
+        for (int i = 0; i < intarr4.size(); i++) {
+            for (int j = i + 1; j < intarr4.size(); j++) {
                 if (intarr4.get(i) == intarr4.get(j)) {
                     intarr4.remove(i);
                 }
@@ -844,20 +838,20 @@ public class ArrayTasks {
 
         // 17. Write a Java program to find the second largest element in an array
 
-        ArrayList<Integer> intarr5 = new ArrayList<>(Arrays.asList(1,2,3,4,123,345,112,5,6,7,8,9));
+        ArrayList<Integer> intarr5 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 123, 345, 112, 5, 6, 7, 8, 9));
         Collections.sort(intarr5);
         int largestNum = 0;
         int secondLargestNum = 0;
-        for(int i=0; i< intarr5.size()-1 ; i++){
-            for(int j= i+1; j<intarr5.size(); j++){
-                    if(intarr5.get(i)!=intarr5.get(j)){
-                        largestNum =    intarr5.get(j);
-                        secondLargestNum =    intarr5.get(i);
-                    }
+        for (int i = 0; i < intarr5.size() - 1; i++) {
+            for (int j = i + 1; j < intarr5.size(); j++) {
+                if (intarr5.get(i) != intarr5.get(j)) {
+                    largestNum = intarr5.get(j);
+                    secondLargestNum = intarr5.get(i);
+                }
             }
         }
         System.out.println("The Largest number is: " + largestNum);
-        System.out.println("The second Largest number is: "+ secondLargestNum);
+        System.out.println("The second Largest number is: " + secondLargestNum);
 
         // 18. Write a Java program to find the second smallest element in an array.
         Collections.reverse(intarr5);
@@ -865,38 +859,38 @@ public class ArrayTasks {
 
         int smallestNum = 0;
         int secondSmallestNum = 0;
-        for(int i=0; i< intarr5.size()-1 ; i++){
-            for(int j= i+1; j<intarr5.size(); j++){
-                if(intarr5.get(i)!=intarr5.get(j)){
-                    smallestNum =    intarr5.get(j);
-                    secondSmallestNum =    intarr5.get(i);
+        for (int i = 0; i < intarr5.size() - 1; i++) {
+            for (int j = i + 1; j < intarr5.size(); j++) {
+                if (intarr5.get(i) != intarr5.get(j)) {
+                    smallestNum = intarr5.get(j);
+                    secondSmallestNum = intarr5.get(i);
                 }
             }
         }
         System.out.println("The smallest number is: " + smallestNum);
-        System.out.println("The second smallest number is: "+ secondSmallestNum);
+        System.out.println("The second smallest number is: " + secondSmallestNum);
 
         // 19. Write a Java program to add two matrices of the same size
         // 20. Write a Java program to convert an array to ArrayList.
 
-        ArrayList<Integer> intarr6 = new ArrayList<>(Arrays.asList(1,2,3,4,5));
-        System.out.println("The int arrayList before converting to array: "+ intarr6);
-        int[] arr2= new int[5];
-        for (int i =0; i < intarr6.size(); i++){
+        ArrayList<Integer> intarr6 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
+        System.out.println("Problem 20- The int arrayList before converting to array: " + intarr6);
+        int[] arr2 = new int[5];
+        for (int i = 0; i < intarr6.size(); i++) {
             arr2[i] = intarr6.get(i);
         }
-        System.out.println("The int arraylist after converting to array: "+ Arrays.toString(arr2));
+        System.out.println("Problem 20- The int arraylist after converting to array: " + Arrays.toString(arr2));
 
         // 21. Write a Java program to convert an ArrayList to an array.
-        int arr3[] = {1,2,3,4,5,6};
+        int arr3[] = {1, 2, 3, 4, 5, 6};
         ArrayList<Integer> intarr7 = new ArrayList<>();
-        System.out.println("The int array before converting to arraylist: "+ Arrays.toString(arr3));
+        System.out.println("Problem 21- The int array before converting to arraylist: " + Arrays.toString(arr3));
 
-        for (int i=0; i< arr3.length; i++){
+        for (int i = 0; i < arr3.length; i++) {
             intarr7.add(arr3[i]);
         }
 
-        System.out.println("The int array after converting to arraylist: "+ intarr7);
+        System.out.println("Problem 21- The int array after converting to arraylist: " + intarr7);
 
         // 22. Write a Java program to find all pairs of elements in an array whose sum is equal to a specified number.
 
@@ -905,19 +899,19 @@ public class ArrayTasks {
         // 24. Write a Java program to find a missing number in an array.
         // 25. Write a Java program to find common elements from three sorted (in non-decreasing order) arrays.
 
-        ArrayList<Integer> searchArray1 = new ArrayList<>(Arrays.asList(4,1,5,3,2,6));
+        ArrayList<Integer> searchArray1 = new ArrayList<>(Arrays.asList(4, 1, 5, 3, 2, 6));
         Collections.sort(searchArray1);
-        ArrayList<Integer> searchArray2 = new ArrayList<>(Arrays.asList(5,6,4,9,7,12));
+        ArrayList<Integer> searchArray2 = new ArrayList<>(Arrays.asList(5, 6, 4, 9, 7, 12));
         Collections.sort(searchArray2);
-        ArrayList<Integer> searchArray3 = new ArrayList<>(Arrays.asList(12,12,13,14,5,4,21,6));
+        ArrayList<Integer> searchArray3 = new ArrayList<>(Arrays.asList(12, 12, 13, 14, 5, 4, 21, 6));
         Collections.sort(searchArray3);
         ArrayList<Integer> searchArray4 = new ArrayList<>();
 
-        for (int i=0; i<searchArray1.size(); i++){
-            for (int j=0; j<searchArray2.size(); j++){
-                if(searchArray1.get(i)==searchArray2.get(j)) {
+        for (int i = 0; i < searchArray1.size(); i++) {
+            for (int j = 0; j < searchArray2.size(); j++) {
+                if (searchArray1.get(i) == searchArray2.get(j)) {
                     for (int k = 0; k < searchArray3.size(); k++) {
-                        if (searchArray2.get(j)  == searchArray3.get(k)) {
+                        if (searchArray2.get(j) == searchArray3.get(k)) {
                             searchArray4.add(searchArray3.get(k));
                             //System.out.println("The common elements are : " + searchArray4);
                         }
@@ -925,35 +919,111 @@ public class ArrayTasks {
                 }
             }
         }
-        System.out.println("The common elements are : " + searchArray4);
+        System.out.println("Problem 25- The common elements are : " + searchArray4);
 
         // 26. Write a Java program to move all 0's to the end of an array. Maintain the relative order of the other (non-zero) array elements.
 
 
-
-
         // 27. Write a Java program to find the number of even and odd integers in a given array of integers.
 
-        ArrayList<Integer> arrOddEven = new ArrayList<>(Arrays.asList(11,22,33,44,55,66));
+        ArrayList<Integer> arrOddEven = new ArrayList<>(Arrays.asList(11, 22, 33, 44, 55, 66));
         ArrayList<Integer> arrOdd = new ArrayList<>();
         ArrayList<Integer> arrEven = new ArrayList<>();
-        for (int i =0; i< arrOddEven.size(); i++){
-            if(arrOddEven.get(i)%2 == 0 && arrOddEven.get(i)!=0){
+        for (int i = 0; i < arrOddEven.size(); i++) {
+            if (arrOddEven.get(i) % 2 == 0 && arrOddEven.get(i) != 0) {
                 arrEven.add(arrOddEven.get(i));
-            }
-            else {
+            } else {
                 arrOdd.add(arrOddEven.get(i));
             }
         }
-        System.out.println("arrOddEven: "+ arrOddEven);
-        System.out.println("arrOdd: "+ arrOdd);
-        System.out.println("arrEven: "+ arrEven);
+        System.out.println("Problem 27- arrOddEven: " + arrOddEven);
+        System.out.println("Problem 27- arrOdd: " + arrOdd);
+        System.out.println("Problem 27- arrEven: " + arrEven);
 
         // 28. Write a Java program to get the difference between the largest and smallest values in an array of integers. The length of the array must be 1 and above.
 
+        ArrayList<Integer> listArray = new ArrayList<>(Arrays.asList(5, 4, 6, 9, 2, 3));
+        int largest = listArray.get(0);
+        int smallest = listArray.get(0);
+
+        System.out.println("The array is: " + listArray);
+        for (int i = 0; i < listArray.size(); i++) {
+
+            if (largest < listArray.get(i)) {
+                largest = listArray.get(i);
+            }
+
+            if (smallest > listArray.get(i)) {
+                smallest = listArray.get(i);
+            }
+        }
+
+        System.out.println("Problem 28- The largest number is: " + largest);
+        System.out.println("Problem 28- The smallest number is: " + smallest);
+        int difference = largest - smallest;
+        System.out.println("Problem 28- The difference between largest and smallest number is: " + difference);
+/*
+        for (int i =0; i< listArray.size(); i++){
+            for (int j =i+1; j< listArray.size(); j++){
+                if(listArray.get(j)>listArray.get(i) && (i!=j)){
+                    largest = listArray.get(j);
+
+                }
+            }
+        }
+
+        Collections.reverse(listArray);
+        for (int i =0; i< listArray.size(); i++){
+            for (int j =i+1; j< listArray.size(); j++){
+                Collections.replaceAll(listArray, listArray.get(j), listArray.get(i));
+                if(listArray.get(i)<listArray.get(j) && (j!=i) ){
+
+                    smallest = listArray.get(i);
+                }
+
+            }
+        }
+
+ */
+
+
         // 29. Write a Java program to compute the average value of an array of integers except the largest and smallest values.
 
+        ArrayList<Integer> listArray2 = new ArrayList<>(Arrays.asList(5, 4, 6, 9, 2, 3));
+
+        Collections.sort(listArray2);
+        int largest2 = listArray2.get(0);
+        int smallest2 = listArray2.get(0);
+        int index_max = 0;
+        int index_min = 0;
+        int sum = 0;
+
+        System.out.println("The listArray2 array  is: " + listArray2);
+
+        for (int i = 0; i < listArray2.size(); i++) {
+
+            if (largest2 < listArray2.get(i)) {
+                index_max = listArray2.indexOf(listArray2.get(i));
+            }
+
+            if (smallest2 > listArray2.get(i)) {
+                index_min = listArray2.indexOf(listArray2.get(i));
+            }
+
+        }
+        listArray2.remove(index_max);
+        listArray2.remove(index_min);
+
+        for (int i = 0; i < listArray2.size(); i++) {
+            sum += listArray2.get(i);
+        }
+
+        System.out.println("Problem 29- The array is: " + listArray2);
+        System.out.println("Problem 29- The sum is: " + sum);
+
+
         // 30. Write a Java program to check if an array of integers without 0 and -1
+
 
         // 31. Write a Java program to check if the sum of all the 10's in the array is exactly 30. Return false if the condition does not satisfy, otherwise true.
 
@@ -967,4 +1037,21 @@ public class ArrayTasks {
 
 
     }
+
+    public boolean problem30() {
+        ArrayList<Integer> arrayProb30 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, -1, -2));
+        //Boolean t = true;
+        Boolean f = null;
+
+        for (int i = 0; i < arrayProb30.size(); i++) {
+            if (arrayProb30.get(i).equals(2)) {
+
+                f = true;
+            } else {
+                f= false;
+            }
+        }
+        System.out.println(f);
+         return f;
+      }
 }
