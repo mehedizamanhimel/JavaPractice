@@ -894,6 +894,19 @@ public class ArrayTasks {
 
         // 22. Write a Java program to find all pairs of elements in an array whose sum is equal to a specified number.
 
+        ArrayList<Integer> arrayProblem22 = new ArrayList<>(Arrays.asList(1,2,3,4,5,6));
+        int val = 6;
+
+        for(int i =0; i < arrayProblem22.size(); i++){
+            for(int j =i+1; j < arrayProblem22.size(); j++){
+                if(arrayProblem22.get(i)+arrayProblem22.get(j) == val){
+                    System.out.println("The solution of problem 22 is: ");
+                    System.out.println(arrayProblem22.get(i)+" + "+arrayProblem22.get(j)+" = " + val);
+                }
+            }
+        }
+
+
 
         // 23. Write a Java program to test the equality of two arrays.
         // 24. Write a Java program to find a missing number in an array.
@@ -1038,20 +1051,38 @@ public class ArrayTasks {
 
     }
 
-    public boolean problem30() {
+    public void problem30() {
         ArrayList<Integer> arrayProb30 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, -1, -2));
-        //Boolean t = true;
+
         Boolean f = null;
+        String S = "";
 
         for (int i = 0; i < arrayProb30.size(); i++) {
-            if (arrayProb30.get(i).equals(2)) {
-
-                f = true;
-            } else {
-                f= false;
+            if (arrayProb30.get(i).equals(1)) {
+                S = "true";
+                System.out.println(S);
+            }
+            else {
+                S= "false";
+                System.out.println(S);
             }
         }
-        System.out.println(f);
-         return f;
-      }
+        System.out.println("this is for testing the command line execution 1");
+        System.out.println("this is for testing the command line execution 2");
+        System.out.println("this is for testing the command line execution 3");
+        System.out.println("this is for testing the command line execution 4");
+        System.out.println("the result is: "+S);
+
+
+        int[] array22 = {1,2,3,4,5,6};
+        int val = 6;
+        for(int i=0; i< array22.length; i++){
+            for(int j=i+1; j< array22.length; j++){
+                if(array22[i]+array22[j]== val){
+                    System.out.println(array22[i]+" "+array22[j]+" "+val);
+                }
+            }
+        }
+
+    }
 }
