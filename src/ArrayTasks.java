@@ -486,14 +486,18 @@ public class ArrayTasks {
 
         int array[] = new int[arraysize];
         System.out.println("Provide your elements of array");
+
         for (int i = 0; i < arraysize; i++) {
             array[i] = sc.nextInt();
         }
+
         System.out.println("The elements of the array is: ");
         for (int j = 0; j < arraysize; j++) {
-            System.out.print(array[j] + " ");
+            System.out.print(array[j] + ": ");
         }
+
         System.out.println("The final array is: " + Arrays.toString(array));
+
     }
 
     public void arraychangeViaInput() {
@@ -1035,16 +1039,15 @@ public class ArrayTasks {
         System.out.println("Problem 29- The sum is: " + sum);
 
 
-        // 30. Write a Java program to check if an array of integers without 0 and -1
 
 
-        // 31. Write a Java program to check if the sum of all the 10's in the array is exactly 30. Return false if the condition does not satisfy, otherwise true.
 
-        // 32. Write a Java program to check if an array of integers contains two specified elements 65 and 77
 
-        // 33. Write a Java program to remove the duplicate elements of a given array and return the new length of the array. Sample array: [20, 20, 30, 40, 50, 50, 50] After removing the duplicate elements the program should return 4 as the new length of the array.
 
-        // 34. Write a Java program to find the length of the longest consecutive elements sequence from a given unsorted array of integers. Sample array: [49, 1, 3, 200, 2, 4, 70, 5] The longest consecutive elements sequence is [1, 2, 3, 4, 5], therefore the program will return its length 5.
+
+
+
+
 
         // 35. Write a Java program to find the sum of the two elements of a given array which is equal to a given integer. Sample array: [1,2,4,5,6] Target value: 6.
 
@@ -1083,6 +1086,352 @@ public class ArrayTasks {
                 }
             }
         }
+
+
+        String initial_milage = "10.000 km";
+        int final_Milage=0;
+            //milage = milage.replaceAll("abcdefghijklmnopqrstuvwxyz.,","#");
+            initial_milage = initial_milage.replace(" km","");
+            initial_milage = initial_milage.replace(".","");
+            System.out.println("The milage values are: "+initial_milage);
+            final_Milage = Integer.parseInt(initial_milage);
+        System.out.println("The milage values in int are: "+final_Milage);
+
+
+
+        // 30. Write a Java program to check if an array of integers without 0 and -1
+
+        ArrayList<Integer> array30 = new ArrayList<>(Arrays.asList(1,2,0,3,-1,6));
+
+        if(array30.contains(-1) && array30.contains(0)){
+            System.out.println("right");
+        }
+        else {
+            System.out.println("wrong");
+        }
+
+
+
+
+        // 31. Write a Java program to check if the sum of all the 10's in the array is exactly 30. Return false if the condition does not satisfy, otherwise true.
+
+        ArrayList<Integer> array31 = new ArrayList<>(Arrays.asList(1,15,15,21,5,8,9,7));
+
+        Scanner scanner = new Scanner(System.in);
+        int sum =0;
+        int number =30;
+        //int s= scanner.nextInt();
+
+
+        System.out.println("Started");
+        for (int i =0 ; i < array31.size(); i++){
+            if(array31.get(i) <= 10){
+                sum = sum+array31.get(i);
+
+            }
+        }
+
+        if( sum == 30  ){
+            System.out.println("True");
+        }
+        else {
+            System.out.println("false");
+        }
+
+
+        int[] abcd = {1,2,3,4};
+        int[] abc = new int[2];
+        for (int i=0; i< abc.length; i++){
+            abc[i] = 5;
+        }
+        System.out.println(Arrays.toString(abcd));
+        System.out.println(Arrays.toString(abc));
+
+
+        System.out.println("ended");
+    }
+
+
+    public void arrT() {
+        Scanner sc = new Scanner(System.in);
+        boolean bool = false;
+
+        int[] arr = {3, 1, 7, 11};
+        System.out.println("initial" + Arrays.toString(arr));
+
+        Arrays.sort(arr);
+        for (int i = 0; i < arr.length; i++) {
+            int first = arr[i];
+            for (int j = i + 1; j < arr.length; j++) {
+                int second = arr[j];
+                if (second == first * 2) {
+
+                } else if (first % 2 == 0) {
+
+                    if (second == first / 2) {
+
+                    }
+
+
+                }
+
+            }
+
+        }
+
+        int palindrome = 1000021;
+        System.out.println(palindrome);
+        String str = String.valueOf(palindrome);
+        System.out.println(str);
+
+        String s1 = "";
+
+
+        for (int i= 0 , j = str.length()-1 ; i < j; i++, j--){
+                if(str.charAt(i)!=str.charAt(j)){
+                    s1 = "false";
+                }
+        }
+
+        System.out.println(s1);
+
+        LinkedList<Integer> list1 = new LinkedList<>(Arrays.asList(1,2,3));
+        LinkedList<Integer> list2 = new LinkedList<>(Arrays.asList(1,2,3));
+        LinkedList<Integer> list3 = new LinkedList<>();
+        LinkedList<Integer> list4 = new LinkedList<>();
+
+
+
+        for (int i =0 ; i < list1.size(); i++){
+            list3.add(list1.get(i));
+            list4.add(list1.get(i));
+
+        }
+        for (int j =0 ; j < list2.size(); j++){
+            list3.add(list2.get(j));
+            list4.add(list2.get(j));
+        }
+        Collections.sort(list3);
+        System.out.println(list3);
+        System.out.println(list4);
+
+        int whil = 5;
+        int whil2 = 7;
+        while (whil == whil2){
+            System.out.println("printing");
+        }
+
+        String testStr = "abcde";
+        int int1 = -12333;
+        String testStr2 = "";
+
+        char ch;
+        System.out.println("The initial string is : "+testStr);
+        StringBuilder builder = new StringBuilder();
+        builder.append(testStr);
+        builder.reverse();
+
+        System.out.println("The reverse output is : "+builder);
+
+
+        for(int i =0; i< testStr.length(); i++){
+            ch = testStr.charAt(i);
+            testStr2 = ch+testStr2;
+        }
+
+        System.out.println("The reverse output 2 is : "+testStr2);
+
+        String testStr3 = Integer.toString(int1);
+        String sss = "";
+        for(int i = 0 ; i <testStr3.length(); i++){
+            ch = testStr3.charAt(i); // defining the individual character from string
+            sss = ch+sss;
+        }
+
+        System.out.println("The reverse int output is : "+sss);
+
+        String abcd = "abde1erer2sf3tyuth4fgh5";
+        ArrayList<Integer> arr2 = new ArrayList<>();
+        char c ;
+
+        for (int i =0; i < abcd.length() ; i++){
+
+        }
+
+        int a =1, b =2, d=3, sum= a+b;
+        System.out.println(sum);
+        // FL6ZLNKTJMMF
+
+
+        /*
+        34. Write a Java program to find the length of the longest consecutive elements
+        sequence from a given unsorted array of integers.
+        Sample array: [49, 1, 3, 200, 2, 4, 70, 5]
+        The longest consecutive elements sequence is [1, 2, 3, 4, 5],
+        therefore the program will return its length 5.
+         */
+
+        ArrayList<Integer> problem34 = new ArrayList<>(Arrays.asList(49, 1, 3, 200, 2, 4, 70, 5));
+        ArrayList<Integer> problem34_2 = new ArrayList<>();
+        Collections.sort(problem34);
+
+        int[] array34 = {4,2,6,1,3,7};
+        System.out.println(Arrays.toString(array34));
+        Arrays.sort(array34);
+        System.out.println(Arrays.toString(array34));
+
+        for(int i =0; i < problem34.size(); i++){
+            for(int j =i+1; j < problem34.size(); j++){
+                int k = problem34.get(i),l = problem34.get(j) ;
+                if(l-k == 1 ){
+                //problem34_2.add(l);
+                    l=k;
+                    problem34_2.add(k);
+                }
+            }
+        }
+        System.out.println("the solution of problem 34 is : "+problem34_2);
+
+
+        int x = 12234;
+        String str2 = Integer.toString(x);
+        char e,f;
+        for(int i = 0; i < str.length(); i++ ){
+            c = str.charAt(i);
+            d = d+c;
+            System.out.print(d);
+        }
+
+        // 32. Write a Java program to check if an array of integers contains two specified elements 65 and 77
+        int[] arr32 = {33,44,55,77,54,65,88};
+        for(int i =0; i< arr32.length; i++){
+            if (arr32[i] == 65 || arr32[i] == 77){
+               System.out.println("TRue");
+            }
+            System.out.println("false");
+        }
+
+        Arrays.equals(arr32, arr32);
+        str2.indexOf(2);
+
+        System.out.println(str2);
+
+
+        // adding two list and adding the sum of element in anothet list
+
+
+        String s ="abcde efghi \"striasfasdfasdng\"ijklmiiii";
+        String ss[] = s.split(" ");
+        System.out.println( Arrays.toString(ss));
+        int size = ss[ss.length-1].length();
+        System.out.println( size);
+        String[] parenthesis = {"}","{","(",")","[","]"};
+        for(int i =0; i<parenthesis.length; i++){
+            for(int j =i+1; j<parenthesis.length; j++){
+              if(parenthesis[i].contains("")){
+
+              }
+            }
+        }
+
+    }
+
+
+    public void merge() {
+        int nums1[] = {1,2,3,0,0,0};
+        int nums2[] = {2,5,6};
+        int m=3,n=3,newSize = m+n;
+        m=nums1.length;
+        n=nums2.length;
+        int[] arr = new int[newSize];
+
+        for(int i =0; i< nums1.length; i++){
+            for( int j =0; j< nums2.length; j++){
+
+            }
+        }
+        System.out.print("The final array of merging: "+Arrays.toString(arr));
+        
+        
+        String hello = "heeelloooo  kkkilll";
+        //char charA = 'a' ;
+        char[] c = {'a','b','c'};
+        char dp[] = new char[3];
+        dp[0] = 'f';
+        dp[1] = 'c';
+        dp[2] = 'd';
+        char cc = 0;
+        int count=0;
+        for(int i =0; i < hello.length(); i++){
+            for(int j =i+1; j < hello.length(); j++){
+                if(hello.charAt(i)== hello.charAt(j)){
+                    count =+1;
+                    cc = hello.charAt(i);
+                }
+            }
+        }
+        System.out.println("the count: "+count +""+cc);
+        System.out.println("the count: "+ Arrays.toString(c));
+        System.out.println("the count new char array: "+ Arrays.toString(dp));
+
+        /*
+
+        33. Write a Java program to remove the duplicate elements
+        of a given array and return the new length of the array.
+        Sample array: [20, 20, 30, 40, 50, 50, 50]
+        After removing the duplicate elements the program
+        should return 4 as the new length of the array.
+
+        */
+
+        ArrayList<Integer> arr33 = new ArrayList<>(Arrays.asList(20,20,30,40,50,50,50));
+        int ar31[] = {20,20,30,40,50,50,50};
+
+        ArrayList<Integer> arr33_2 = new ArrayList<>();
+        System.out.println("The new array33 before sorted: "+arr33);
+        Collections.sort(arr33);
+        System.out.println("The new array33 before removing duplicate and sorted: "+arr33);
+
+        int temp = 1;
+        for (int i = 1; i< arr33.size(); i++){
+                if (arr33.get(i) == arr33.get(temp-1)){
+                    arr33.remove(arr33.get(i));
+                }
+        }
+
+        for(int i =1; i < ar31.length; i++){
+            if (ar31[i]!= ar31[temp-1]){
+                ar31[temp++] = ar31[i];
+            }
+        }
+        //arr33_2.add(temp);
+        System.out.println("The new array33 after removing duplicate value is: "+Arrays.toString(ar31));
+        System.out.println("The new array33 length is: "+ar31.length );
+        System.out.println("The new array33 length is: "+ temp );
+
+
+        // tech issue resolving with char
+
+        /*
+
+        ArrayList<Character> arr1 = new ArrayList<>();
+
+        String abcd = "Heeellooo Evvvee";
+        char ch[] = abcd.toCharArray();
+        int num = 1;
+        for (int i=0; i< ch.length; i++){
+            for (int j=i+1; j< abcd.length(); j++){
+                if (abcd.charAt(i)==abcd.charAt(j)){
+                    arr1.remove(abcd.charAt(j));
+                    break;
+                }
+            }
+        }
+
+        System.out.println("The char array without duplicate value is: "+ arr1);
+        System.out.println("The length duplicate value is: "+ num);
+
+         */
 
     }
 }

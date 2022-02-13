@@ -127,6 +127,8 @@ public class MainClass implements Runnable{
 
 		arrayTasks.fullPhase();
 		arrayTasks.problem30();
+		arrayTasks.arrT();
+		arrayTasks.merge();
 	}
 
 }
