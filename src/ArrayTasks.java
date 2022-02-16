@@ -898,18 +898,17 @@ public class ArrayTasks {
 
         // 22. Write a Java program to find all pairs of elements in an array whose sum is equal to a specified number.
 
-        ArrayList<Integer> arrayProblem22 = new ArrayList<>(Arrays.asList(1,2,3,4,5,6));
+        ArrayList<Integer> arrayProblem22 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
         int val = 6;
 
-        for(int i =0; i < arrayProblem22.size(); i++){
-            for(int j =i+1; j < arrayProblem22.size(); j++){
-                if(arrayProblem22.get(i)+arrayProblem22.get(j) == val){
+        for (int i = 0; i < arrayProblem22.size(); i++) {
+            for (int j = i + 1; j < arrayProblem22.size(); j++) {
+                if (arrayProblem22.get(i) + arrayProblem22.get(j) == val) {
                     System.out.println("The solution of problem 22 is: ");
-                    System.out.println(arrayProblem22.get(i)+" + "+arrayProblem22.get(j)+" = " + val);
+                    System.out.println(arrayProblem22.get(i) + " + " + arrayProblem22.get(j) + " = " + val);
                 }
             }
         }
-
 
 
         // 23. Write a Java program to test the equality of two arrays.
@@ -1039,16 +1038,6 @@ public class ArrayTasks {
         System.out.println("Problem 29- The sum is: " + sum);
 
 
-
-
-
-
-
-
-
-
-
-
         // 35. Write a Java program to find the sum of the two elements of a given array which is equal to a given integer. Sample array: [1,2,4,5,6] Target value: 6.
 
 
@@ -1064,9 +1053,8 @@ public class ArrayTasks {
             if (arrayProb30.get(i).equals(1)) {
                 S = "true";
                 System.out.println(S);
-            }
-            else {
-                S= "false";
+            } else {
+                S = "false";
                 System.out.println(S);
             }
         }
@@ -1074,74 +1062,69 @@ public class ArrayTasks {
         System.out.println("this is for testing the command line execution 2");
         System.out.println("this is for testing the command line execution 3");
         System.out.println("this is for testing the command line execution 4");
-        System.out.println("the result is: "+S);
+        System.out.println("the result is: " + S);
 
 
-        int[] array22 = {1,2,3,4,5,6};
+        int[] array22 = {1, 2, 3, 4, 5, 6};
         int val = 6;
-        for(int i=0; i< array22.length; i++){
-            for(int j=i+1; j< array22.length; j++){
-                if(array22[i]+array22[j]== val){
-                    System.out.println(array22[i]+" "+array22[j]+" "+val);
+        for (int i = 0; i < array22.length; i++) {
+            for (int j = i + 1; j < array22.length; j++) {
+                if (array22[i] + array22[j] == val) {
+                    System.out.println(array22[i] + " " + array22[j] + " " + val);
                 }
             }
         }
 
 
         String initial_milage = "10.000 km";
-        int final_Milage=0;
-            //milage = milage.replaceAll("abcdefghijklmnopqrstuvwxyz.,","#");
-            initial_milage = initial_milage.replace(" km","");
-            initial_milage = initial_milage.replace(".","");
-            System.out.println("The milage values are: "+initial_milage);
-            final_Milage = Integer.parseInt(initial_milage);
-        System.out.println("The milage values in int are: "+final_Milage);
-
+        int final_Milage = 0;
+        //milage = milage.replaceAll("abcdefghijklmnopqrstuvwxyz.,","#");
+        initial_milage = initial_milage.replace(" km", "");
+        initial_milage = initial_milage.replace(".", "");
+        System.out.println("The milage values are: " + initial_milage);
+        final_Milage = Integer.parseInt(initial_milage);
+        System.out.println("The milage values in int are: " + final_Milage);
 
 
         // 30. Write a Java program to check if an array of integers without 0 and -1
 
-        ArrayList<Integer> array30 = new ArrayList<>(Arrays.asList(1,2,0,3,-1,6));
+        ArrayList<Integer> array30 = new ArrayList<>(Arrays.asList(1, 2, 0, 3, -1, 6));
 
-        if(array30.contains(-1) && array30.contains(0)){
+        if (array30.contains(-1) && array30.contains(0)) {
             System.out.println("right");
-        }
-        else {
+        } else {
             System.out.println("wrong");
         }
 
 
-
-
         // 31. Write a Java program to check if the sum of all the 10's in the array is exactly 30. Return false if the condition does not satisfy, otherwise true.
 
-        ArrayList<Integer> array31 = new ArrayList<>(Arrays.asList(1,15,15,21,5,8,9,7));
+        ArrayList<Integer> array31 = new ArrayList<>(Arrays.asList(1, 15, 15, 21, 5, 8, 9, 7));
 
         Scanner scanner = new Scanner(System.in);
-        int sum =0;
-        int number =30;
+        int sum = 0;
+        int number = 30;
         //int s= scanner.nextInt();
 
 
         System.out.println("Started");
-        for (int i =0 ; i < array31.size(); i++){
-            if(array31.get(i) <= 10){
-                sum = sum+array31.get(i);
+        for (int i = 0; i < array31.size(); i++) {
+            if (array31.get(i) <= 10) {
+                sum = sum + array31.get(i);
 
             }
         }
 
-        if( sum == 30  ){
+        if (sum == 30) {
             System.out.println("True");
-        }
-        else {
+        } else {
             System.out.println("false");
         }
 
 
-        int[] abcd = {1,2,3,4};
+        int[] abcd = {1, 2, 3, 4};
         int[] abc = new int[2];
-        for (int i=0; i< abc.length; i++){
+        for (int i = 0; i < abc.length; i++) {
             abc[i] = 5;
         }
         System.out.println(Arrays.toString(abcd));
@@ -1187,27 +1170,26 @@ public class ArrayTasks {
         String s1 = "";
 
 
-        for (int i= 0 , j = str.length()-1 ; i < j; i++, j--){
-                if(str.charAt(i)!=str.charAt(j)){
-                    s1 = "false";
-                }
+        for (int i = 0, j = str.length() - 1; i < j; i++, j--) {
+            if (str.charAt(i) != str.charAt(j)) {
+                s1 = "false";
+            }
         }
 
         System.out.println(s1);
 
-        LinkedList<Integer> list1 = new LinkedList<>(Arrays.asList(1,2,3));
-        LinkedList<Integer> list2 = new LinkedList<>(Arrays.asList(1,2,3));
+        LinkedList<Integer> list1 = new LinkedList<>(Arrays.asList(1, 2, 3));
+        LinkedList<Integer> list2 = new LinkedList<>(Arrays.asList(1, 2, 3));
         LinkedList<Integer> list3 = new LinkedList<>();
         LinkedList<Integer> list4 = new LinkedList<>();
 
 
-
-        for (int i =0 ; i < list1.size(); i++){
+        for (int i = 0; i < list1.size(); i++) {
             list3.add(list1.get(i));
             list4.add(list1.get(i));
 
         }
-        for (int j =0 ; j < list2.size(); j++){
+        for (int j = 0; j < list2.size(); j++) {
             list3.add(list2.get(j));
             list4.add(list2.get(j));
         }
@@ -1217,7 +1199,7 @@ public class ArrayTasks {
 
         int whil = 5;
         int whil2 = 7;
-        while (whil == whil2){
+        while (whil == whil2) {
             System.out.println("printing");
         }
 
@@ -1226,39 +1208,40 @@ public class ArrayTasks {
         String testStr2 = "";
 
         char ch;
-        System.out.println("The initial string is : "+testStr);
+        System.out.println("The initial string is : " + testStr);
         StringBuilder builder = new StringBuilder();
         builder.append(testStr);
         builder.reverse();
 
-        System.out.println("The reverse output is : "+builder);
+
+        System.out.println("The reverse output is : " + builder);
 
 
-        for(int i =0; i< testStr.length(); i++){
+        for (int i = 0; i < testStr.length(); i++) {
             ch = testStr.charAt(i);
             testStr2 = ch+testStr2;
         }
 
-        System.out.println("The reverse output 2 is : "+testStr2);
+        System.out.println("The reverse output 2 is : " + testStr2);
 
         String testStr3 = Integer.toString(int1);
         String sss = "";
-        for(int i = 0 ; i <testStr3.length(); i++){
+        for (int i = 0; i < testStr3.length(); i++) {
             ch = testStr3.charAt(i); // defining the individual character from string
-            sss = ch+sss;
+            sss = ch + sss;
         }
 
-        System.out.println("The reverse int output is : "+sss);
+        System.out.println("The reverse int output is : " + sss);
 
         String abcd = "abde1erer2sf3tyuth4fgh5";
         ArrayList<Integer> arr2 = new ArrayList<>();
-        char c ;
+        char c;
 
-        for (int i =0; i < abcd.length() ; i++){
+        for (int i = 0; i < abcd.length(); i++) {
 
         }
 
-        int a =1, b =2, d=3, sum= a+b;
+        int a = 1, b = 2, d = 3, sum = a + b;
         System.out.println(sum);
         // FL6ZLNKTJMMF
 
@@ -1275,38 +1258,38 @@ public class ArrayTasks {
         ArrayList<Integer> problem34_2 = new ArrayList<>();
         Collections.sort(problem34);
 
-        int[] array34 = {4,2,6,1,3,7};
+        int[] array34 = {4, 2, 6, 1, 3, 7};
         System.out.println(Arrays.toString(array34));
         Arrays.sort(array34);
         System.out.println(Arrays.toString(array34));
 
-        for(int i =0; i < problem34.size(); i++){
-            for(int j =i+1; j < problem34.size(); j++){
-                int k = problem34.get(i),l = problem34.get(j) ;
-                if(l-k == 1 ){
-                //problem34_2.add(l);
-                    l=k;
+        for (int i = 0; i < problem34.size(); i++) {
+            for (int j = i + 1; j < problem34.size(); j++) {
+                int k = problem34.get(i), l = problem34.get(j);
+                if (l - k == 1) {
+                    //problem34_2.add(l);
+                    l = k;
                     problem34_2.add(k);
                 }
             }
         }
-        System.out.println("the solution of problem 34 is : "+problem34_2);
+        System.out.println("the solution of problem 34 is : " + problem34_2);
 
 
         int x = 12234;
         String str2 = Integer.toString(x);
-        char e,f;
-        for(int i = 0; i < str.length(); i++ ){
+        char e, f;
+        for (int i = 0; i < str.length(); i++) {
             c = str.charAt(i);
-            d = d+c;
+            d = d + c;
             System.out.print(d);
         }
 
         // 32. Write a Java program to check if an array of integers contains two specified elements 65 and 77
-        int[] arr32 = {33,44,55,77,54,65,88};
-        for(int i =0; i< arr32.length; i++){
-            if (arr32[i] == 65 || arr32[i] == 77){
-               System.out.println("TRue");
+        int[] arr32 = {33, 44, 55, 77, 54, 65, 88};
+        for (int i = 0; i < arr32.length; i++) {
+            if (arr32[i] == 65 || arr32[i] == 77) {
+                System.out.println("TRue");
             }
             System.out.println("false");
         }
@@ -1320,17 +1303,17 @@ public class ArrayTasks {
         // adding two list and adding the sum of element in anothet list
 
 
-        String s ="abcde efghi \"striasfasdfasdng\"ijklmiiii";
+        String s = "abcde efghi \"striasfasdfasdng\"ijklmiiii";
         String ss[] = s.split(" ");
-        System.out.println( Arrays.toString(ss));
-        int size = ss[ss.length-1].length();
-        System.out.println( size);
-        String[] parenthesis = {"}","{","(",")","[","]"};
-        for(int i =0; i<parenthesis.length; i++){
-            for(int j =i+1; j<parenthesis.length; j++){
-              if(parenthesis[i].contains("")){
+        System.out.println(Arrays.toString(ss));
+        int size = ss[ss.length - 1].length();
+        System.out.println(size);
+        String[] parenthesis = {"}", "{", "(", ")", "[", "]"};
+        for (int i = 0; i < parenthesis.length; i++) {
+            for (int j = i + 1; j < parenthesis.length; j++) {
+                if (parenthesis[i].contains("")) {
 
-              }
+                }
             }
         }
 
@@ -1338,41 +1321,41 @@ public class ArrayTasks {
 
 
     public void merge() {
-        int nums1[] = {1,2,3,0,0,0};
-        int nums2[] = {2,5,6};
-        int m=3,n=3,newSize = m+n;
-        m=nums1.length;
-        n=nums2.length;
+        int nums1[] = {1, 2, 3, 0, 0, 0};
+        int nums2[] = {2, 5, 6};
+        int m = 3, n = 3, newSize = m + n;
+        m = nums1.length;
+        n = nums2.length;
         int[] arr = new int[newSize];
 
-        for(int i =0; i< nums1.length; i++){
-            for( int j =0; j< nums2.length; j++){
+        for (int i = 0; i < nums1.length; i++) {
+            for (int j = 0; j < nums2.length; j++) {
 
             }
         }
-        System.out.print("The final array of merging: "+Arrays.toString(arr));
-        
-        
+        System.out.print("The final array of merging: " + Arrays.toString(arr));
+
+
         String hello = "heeelloooo  kkkilll";
         //char charA = 'a' ;
-        char[] c = {'a','b','c'};
+        char[] c = {'a', 'b', 'c'};
         char dp[] = new char[3];
         dp[0] = 'f';
         dp[1] = 'c';
         dp[2] = 'd';
         char cc = 0;
-        int count=0;
-        for(int i =0; i < hello.length(); i++){
-            for(int j =i+1; j < hello.length(); j++){
-                if(hello.charAt(i)== hello.charAt(j)){
-                    count =+1;
+        int count = 0;
+        for (int i = 0; i < hello.length(); i++) {
+            for (int j = i + 1; j < hello.length(); j++) {
+                if (hello.charAt(i) == hello.charAt(j)) {
+                    count = +1;
                     cc = hello.charAt(i);
                 }
             }
         }
-        System.out.println("the count: "+count +""+cc);
-        System.out.println("the count: "+ Arrays.toString(c));
-        System.out.println("the count new char array: "+ Arrays.toString(dp));
+        System.out.println("the count: " + count + "" + cc);
+        System.out.println("the count: " + Arrays.toString(c));
+        System.out.println("the count new char array: " + Arrays.toString(dp));
 
         /*
 
@@ -1384,30 +1367,30 @@ public class ArrayTasks {
 
         */
 
-        ArrayList<Integer> arr33 = new ArrayList<>(Arrays.asList(20,20,30,40,50,50,50));
-        int ar31[] = {20,20,30,40,50,50,50};
+        ArrayList<Integer> arr33 = new ArrayList<>(Arrays.asList(20, 20, 30, 40, 50, 50, 50));
+        int ar31[] = {20, 20, 30, 40, 50, 50, 50};
 
         ArrayList<Integer> arr33_2 = new ArrayList<>();
-        System.out.println("The new array33 before sorted: "+arr33);
+        System.out.println("The new array33 before sorted: " + arr33);
         Collections.sort(arr33);
-        System.out.println("The new array33 before removing duplicate and sorted: "+arr33);
+        System.out.println("The new array33 before removing duplicate and sorted: " + arr33);
 
         int temp = 1;
-        for (int i = 1; i< arr33.size(); i++){
-                if (arr33.get(i) == arr33.get(temp-1)){
-                    arr33.remove(arr33.get(i));
-                }
+        for (int i = 1; i < arr33.size(); i++) {
+            if (arr33.get(i) == arr33.get(temp - 1)) {
+                arr33.remove(arr33.get(i));
+            }
         }
 
-        for(int i =1; i < ar31.length; i++){
-            if (ar31[i]!= ar31[temp-1]){
+        for (int i = 1; i < ar31.length; i++) {
+            if (ar31[i] != ar31[temp - 1]) {
                 ar31[temp++] = ar31[i];
             }
         }
         //arr33_2.add(temp);
-        System.out.println("The new array33 after removing duplicate value is: "+Arrays.toString(ar31));
-        System.out.println("The new array33 length is: "+ar31.length );
-        System.out.println("The new array33 length is: "+ temp );
+        System.out.println("The new array33 after removing duplicate value is: " + Arrays.toString(ar31));
+        System.out.println("The new array33 length is: " + ar31.length);
+        System.out.println("The new array33 length is: " + temp);
 
 
         // tech issue resolving with char
@@ -1433,5 +1416,94 @@ public class ArrayTasks {
 
          */
 
+        /*
+        65. Write a Java program to find maximum difference between two elements
+        in a given array of integers such that smaller element appears
+        before larger element.
+         */
+
+        int[] arr65 = {2, 3, 1, 7, 9, 5, 11, 3, 5, -1, -7};
+        //Arrays.sort(arr65);
+        int min = arr65[0], max = arr65[0];
+
+        for (int i = 1; i < arr65.length; i++) {
+            if (arr65[i] < min) {
+                min = arr65[i];
+            } else if (max < arr65[i]) {
+                max = arr65[i];
+            }
+        }
+
+        int sum = max - min;
+
+        System.out.println("The min is: " + min + "\n" + "The max is: " + max + "\n" + "The gap is: " + sum);
+
+        Integer.reverse(sum);
+        int s = Integer.compare(1001, 2002);
+        System.out.println(s);
+
+        int[] leet1 = {1, 2, 3, 4, 5, 6, 7};
+        int leet2 = 3;
+        for (int i = leet2 + 1; i < leet1.length; i++) {
+
+        }
+
+        int[][] arrl2 = {{1, 2, 3}, {4, 5, 6}};
+        int[][] arrl3 = {{2, 7, 9}, {3, 6, 1, 2, 3, 4}, {7, 4, 2}, {7, 4, 2}, {7, 4, 2}};
+
+        ArrayList<Integer> multi1 = new ArrayList<>();
+
+        System.out.println("the 1st iteration: " + Arrays.toString(arrl3[0]));
+        System.out.println("the 2nd iteration: " + Arrays.toString(arrl3[1]));
+        System.out.println("the 3rd iteration: " + Arrays.toString(arrl3[2]));
+
+        for (int i = 0; i < arrl3.length; i++) {
+            System.out.println(Arrays.toString(arrl3[i]));
+            for (int j = i + 1; j < arrl3.length; j++) {
+                System.out.println(Arrays.toString(arrl3[j]));
+            }
+        }
+
+        HashSet<Integer> hashSet = new HashSet<>();
+        System.out.println("The initial hashset: " + hashSet);
+        int in = 11;
+        for (int i = 0; i <= 10; i++) {
+            hashSet.add(i);
+        }
+        System.out.println("The final hashset1: " + hashSet);
+        do {
+            hashSet.add(in);
+            in++;
+        }
+        while (in <= 20);
+        System.out.println("The final hashset2: " + hashSet);
+
+        int twice[] = {5, 2, 4, 5, 5, 3};
+        int numb = 122;
+        String s3 = " ";
+
+        int ssss = Integer.reverse(numb);
+        StringBuilder build = new StringBuilder();
+        build.append(s3);
+        build.reverse();
+
+        System.out.println(ssss);
+
+        HashSet<Character> charset = new HashSet<>();
+        /*
+        charset.add('a');
+        charset.add('b');
+        charset.add('c');
+
+         */
+        String abcd3 = "String";
+        char ccc  = 0 ;
+        System.out.println(charset);
+
+        for (int i =0; i <abcd3.length(); i++){
+            ccc = abcd3.charAt(i);
+            charset.add(ccc);
+        }
+        System.out.println(charset);
     }
 }
