@@ -1,3 +1,5 @@
+import com.sun.tools.javac.util.ArrayUtils;
+
 import java.util.*;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -1497,6 +1499,7 @@ public class ArrayTasks {
 
          */
         String abcd3 = "String";
+        int tem = abcd3.length();
         char ccc  = 0 ;
         System.out.println(charset);
 
@@ -1505,5 +1508,100 @@ public class ArrayTasks {
             charset.add(ccc);
         }
         System.out.println(charset);
+
+        List<Integer> l1 = new ArrayList<>(Arrays.asList(5,8,5));
+        List<Integer> l2 = new ArrayList<>(Arrays.asList(2,6,4));
+        List<Integer> l3 = new ArrayList<>();
+        List<Object> l4 = new ArrayList<>();
+        int abcd = 0;
+
+        for(int i =0 ; i < l1.size(); i++){
+            System.out.println(l1.get(i)+"");
+            for(int j =0 ; j < l2.size(); j++){
+                System.out.print(l2.get(j)+"");
+            l3.add(l1.get(i)+l2.get(j));
+            }
+            break;
+        }
+
+        System.out.println("The int is: "+abcd);
+        System.out.println("The summm is: "+l3);
+
+        for(int i =0 ; i < l1.size(); i++) {
+            l4.addAll(Collections.singleton(l1.indexOf(i) + ""));
+            System.out.println("the the "+l1.indexOf(i) + "");
+        }
+        //System.out.println("");
+
+        String sstr = "A man, a plan, a canal: Panama";
+        System.out.println(sstr);
+        /*
+        sstr = sstr.replace(",","");
+        sstr = sstr.replace(":","");
+        sstr = sstr.replace(" ","");
+         */
+        sstr = sstr.replaceAll("[^a-zA-Z0-9]","");
+        sstr = sstr.toLowerCase();
+        System.out.println(sstr);
+
+        int brr[] = {1,2,3};
+        System.out.println(Arrays.toString(brr));
+
+        Collections.reverse(Arrays.asList(brr));
+
+        System.out.println(Arrays.toString(brr));
+
+    }
+
+    public boolean boopal(String sstr){
+
+        /*
+        System.out.println(sstr);
+        sstr = sstr.replaceAll("[^a-zA-Z0-9]","");
+        sstr = sstr.toLowerCase();
+        System.out.println(sstr);
+        for(int i = 0, j = sstr.length()-1; i<j; i++,j-- ){
+            if (sstr.charAt(i)!=sstr.charAt(j)){
+
+            }
+            break;
+        }
+
+
+        int[] arr = {1,2,3};
+
+        System.out.println(Arrays.toString(arr));
+        Arrays.sort(arr);
+        System.out.println(Arrays.toString(arr));
+
+        for (int i = 0; i < arr.length; i++){
+            for (int j = i+1; j < arr.length; j++){
+                if (arr[i]== arr[j]){
+                    return true;
+                }
+            }
+        }
+        */
+        int num = 1669;
+
+        while (num >9){
+            num = num/10 + num%10;
+        }
+        System.out.println("The num is: "+num);
+
+        String str = Integer.toString(num);
+
+        for (int i =0; i < str.length()-1 ; i++){
+            for (int j =i+1; j < str.length() ; j++){
+                i = Character.getNumericValue(str.charAt(i));
+                j = Character.getNumericValue(str.charAt(j));
+                System.out.println(i+"///");
+                System.out.println(j+"///");
+                if (((i*i) + (j*j)) ==1){
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

@@ -46,6 +46,7 @@ public class MainClass implements Runnable{
 		Variables variables = new Variables();
 		Operators operators = new Operators();
 		Switch switchStatement = new Switch();
+		HashMapClass hashMapClass = new HashMapClass();
 
 		/**
 		 loop.whileLoopOne();
@@ -128,7 +129,10 @@ public class MainClass implements Runnable{
 		arrayTasks.fullPhase();
 		arrayTasks.problem30();
 		arrayTasks.arrT();
+		hashMapClass.hashSetOne();
 		arrayTasks.merge();
+		//arrayTasks.boopal("A man, a plan, a canal: Panama");
+		System.out.println(arrayTasks.boopal("A man, a plan, a canal: Panama"));
 	}
 
 }
