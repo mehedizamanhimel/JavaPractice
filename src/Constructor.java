@@ -30,4 +30,9 @@ public class Constructor {
         //y = this.abd;
         System.out.println("From constructor S n i: "+y);
     }
+
+    public Constructor(String S, int y, char c){
+        //y = this.abd;
+        System.out.println("From constructor S n i: "+y);
+    }
 }

@@ -133,6 +133,17 @@ public class MainClass implements Runnable{
 		arrayTasks.merge();
 		//arrayTasks.boopal("A man, a plan, a canal: Panama");
 		System.out.println(arrayTasks.boopal("A man, a plan, a canal: Panama"));
+		arrayTasks.returnFirstDuplicate();
+		arrayTasks.replaceDuplicatewithDash();
+		arrayTasks.SumOfUnique();
+		arrayTasks.TestingALoop(5);
+		System.out.println("the recurssion value is: "+arrayTasks.TestingALoop(4));
+
+
+
+
+
+
 	}
 
 }

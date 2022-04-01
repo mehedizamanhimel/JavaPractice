@@ -1604,4 +1604,144 @@ public class ArrayTasks {
         }
         return false;
     }
+
+    public void returnFirstDuplicate() {
+
+        int[] array_s= {1,2,7,3,3,4,7,8,9,9,6,6,8};
+
+        System.out.println(Arrays.toString(array_s));
+
+        int item = 0;
+
+        for (int i = 0; i <array_s.length-1 ; i++){
+            for (int j = i+1; j <array_s.length ; j++) {
+
+                if (array_s[i] == array_s[j]) {
+                    item = array_s[i];
+                    break;
+                }
+
+            }
+            if(item != 0)
+                break;
+        }
+
+        System.out.println("the first duplicate value is: "+item);
+
+        ArrayList<Integer> arrList = new ArrayList<>(Arrays.asList(1,5,2,7,3,3,4,7,8,9,9,6,6,8,5));
+
+        int value= -1;
+
+        for (int i = 0; i <arrList.size()-1 ; i++){
+            for (int j = i+1; j <arrList.size()-1 ; j++) {
+
+              if(arrList.get(i) == arrList.get(j)){
+                  value = arrList.get(i);
+                  break;
+              }
+            }
+            if(value != -1)
+                break;
+        }
+
+        System.out.println("the first duplicate value from arraylist is: "+value);
+
+
+
+        String  charRepeat= "abcdefccd";
+        char c = 0;
+        HashMap<Character, Integer> hashMap = new HashMap<>();
+        for (int i = 0; i <charRepeat.length(); i++){
+            c = charRepeat.charAt(i);
+            if(hashMap.containsKey(c)){
+
+                hashMap.put(c, hashMap.get(c)+1);
+            }
+            else {
+                hashMap.put(c, 1);
+            }
+        }
+
+        int max = -1;
+        String str_2 ="";
+        //Character key;
+        for (Character key: hashMap.keySet()){
+            if(hashMap.get(key) >= max){
+                max = hashMap.get(key);
+                str_2 = key.toString();
+            }
+
+        }
+
+        System.out.println(str_2+ " = " + max);
+
+
+    }
+
+    public void replaceDuplicatewithDash(){
+        int num= 0;
+        int num2=1;
+        ArrayList<Integer> nums = new ArrayList<>(Arrays.asList(1,1,2));
+        System.out.println("The initial array is: "+nums);
+        /*
+        for (int i =0; i< nums.size()-1; i++){
+            for (int j =i+1; j< nums.size(); j++){
+                if(nums.get(i)==nums.get(j)){
+                    nums.set(nums.indexOf(j),0);
+                    //nums.remove(nums.indexOf(j));
+                    num2=+1;
+                }
+            }
+        }
+
+         */
+        System.out.println("The final array is: "+nums);
+        System.out.println("The the count is: "+num2);
+    }
+
+    public void SumOfUnique(){
+        int num1=0, num2 = 0, num3 = 0;
+
+        ArrayList<Integer> nums = new ArrayList<>(Arrays.asList(1,2,3,2));
+        for (int i =0; i< nums.size(); i++){
+            for (int j =i+1; j< nums.size(); j++) {
+                if (nums.get(i) != nums.get(j)) {
+                    num1 = nums.get(i) ;
+                    num2 = nums.get(j);
+                }
+                num3 = num1+num2;
+            }
+            break;
+        }
+        System.out.println("the sum of unique number is: "+num3);
+    }
+
+    public static int TestingALoop(int num2){
+        int num = 0 ;
+
+        for (int i =0; i <11; i++){
+            if(i!=0)
+            num++;
+        }
+        System.out.println(num);
+        if (num2 > 0 ){
+            return num2 + TestingALoop(num2-1);
+        }
+        else {
+            return 0;
+        }
+
+
+    }
+
+
 }
+
+/*
+
+  Write an algorithm to find the Number of occurrences of char in the array
+  Find the max occurrence in a string
+
+ */
+
+
