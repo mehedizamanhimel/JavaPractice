@@ -38,4 +38,19 @@ public class Regex {
 		
 	}
 
+	public void IntToString() {
+		int i = 200;
+		String str = Integer.toString(i);
+		String str2 =  String.valueOf(i);
+		System.out.println(str);
+		System.out.println(str2);
+
+		String string = "This is a string";
+		System.out.println(string);
+		String[] str4 = string.split("\\s");
+		for (String s : str4){
+			System.out.println(s);
+		}
+
+	}
 }

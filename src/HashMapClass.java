@@ -27,4 +27,22 @@ public class HashMapClass {
         System.out.println(capitalCities2);
     }
 
+    public void findingOccurance(){
+        String str = "fdddfdadaaa";
+        char c = 'a';
+
+        int count = 0;
+        for (int i = 0 ; i < str.length()-1; i++){
+            for (int j = i+1 ; i < str.length(); i++) {
+                if (str.charAt(i) == str.charAt(j)) {
+                    count++;
+                }
+            }
+            //break;
+        }
+        System.out.println("The total number of character in the string is: "+count);
+    }
+
+
+
 }

@@ -47,6 +47,7 @@ public class MainClass implements Runnable{
 		Operators operators = new Operators();
 		Switch switchStatement = new Switch();
 		HashMapClass hashMapClass = new HashMapClass();
+		List list = new List();
 
 		/**
 		 loop.whileLoopOne();
@@ -134,15 +135,21 @@ public class MainClass implements Runnable{
 		//arrayTasks.boopal("A man, a plan, a canal: Panama");
 		System.out.println(arrayTasks.boopal("A man, a plan, a canal: Panama"));
 		arrayTasks.returnFirstDuplicate();
-		arrayTasks.replaceDuplicatewithDash();
+
 		arrayTasks.SumOfUnique();
 		arrayTasks.TestingALoop(5);
 		System.out.println("the recurssion value is: "+arrayTasks.TestingALoop(4));
+		arrayTasks.removeDisSimilarValue();
 
+		//arrayTasks.replaceDuplicatewithDash(new int[]{1, 2, 3, 5});
 
+		//System.out.println("the final array is: "+arrayTasks.replaceDuplicatewithDash(new int[]{1, 2, 3, 5}));
 
-
-
+		regx.IntToString();
+		list.returnBoth(5,6, 5,6);
+		System.out.println(list.returnBoth(11,11, 11,11));
+		hashMapClass.findingOccurance();
+		list.removeDuplicate();
 
 	}
 

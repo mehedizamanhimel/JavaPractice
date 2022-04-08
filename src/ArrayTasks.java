@@ -1678,25 +1678,42 @@ public class ArrayTasks {
 
     }
 
-    public void replaceDuplicatewithDash(){
-        int num= 0;
-        int num2=1;
-        ArrayList<Integer> nums = new ArrayList<>(Arrays.asList(1,1,2));
-        System.out.println("The initial array is: "+nums);
+    public int replaceDuplicatewithDash(int[] nums){
+
+        //ArrayList<Integer> nums = new ArrayList<>(Arrays.asList(0,0,1,1,1,2,2,3,3,4));
         /*
-        for (int i =0; i< nums.size()-1; i++){
-            for (int j =i+1; j< nums.size(); j++){
+        int numslength = nums.size();
+        System.out.println("The initial array is: "+nums+" : and the length of the array is: "+numslength);
+        for (int i=0 ; i<nums.size(); i++){
+            for (int j=i+1 ; j<nums.size(); j++){
                 if(nums.get(i)==nums.get(j)){
-                    nums.set(nums.indexOf(j),0);
-                    //nums.remove(nums.indexOf(j));
-                    num2=+1;
+                    nums.remove(nums.get(i));
                 }
             }
         }
+        int numslength2 = nums.size();
+        for(int i =0; i < numslength ; i ++){
+
+        }
+        System.out.println("The array2 is: "+nums+" : and the length of the array2 is: "+numslength2);
+
+        for (int i = numslength2; i < numslength ; i++){
+            nums.add(0);
+        }
+        int numslength3 = nums.size();
+        System.out.println("The final array is: "+nums+" : and the length of the final array is: "+numslength3);
 
          */
-        System.out.println("The final array is: "+nums);
-        System.out.println("The the count is: "+num2);
+        if(nums.length == 0 )
+        return 0;
+        int i = 0;
+        for (int j = 1; j < nums.length; i++){
+            if(nums[j]!=nums[i]){
+                i++;
+                nums[i]=nums[j];
+            }
+        }
+        return i+1;
     }
 
     public void SumOfUnique(){
@@ -1734,6 +1751,18 @@ public class ArrayTasks {
 
     }
 
+    public void removeDisSimilarValue(){
+        ArrayList<Integer> fullArr = new ArrayList<>(Arrays.asList(5,10,20,30,40,50));
+        for (int i =0 ; i < fullArr.size(); i++){
+            if((fullArr.get(i)%10) !=0 ){
+                fullArr.remove(fullArr.get(i));
+            }
+        }
+        for(int i : fullArr){
+            System.out.println(i);
+        }
+        //System.out.println(fullArr);
+    }
 
 }
 
