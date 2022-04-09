@@ -139,7 +139,7 @@ public class MainClass implements Runnable{
 		arrayTasks.SumOfUnique();
 		arrayTasks.TestingALoop(5);
 		System.out.println("the recurssion value is: "+arrayTasks.TestingALoop(4));
-		arrayTasks.removeDisSimilarValue();
+
 
 		//arrayTasks.replaceDuplicatewithDash(new int[]{1, 2, 3, 5});
 
@@ -150,6 +150,7 @@ public class MainClass implements Runnable{
 		System.out.println(list.returnBoth(11,11, 11,11));
 		hashMapClass.findingOccurance();
 		list.removeDuplicate();
+		arrayTasks.removeDisSimilarValue();
 
 	}
 
