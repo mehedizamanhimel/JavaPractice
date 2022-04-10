@@ -151,6 +151,7 @@ public class MainClass implements Runnable{
 		hashMapClass.findingOccurance();
 		list.removeDuplicate();
 		arrayTasks.removeDisSimilarValue();
+		arrayTasks.SumOfEvenNumber();
 
 	}
 

@@ -1753,34 +1753,33 @@ public class ArrayTasks {
 
     public void removeDisSimilarValue(){
         ArrayList<Integer> fullArr = new ArrayList<>(Arrays.asList(1,2,3,4,5,6));
-        ArrayList<Integer> fullArr2 = new ArrayList<>();
+
         int initial = 0 ;
-        for (int i =0 ; i < fullArr.size(); i++){
-            if((fullArr.get(i)%10) !=0 ){
-                fullArr.remove(fullArr.get(i));
-            }
-        }
-        for(int i : fullArr){
-            System.out.println(i);
-        }
-        //System.out.println(fullArr);
 
         for (int i = 0 ; i< fullArr.size(); i++){
-            if(fullArr.get(i)%2==0){
+            if(fullArr.get(i)%2==0 && fullArr.get(i)!=0){
                 initial = initial+fullArr.get(i);
-                //fullArr.remove(fullArr.get(i));
-            }
-        }
-        for (int j = 0 ; j< fullArr.size(); j++){
-            if(fullArr.get(j)%2!=0){
-                fullArr2.add(fullArr.get(j));
-            }
-            //break;
-        }
 
-        System.out.println(initial);
-        System.out.println(fullArr);
-        System.out.println(fullArr2);
+            }
+        }
+        System.out.println("The array is: " +fullArr);
+        System.out.println("The total sum of even numbers are: "+initial);
+
+    }
+
+    public void SumOfEvenNumber(){
+        ArrayList<Integer> fullArr = new ArrayList<>(Arrays.asList(0,1,2,3,4,5,6));
+
+        int initial = 0 ;
+
+        for (int i = 0 ; i< fullArr.size(); i++){
+            if(fullArr.get(i)%2==0 && fullArr.get(i)!=0){
+                initial = initial+fullArr.get(i);
+
+            }
+        }
+        System.out.println("The array is: " +fullArr);
+        System.out.println("The total sum of even numbers are: "+initial);
     }
 
 }
