@@ -1,5 +1,3 @@
-import com.sun.tools.javac.util.ArrayUtils;
-
 import java.util.*;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -1768,19 +1766,115 @@ public class ArrayTasks {
     }
 
     public void SumOfEvenNumber(){
+
         ArrayList<Integer> fullArr = new ArrayList<>(Arrays.asList(0,1,2,3,4,5,6));
 
         int initial = 0 ;
+        int count = 0 ;
+
+        HashSet<Integer> hashSet = new HashSet<>();
+        HashMap<Integer, Integer> hashMap = new HashMap();
 
         for (int i = 0 ; i< fullArr.size(); i++){
             if(fullArr.get(i)%2==0 && fullArr.get(i)!=0){
                 initial = initial+fullArr.get(i);
-
+                count++;
+                hashSet.add(fullArr.get(i));
+                hashMap.put(count, initial);
             }
         }
         System.out.println("The array is: " +fullArr);
         System.out.println("The total sum of even numbers are: "+initial);
+        System.out.println("The Hashset is: "+hashSet);
+        System.out.println("The HashMap is: "+hashMap);
+        System.out.println("The first value of HashMap is: "+hashMap.get(1));
+        System.out.println("The second value of HashMap is: "+hashMap.get(2));
+        System.out.println("The third value of HashMap is: "+hashMap.get(3));
+        System.out.println("The fourth value of HashMap is: "+hashMap.get(4));
     }
+
+    public void addingArrayNumbers(){
+        ArrayList<Integer> arr = new ArrayList<>(Arrays.asList(1,2,3));
+        ArrayList<Integer> arr2 = new ArrayList<>();
+        int[] array = {1,2,3,4,5,6};
+        int[] array2 = {1,2,3,4,5,6};
+        /*
+        for(int i = arr.size(); i >=0 ; i--){
+            System.out.println(arr.get(i));
+        }
+         */
+        for(int i = array.length-1; i >=0 ; i--){
+            array[i]=array[i];
+        }
+        System.out.println("The final array is: "+Arrays.toString(array));
+    }
+
+    public int majority(int[] nums){
+
+        int majorityCount = nums.length/2;
+
+        for(int i =0; i < nums.length; i++){
+            int count = 0;
+            for(int j=0 ; j<nums.length; j++){
+                if (nums[i]==nums[j] ){
+                    count+=1;
+                }
+            }
+            if(count >= majorityCount){
+                return nums[i];
+            }
+        }
+
+        return -1;
+
+    }
+
+    public int majorityElement(int[] nums) {
+        Arrays.sort(nums);
+        return nums[nums.length / 2];
+    }
+
+    public int major (int[] nums){
+        int majorityCount = nums.length/2;
+
+        for (int num : nums) {
+            int count = 0;
+            for (int elem : nums) {
+                if (elem == num) {
+                    count += 1;
+                }
+            }
+
+            if (count > majorityCount) {
+                return num;
+            }
+
+        }
+
+        return -1;
+    }
+
+    public int[] removeElements(int[] head, int val){
+        int i = 0;
+        System.out.println(Arrays.toString(head));
+        for(int j = 0 ; j < head.length; j++){
+
+            if(head[j]!=val){
+
+                head[i]=head[j];
+
+                i++;
+
+            }
+
+        }
+        System.out.println(Arrays.toString(head));
+        return head;
+    }
+
+
+
+
 
 }
 

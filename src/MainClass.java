@@ -2,6 +2,8 @@ import ConceptPractice.*;
 import problems.Fibonacci;
 import problems.ScannerClass;
 
+import java.util.Arrays;
+
 public class MainClass implements Runnable{
 
 	@Override
@@ -48,6 +50,7 @@ public class MainClass implements Runnable{
 		Switch switchStatement = new Switch();
 		HashMapClass hashMapClass = new HashMapClass();
 		List list = new List();
+		StringOperations stringOperations = new StringOperations();
 
 		/**
 		 loop.whileLoopOne();
@@ -152,7 +155,18 @@ public class MainClass implements Runnable{
 		list.removeDuplicate();
 		arrayTasks.removeDisSimilarValue();
 		arrayTasks.SumOfEvenNumber();
+		arrayTasks.addingArrayNumbers();
+		//System.out.println("the majority number: First method is >> " + arrayTasks.majority(new int[]{3,2,3}));
+		System.out.println("the majority number: First method is >> " + arrayTasks.majority(new int[]{6,6,6,7,7}));
+		//System.out.println("the majority number: First method is >> " + arrayTasks.majority(new int[]{6,5,5}));
+		//arrayTasks.majorityElement(new int[]{1});
+		//System.out.println("The majority elements are: " + arrayTasks.majorityElement(new int[]{7,7,1,1,1,7,7}));
 
+		System.out.println("the majority number: First method is >> " + arrayTasks.major(new int[]{6,6,6,7,7}));
+
+
+		System.out.println("the array after removing duplicate element is >> " + arrayTasks.removeElements(new int[]{1,2,6,3,4,5,6}, 6));
+		stringOperations.removeSubString();
 	}
 
 }

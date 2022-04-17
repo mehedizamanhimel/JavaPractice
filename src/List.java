@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
+import java.util.*;
 
 public class List {
 
@@ -25,6 +22,15 @@ public class List {
 
     public void removeDuplicate(){
         ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 2, 1, 4, 6, 3));
+        LinkedList<Integer> list3 = new LinkedList<>();
+
+        for(int i = 0 ; i < list3.size(); i++){
+            if(list3.get(i)==list3.get(i)+1){
+                list3.remove(list3.get(i));
+                System.out.println("");
+            }
+        }
+
         Collections.sort(list);
         ArrayList<Integer> list2 = new ArrayList<>();
         for (int i = 0 ; i < list.size(); i++){
@@ -36,6 +42,10 @@ public class List {
         }
         System.out.println("The list without duplicate value is: "+list);
     }
+
+
+
+
 
 
 }
