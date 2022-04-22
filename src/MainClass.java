@@ -2,8 +2,6 @@ import ConceptPractice.*;
 import problems.Fibonacci;
 import problems.ScannerClass;
 
-import java.util.Arrays;
-
 public class MainClass implements Runnable{
 
 	@Override
@@ -51,6 +49,7 @@ public class MainClass implements Runnable{
 		HashMapClass hashMapClass = new HashMapClass();
 		List list = new List();
 		StringOperations stringOperations = new StringOperations();
+		StringBuilder stringBuilder = new StringBuilder();
 
 		/**
 		 loop.whileLoopOne();
@@ -167,6 +166,14 @@ public class MainClass implements Runnable{
 
 		System.out.println("the array after removing duplicate element is >> " + arrayTasks.removeElements(new int[]{1,2,6,3,4,5,6}, 6));
 		stringOperations.removeSubString();
+
+		stringBuilder.practiceOne();
+		stringBuilder.practiceTwo();
+		System.out.println(stringOperations.removeSubstring2(new String[]{"uexk","aeuexkf","wgxih","yuexk","gxea","yuexkm","ypmfx","jjuexkmb","wqpri","aeuexkfpo","kqtnz","pkqtnza","nrbb","hmypmfx","krqs","jjuexkmbyt","zvru","ypmfxj"}));
+		System.out.println(stringOperations.arrayStringsAreEqual(new String[]{"ac", "b"}, new String[]{"a", "bc"}));
+		System.out.println(stringOperations.restoreString("codeleet",new int[]{4,5,6,7,0,2,1,3}));
+		System.out.println(stringOperations.restoreString2("codeleet",new int[]{4,5,6,7,0,2,1,3}));
+		System.out.println(arrayTasks.isSameTree());
 	}
 
 }

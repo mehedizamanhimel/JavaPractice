@@ -1,3 +1,4 @@
+import javax.swing.tree.TreeNode;
 import java.util.*;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -1210,8 +1211,7 @@ public class ArrayTasks {
         char ch;
         System.out.println("The initial string is : " + testStr);
         StringBuilder builder = new StringBuilder();
-        builder.append(testStr);
-        builder.reverse();
+
 
 
         System.out.println("The reverse output is : " + builder);
@@ -1484,8 +1484,7 @@ public class ArrayTasks {
 
         int ssss = Integer.reverse(numb);
         StringBuilder build = new StringBuilder();
-        build.append(s3);
-        build.reverse();
+
 
         System.out.println(ssss);
 
@@ -1872,7 +1871,10 @@ public class ArrayTasks {
         return head;
     }
 
+    public boolean isSameTree(TreeNode p, TreeNode q) {
 
+        return true;
+    }
 
 
 

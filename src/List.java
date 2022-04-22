@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class List {
+public class List<S> {
 
     public HashMap<String, Integer> returnBoth(int a, int b, int c, int d){
         int sum = a+b+c+d;
