@@ -2,6 +2,10 @@ import ConceptPractice.*;
 import problems.Fibonacci;
 import problems.ScannerClass;
 
+import javax.swing.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class MainClass implements Runnable{
 
 	@Override
@@ -173,7 +177,11 @@ public class MainClass implements Runnable{
 		System.out.println(stringOperations.arrayStringsAreEqual(new String[]{"ac", "b"}, new String[]{"a", "bc"}));
 		System.out.println(stringOperations.restoreString("codeleet",new int[]{4,5,6,7,0,2,1,3}));
 		System.out.println(stringOperations.restoreString2("codeleet",new int[]{4,5,6,7,0,2,1,3}));
-		System.out.println(arrayTasks.isSameTree());
+		//System.out.println(arrayTasks.plusOne(new int[]{1,2,3}));
+		System.out.println(Arrays.toString(arrayTasks.plusOne(new int[]{1,2,3,4})));
+		arrayTasks.kthSmallest(new int[][]{{1,2,3},{1,2,3}}, 5);
+		//System.out.println(Arrays.deepToString(arrayTasks.kthSmallest(new int[][]{{1},{1}}, 5)));
+
 	}
 
 }

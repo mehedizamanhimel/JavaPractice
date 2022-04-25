@@ -1213,13 +1213,12 @@ public class ArrayTasks {
         StringBuilder builder = new StringBuilder();
 
 
-
         System.out.println("The reverse output is : " + builder);
 
 
         for (int i = 0; i < testStr.length(); i++) {
             ch = testStr.charAt(i);
-            testStr2 = ch+testStr2;
+            testStr2 = ch + testStr2;
         }
 
         System.out.println("The reverse output 2 is : " + testStr2);
@@ -1497,36 +1496,36 @@ public class ArrayTasks {
          */
         String abcd3 = "String";
         int tem = abcd3.length();
-        char ccc  = 0 ;
+        char ccc = 0;
         System.out.println(charset);
 
-        for (int i =0; i <abcd3.length(); i++){
+        for (int i = 0; i < abcd3.length(); i++) {
             ccc = abcd3.charAt(i);
             charset.add(ccc);
         }
         System.out.println(charset);
 
-        List<Integer> l1 = new ArrayList<>(Arrays.asList(5,8,5));
-        List<Integer> l2 = new ArrayList<>(Arrays.asList(2,6,4));
+        List<Integer> l1 = new ArrayList<>(Arrays.asList(5, 8, 5));
+        List<Integer> l2 = new ArrayList<>(Arrays.asList(2, 6, 4));
         List<Integer> l3 = new ArrayList<>();
         List<Object> l4 = new ArrayList<>();
         int abcd = 0;
 
-        for(int i =0 ; i < l1.size(); i++){
-            System.out.println(l1.get(i)+"");
-            for(int j =0 ; j < l2.size(); j++){
-                System.out.print(l2.get(j)+"");
-            l3.add(l1.get(i)+l2.get(j));
+        for (int i = 0; i < l1.size(); i++) {
+            System.out.println(l1.get(i) + "");
+            for (int j = 0; j < l2.size(); j++) {
+                System.out.print(l2.get(j) + "");
+                l3.add(l1.get(i) + l2.get(j));
             }
             break;
         }
 
-        System.out.println("The int is: "+abcd);
-        System.out.println("The summm is: "+l3);
+        System.out.println("The int is: " + abcd);
+        System.out.println("The summm is: " + l3);
 
-        for(int i =0 ; i < l1.size(); i++) {
+        for (int i = 0; i < l1.size(); i++) {
             l4.addAll(Collections.singleton(l1.indexOf(i) + ""));
-            System.out.println("the the "+l1.indexOf(i) + "");
+            System.out.println("the the " + l1.indexOf(i) + "");
         }
         //System.out.println("");
 
@@ -1537,11 +1536,11 @@ public class ArrayTasks {
         sstr = sstr.replace(":","");
         sstr = sstr.replace(" ","");
          */
-        sstr = sstr.replaceAll("[^a-zA-Z0-9]","");
+        sstr = sstr.replaceAll("[^a-zA-Z0-9]", "");
         sstr = sstr.toLowerCase();
         System.out.println(sstr);
 
-        int brr[] = {1,2,3};
+        int brr[] = {1, 2, 3};
         System.out.println(Arrays.toString(brr));
 
         Collections.reverse(Arrays.asList(brr));
@@ -1550,7 +1549,7 @@ public class ArrayTasks {
 
     }
 
-    public boolean boopal(String sstr){
+    public boolean boopal(String sstr) {
 
         /*
         System.out.println(sstr);
@@ -1581,20 +1580,20 @@ public class ArrayTasks {
         */
         int num = 1669;
 
-        while (num >9){
-            num = num/10 + num%10;
+        while (num > 9) {
+            num = num / 10 + num % 10;
         }
-        System.out.println("The num is: "+num);
+        System.out.println("The num is: " + num);
 
         String str = Integer.toString(num);
 
-        for (int i =0; i < str.length()-1 ; i++){
-            for (int j =i+1; j < str.length() ; j++){
+        for (int i = 0; i < str.length() - 1; i++) {
+            for (int j = i + 1; j < str.length(); j++) {
                 i = Character.getNumericValue(str.charAt(i));
                 j = Character.getNumericValue(str.charAt(j));
-                System.out.println(i+"///");
-                System.out.println(j+"///");
-                if (((i*i) + (j*j)) ==1){
+                System.out.println(i + "///");
+                System.out.println(j + "///");
+                if (((i * i) + (j * j)) == 1) {
                     return true;
                 }
             }
@@ -1604,14 +1603,14 @@ public class ArrayTasks {
 
     public void returnFirstDuplicate() {
 
-        int[] array_s= {1,2,7,3,3,4,7,8,9,9,6,6,8};
+        int[] array_s = {1, 2, 7, 3, 3, 4, 7, 8, 9, 9, 6, 6, 8};
 
         System.out.println(Arrays.toString(array_s));
 
         int item = 0;
 
-        for (int i = 0; i <array_s.length-1 ; i++){
-            for (int j = i+1; j <array_s.length ; j++) {
+        for (int i = 0; i < array_s.length - 1; i++) {
+            for (int j = i + 1; j < array_s.length; j++) {
 
                 if (array_s[i] == array_s[j]) {
                     item = array_s[i];
@@ -1619,63 +1618,61 @@ public class ArrayTasks {
                 }
 
             }
-            if(item != 0)
+            if (item != 0)
                 break;
         }
 
-        System.out.println("the first duplicate value is: "+item);
+        System.out.println("the first duplicate value is: " + item);
 
-        ArrayList<Integer> arrList = new ArrayList<>(Arrays.asList(1,5,2,7,3,3,4,7,8,9,9,6,6,8,5));
+        ArrayList<Integer> arrList = new ArrayList<>(Arrays.asList(1, 5, 2, 7, 3, 3, 4, 7, 8, 9, 9, 6, 6, 8, 5));
 
-        int value= -1;
+        int value = -1;
 
-        for (int i = 0; i <arrList.size()-1 ; i++){
-            for (int j = i+1; j <arrList.size()-1 ; j++) {
+        for (int i = 0; i < arrList.size() - 1; i++) {
+            for (int j = i + 1; j < arrList.size() - 1; j++) {
 
-              if(arrList.get(i) == arrList.get(j)){
-                  value = arrList.get(i);
-                  break;
-              }
+                if (arrList.get(i) == arrList.get(j)) {
+                    value = arrList.get(i);
+                    break;
+                }
             }
-            if(value != -1)
+            if (value != -1)
                 break;
         }
 
-        System.out.println("the first duplicate value from arraylist is: "+value);
+        System.out.println("the first duplicate value from arraylist is: " + value);
 
 
-
-        String  charRepeat= "abcdefccd";
+        String charRepeat = "abcdefccd";
         char c = 0;
         HashMap<Character, Integer> hashMap = new HashMap<>();
-        for (int i = 0; i <charRepeat.length(); i++){
+        for (int i = 0; i < charRepeat.length(); i++) {
             c = charRepeat.charAt(i);
-            if(hashMap.containsKey(c)){
+            if (hashMap.containsKey(c)) {
 
-                hashMap.put(c, hashMap.get(c)+1);
-            }
-            else {
+                hashMap.put(c, hashMap.get(c) + 1);
+            } else {
                 hashMap.put(c, 1);
             }
         }
 
         int max = -1;
-        String str_2 ="";
+        String str_2 = "";
         //Character key;
-        for (Character key: hashMap.keySet()){
-            if(hashMap.get(key) >= max){
+        for (Character key : hashMap.keySet()) {
+            if (hashMap.get(key) >= max) {
                 max = hashMap.get(key);
                 str_2 = key.toString();
             }
 
         }
 
-        System.out.println(str_2+ " = " + max);
+        System.out.println(str_2 + " = " + max);
 
 
     }
 
-    public int replaceDuplicatewithDash(int[] nums){
+    public int replaceDuplicatewithDash(int[] nums) {
 
         //ArrayList<Integer> nums = new ArrayList<>(Arrays.asList(0,0,1,1,1,2,2,3,3,4));
         /*
@@ -1701,125 +1698,124 @@ public class ArrayTasks {
         System.out.println("The final array is: "+nums+" : and the length of the final array is: "+numslength3);
 
          */
-        if(nums.length == 0 )
-        return 0;
+        if (nums.length == 0)
+            return 0;
         int i = 0;
-        for (int j = 1; j < nums.length; i++){
-            if(nums[j]!=nums[i]){
+        for (int j = 1; j < nums.length; i++) {
+            if (nums[j] != nums[i]) {
                 i++;
-                nums[i]=nums[j];
+                nums[i] = nums[j];
             }
         }
-        return i+1;
+        return i + 1;
     }
 
-    public void SumOfUnique(){
-        int num1=0, num2 = 0, num3 = 0;
+    public void SumOfUnique() {
+        int num1 = 0, num2 = 0, num3 = 0;
 
-        ArrayList<Integer> nums = new ArrayList<>(Arrays.asList(1,2,3,2));
-        for (int i =0; i< nums.size(); i++){
-            for (int j =i+1; j< nums.size(); j++) {
+        ArrayList<Integer> nums = new ArrayList<>(Arrays.asList(1, 2, 3, 2));
+        for (int i = 0; i < nums.size(); i++) {
+            for (int j = i + 1; j < nums.size(); j++) {
                 if (nums.get(i) != nums.get(j)) {
-                    num1 = nums.get(i) ;
+                    num1 = nums.get(i);
                     num2 = nums.get(j);
                 }
-                num3 = num1+num2;
+                num3 = num1 + num2;
             }
             break;
         }
-        System.out.println("the sum of unique number is: "+num3);
+        System.out.println("the sum of unique number is: " + num3);
     }
 
-    public static int TestingALoop(int num2){
-        int num = 0 ;
+    public static int TestingALoop(int num2) {
+        int num = 0;
 
-        for (int i =0; i <11; i++){
-            if(i!=0)
-            num++;
+        for (int i = 0; i < 11; i++) {
+            if (i != 0)
+                num++;
         }
         System.out.println(num);
-        if (num2 > 0 ){
-            return num2 + TestingALoop(num2-1);
-        }
-        else {
+        if (num2 > 0) {
+            return num2 + TestingALoop(num2 - 1);
+        } else {
             return 0;
         }
 
 
     }
 
-    public void removeDisSimilarValue(){
-        ArrayList<Integer> fullArr = new ArrayList<>(Arrays.asList(1,2,3,4,5,6));
+    public void removeDisSimilarValue() {
+        ArrayList<Integer> fullArr = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
 
-        int initial = 0 ;
+        int initial = 0;
 
-        for (int i = 0 ; i< fullArr.size(); i++){
-            if(fullArr.get(i)%2==0 && fullArr.get(i)!=0){
-                initial = initial+fullArr.get(i);
+        for (int i = 0; i < fullArr.size(); i++) {
+            if (fullArr.get(i) % 2 == 0 && fullArr.get(i) != 0) {
+                initial = initial + fullArr.get(i);
 
             }
         }
-        System.out.println("The array is: " +fullArr);
-        System.out.println("The total sum of even numbers are: "+initial);
+        System.out.println("The array is: " + fullArr);
+        System.out.println("The total sum of even numbers are: " + initial);
 
     }
 
-    public void SumOfEvenNumber(){
+    public void SumOfEvenNumber() {
 
-        ArrayList<Integer> fullArr = new ArrayList<>(Arrays.asList(0,1,2,3,4,5,6));
+        ArrayList<Integer> fullArr = new ArrayList<>(Arrays.asList(0, 1, 2, 3, 4, 5, 6));
 
-        int initial = 0 ;
-        int count = 0 ;
+        int initial = 0;
+        int count = 0;
 
         HashSet<Integer> hashSet = new HashSet<>();
         HashMap<Integer, Integer> hashMap = new HashMap();
 
-        for (int i = 0 ; i< fullArr.size(); i++){
-            if(fullArr.get(i)%2==0 && fullArr.get(i)!=0){
-                initial = initial+fullArr.get(i);
+        for (int i = 0; i < fullArr.size(); i++) {
+            if (fullArr.get(i) % 2 == 0 && fullArr.get(i) != 0) {
+                initial = initial + fullArr.get(i);
                 count++;
                 hashSet.add(fullArr.get(i));
                 hashMap.put(count, initial);
             }
         }
-        System.out.println("The array is: " +fullArr);
-        System.out.println("The total sum of even numbers are: "+initial);
-        System.out.println("The Hashset is: "+hashSet);
-        System.out.println("The HashMap is: "+hashMap);
-        System.out.println("The first value of HashMap is: "+hashMap.get(1));
-        System.out.println("The second value of HashMap is: "+hashMap.get(2));
-        System.out.println("The third value of HashMap is: "+hashMap.get(3));
-        System.out.println("The fourth value of HashMap is: "+hashMap.get(4));
+        System.out.println("The array is: " + fullArr);
+        System.out.println("The total sum of even numbers are: " + initial);
+        System.out.println("The Hashset is: " + hashSet);
+        System.out.println("The HashMap is: " + hashMap);
+        System.out.println("The first value of HashMap is: " + hashMap.get(1));
+        System.out.println("The second value of HashMap is: " + hashMap.get(2));
+        System.out.println("The third value of HashMap is: " + hashMap.get(3));
+        System.out.println("The fourth value of HashMap is: " + hashMap.get(4));
     }
 
-    public void addingArrayNumbers(){
-        ArrayList<Integer> arr = new ArrayList<>(Arrays.asList(1,2,3));
+    public void addingArrayNumbers() {
+        ArrayList<Integer> arr = new ArrayList<>(Arrays.asList(1, 2, 3));
         ArrayList<Integer> arr2 = new ArrayList<>();
-        int[] array = {1,2,3,4,5,6};
-        int[] array2 = {1,2,3,4,5,6};
+        int[] array = {1, 2, 3, 4, 5, 6};
+        int[] array2 = {1, 2, 3, 4, 5, 6};
         /*
         for(int i = arr.size(); i >=0 ; i--){
             System.out.println(arr.get(i));
         }
          */
-        for(int i = array.length-1; i >=0 ; i--){
-            array[i]=array[i];
+        for (int i = array.length - 1; i >= 0; i--) {
+            array[i] = array[i];
         }
-        System.out.println("The final array is: "+Arrays.toString(array));
+        System.out.println("The final array is: " + Arrays.toString(array));
     }
 
-    public int majority(int[] nums){
+    public int majority(int[] nums) {
 
-        int majorityCount = nums.length/2;
+        int majorityCount = nums.length / 2;
 
-        for(int i =0; i < nums.length; i++){
+        for (int i = 0; i < nums.length; i++) {
             int count = 0;
-            for(int j=0 ; j<nums.length; j++){
-                if (nums[i]==nums[j] ){
-                    count+=1;
+            for (int j = 0; j < nums.length; j++) {
+                if (nums[i] == nums[j]) {
+                    count += 1;
                 }
             }
-            if(count >= majorityCount){
+            if (count >= majorityCount) {
                 return nums[i];
             }
         }
@@ -1833,8 +1829,8 @@ public class ArrayTasks {
         return nums[nums.length / 2];
     }
 
-    public int major (int[] nums){
-        int majorityCount = nums.length/2;
+    public int major(int[] nums) {
+        int majorityCount = nums.length / 2;
 
         for (int num : nums) {
             int count = 0;
@@ -1853,14 +1849,14 @@ public class ArrayTasks {
         return -1;
     }
 
-    public int[] removeElements(int[] head, int val){
+    public int[] removeElements(int[] head, int val) {
         int i = 0;
         System.out.println(Arrays.toString(head));
-        for(int j = 0 ; j < head.length; j++){
+        for (int j = 0; j < head.length; j++) {
 
-            if(head[j]!=val){
+            if (head[j] != val) {
 
-                head[i]=head[j];
+                head[i] = head[j];
 
                 i++;
 
@@ -1871,12 +1867,43 @@ public class ArrayTasks {
         return head;
     }
 
-    public boolean isSameTree(TreeNode p, TreeNode q) {
 
-        return true;
+
+    public int[] plusOne(int[] digits) {
+        int n = digits.length;
+        if (n==0){
+            return null;
+        }
+
+        for (int i = n-1 ; i>=0 ; i--){
+            if(digits[i]<9){
+                digits[i]++;
+                break;
+            }
+//            digits[i]=0;
+        }
+
+        /*
+        int[] newNumber = new int [n+1];
+        newNumber[0] = 1;
+        return newNumber;
+        */
+
+        return digits;
     }
 
+    public int kthSmallest(int[][] mat, int k) {
+        int[][] arr = {{1},{1}};
+        for (int i = 0 ; i <mat.length; i++ ){
+            for (int j = 0 ; j <mat[i].length; j++ ){
+                System.out.print(mat[i][j] + "\t");
+            }
+            System.out.println("");
+        }
 
+        System.out.println(k);
+        return k;
+    }
 
 }
 
