@@ -1319,7 +1319,7 @@ public class ArrayTasks {
     }
 
 
-    public void merge() {
+    public void merge2() {
         int nums1[] = {1, 2, 3, 0, 0, 0};
         int nums2[] = {2, 5, 6};
         int m = 3, n = 3, newSize = m + n;
@@ -1903,6 +1903,45 @@ public class ArrayTasks {
 
         System.out.println(k);
         return k;
+    }
+
+
+    public void merge() {
+        int[] nums1={1,2,3,0,0,0};
+        int[] nums2={2,5,6};
+        int m=3,n=3;
+
+        int newSize = m+n;
+        int[] arr = new int[newSize];
+
+        for(int i =0; i< m; i++){
+            for(int j =0; j< n; j++){
+                arr[i] = nums1[i];
+                //arr[j] = nums2[j];
+
+            }
+
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public void moveZeroes(int[] nums) {
+        /*
+        algorithm:
+        1. run a for loop over the array.
+        2. initialize int i for first element
+        3. initialize int j for second element where j=i+1
+         */
+
+    }
+
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+        for(int i =0; i<nums.length; i++){
+         if(nums[i]<=k){
+             return true;
+            }
+        }
+        return false;
     }
 
 }

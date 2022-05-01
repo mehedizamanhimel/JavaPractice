@@ -137,7 +137,7 @@ public class MainClass implements Runnable{
 		arrayTasks.problem30();
 		arrayTasks.arrT();
 		hashMapClass.hashSetOne();
-		arrayTasks.merge();
+
 		//arrayTasks.boopal("A man, a plan, a canal: Panama");
 		System.out.println(arrayTasks.boopal("A man, a plan, a canal: Panama"));
 		arrayTasks.returnFirstDuplicate();
@@ -181,7 +181,11 @@ public class MainClass implements Runnable{
 		System.out.println(Arrays.toString(arrayTasks.plusOne(new int[]{1,2,3,4})));
 		arrayTasks.kthSmallest(new int[][]{{1,2,3},{1,2,3}}, 5);
 		//System.out.println(Arrays.deepToString(arrayTasks.kthSmallest(new int[][]{{1},{1}}, 5)));
-
+		arrayTasks.merge();
+		System.out.println(arrayTasks.containsNearbyDuplicate(new int[]{1,2,3,1},3));
 	}
 
 }
+
+
+
