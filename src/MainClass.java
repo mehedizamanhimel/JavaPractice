@@ -183,6 +183,7 @@ public class MainClass implements Runnable{
 		//System.out.println(Arrays.deepToString(arrayTasks.kthSmallest(new int[][]{{1},{1}}, 5)));
 		arrayTasks.merge();
 		System.out.println(arrayTasks.containsNearbyDuplicate(new int[]{1,2,3,1},3));
+		System.out.println("the leetcode shuffle answer is: "+ Arrays.toString(arrayTasks.shuffle(new int[]{1,2,3,4,4,3,2,1},4)));
 	}
 
 }
