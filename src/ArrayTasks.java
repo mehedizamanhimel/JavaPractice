@@ -1964,7 +1964,55 @@ public class ArrayTasks {
         return res;
     }
 
+    public int maxProfit(int[] prices) {
+
+        int profit = 0;
+        int maxprofit = 0;
+        int buy = Integer.MAX_VALUE;
+        /*
+        Method 1
+        for( int i=0; i<prices.length; i++){
+            for(int j = i+1; j<prices.length ; j++){
+                profit = prices[j]-prices[i];
+                if(profit > maxprofit){
+                    maxprofit = profit;
+                    //return maxprofit;
+                }
+
+            }
+        }
+        */
+
+        // solution with faster route
+        for(int i = 0 ; i < prices.length; i++){
+            if(prices[i]<buy){
+                buy=prices[i];
+            }
+            else {
+                maxprofit = Math.max(maxprofit, prices[i]-buy);
+            }
+        }
+        return maxprofit ;
+    }
+
+    public int maximumDifference(int[] nums) {
+        int maxmin = 0;
+        for(int i =0 ; i< nums.length; i++){
+            for(int j =i+1 ; j< nums.length; j++){
+                if(nums[i]<nums[j]){
+                    maxmin = Math.max(maxmin, nums[j] - nums [i]);
+                }
+            }
+        }
+        return maxmin;
+    }
+
+
 }
+
+
+
+
 
 /*
 
