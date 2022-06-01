@@ -13,7 +13,7 @@ public class Fibonacci {
     }
 
     public void fiboTwo() {
-        int number1 = 0, number2 = 1,number3, a = 0, sum = 10;
+        int number1 = 0, number2 = 1,number3,  sum = 10;
 
         System.out.println(number1+"  "+number2);
         for (int i = 2; i < sum; ++i) {

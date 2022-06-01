@@ -1935,14 +1935,7 @@ public class ArrayTasks {
 
     }
 
-    public boolean containsNearbyDuplicate(int[] nums, int k) {
-        for(int i =0; i<nums.length; i++){
-         if(nums[i]<=k){
-             return true;
-            }
-        }
-        return false;
-    }
+
 
     public int[] shuffle(int[] nums, int n) {
 
@@ -1997,6 +1990,7 @@ public class ArrayTasks {
 
     public int maximumDifference(int[] nums) {
         int maxmin = 0;
+        int min = nums[0];
         for(int i =0 ; i< nums.length; i++){
             for(int j =i+1 ; j< nums.length; j++){
                 if(nums[i]<nums[j]){
@@ -2007,6 +2001,78 @@ public class ArrayTasks {
         return maxmin;
     }
 
+    public void arrayMaxMinTest(){
+        int[] a = {5,4,3,2,1};
+        int result = -1 ;
+        int start = a[0];
+
+        for (int i =0; i < a.length; i++){
+
+            if(a[i]<start){
+                start =a[i];
+            }
+            if(a[i] > start){
+                result = Math.max(result, a[i]-start);
+            }
+
+        }
+        System.out.println(result);
+    }
+
+    public void fiboprac(){
+        int firstNum = 0, secondNum = 1, Sum=0 , totaldigit = 9 ;
+        for(int i = 0 ; i < totaldigit ; i++){
+            Sum = firstNum+secondNum;
+            firstNum= secondNum;
+            secondNum = Sum;
+
+            System.out.println(Sum);
+        }
+    }
+
+    public List<List<Integer>> threeSum(int[] nums) {
+
+
+        return null;
+    }
+
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        HashSet<Integer> hashSet = new HashSet<>();
+        for(int i =0; i<nums.length; i++){
+            if (map.containsKey(nums[i]) && (i - map.get(nums[i])) <= k) {
+                return true;
+            }
+            map.put(nums[i], i);
+            /*
+            Integer num = hashMap.put(nums[i], i);
+            if(num!=0 && i-num<=k ){
+                    return true;
+            }
+
+             */
+            /*
+            for(int j =i+1; j<nums.length; j++) {
+                if (nums[i] == nums[j] && nums[i]-nums[j] <=k) {
+                    return true;
+                }
+            }
+
+             */
+
+        }
+        return false;
+    }
+
+    public int search(int[] nums, int target) {
+        int num = 0;
+        for(int i = 0 ; i< nums.length; i++){
+            if(nums[i]==target){
+                return i;
+            }
+        }
+        return -1;
+    }
 
 }
 

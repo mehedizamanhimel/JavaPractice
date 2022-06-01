@@ -107,4 +107,8 @@ public class StringOperations {
 
         return String.valueOf(cset);
     }
+
+    public void StringOps() {
+
+    }
 }
