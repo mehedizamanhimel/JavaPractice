@@ -1,4 +1,5 @@
-import javax.swing.tree.TreeNode;
+import sun.tools.tree.Node;
+
 import java.util.*;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -1868,15 +1869,14 @@ public class ArrayTasks {
     }
 
 
-
     public int[] plusOne(int[] digits) {
         int n = digits.length;
-        if (n==0){
+        if (n == 0) {
             return null;
         }
 
-        for (int i = n-1 ; i>=0 ; i--){
-            if(digits[i]<9){
+        for (int i = n - 1; i >= 0; i--) {
+            if (digits[i] < 9) {
                 digits[i]++;
                 break;
             }
@@ -1893,9 +1893,9 @@ public class ArrayTasks {
     }
 
     public int kthSmallest(int[][] mat, int k) {
-        int[][] arr = {{1},{1}};
-        for (int i = 0 ; i <mat.length; i++ ){
-            for (int j = 0 ; j <mat[i].length; j++ ){
+        int[][] arr = {{1}, {1}};
+        for (int i = 0; i < mat.length; i++) {
+            for (int j = 0; j < mat[i].length; j++) {
                 System.out.print(mat[i][j] + "\t");
             }
             System.out.println("");
@@ -1907,15 +1907,15 @@ public class ArrayTasks {
 
 
     public void merge() {
-        int[] nums1={1,2,3,0,0,0};
-        int[] nums2={2,5,6};
-        int m=3,n=3;
+        int[] nums1 = {1, 2, 3, 0, 0, 0};
+        int[] nums2 = {2, 5, 6};
+        int m = 3, n = 3;
 
-        int newSize = m+n;
+        int newSize = m + n;
         int[] arr = new int[newSize];
 
-        for(int i =0; i< m; i++){
-            for(int j =0; j< n; j++){
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
                 arr[i] = nums1[i];
                 //arr[j] = nums2[j];
 
@@ -1936,7 +1936,6 @@ public class ArrayTasks {
     }
 
 
-
     public int[] shuffle(int[] nums, int n) {
 
         /*
@@ -1949,10 +1948,10 @@ public class ArrayTasks {
         }
          */
 
-        int[] res = new int[2*n];
-        for(int i = 0; i < n; i++){
+        int[] res = new int[2 * n];
+        for (int i = 0; i < n; i++) {
             res[2 * i] = nums[i];
-            res[2 * i + 1] = nums[n+i];
+            res[2 * i + 1] = nums[n + i];
         }
         return res;
     }
@@ -1977,53 +1976,52 @@ public class ArrayTasks {
         */
 
         // solution with faster route
-        for(int i = 0 ; i < prices.length; i++){
-            if(prices[i]<buy){
-                buy=prices[i];
-            }
-            else {
-                maxprofit = Math.max(maxprofit, prices[i]-buy);
+        for (int i = 0; i < prices.length; i++) {
+            if (prices[i] < buy) {
+                buy = prices[i];
+            } else {
+                maxprofit = Math.max(maxprofit, prices[i] - buy);
             }
         }
-        return maxprofit ;
+        return maxprofit;
     }
 
     public int maximumDifference(int[] nums) {
         int maxmin = 0;
         int min = nums[0];
-        for(int i =0 ; i< nums.length; i++){
-            for(int j =i+1 ; j< nums.length; j++){
-                if(nums[i]<nums[j]){
-                    maxmin = Math.max(maxmin, nums[j] - nums [i]);
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] < nums[j]) {
+                    maxmin = Math.max(maxmin, nums[j] - nums[i]);
                 }
             }
         }
         return maxmin;
     }
 
-    public void arrayMaxMinTest(){
-        int[] a = {5,4,3,2,1};
-        int result = -1 ;
+    public void arrayMaxMinTest() {
+        int[] a = {5, 4, 3, 2, 1};
+        int result = -1;
         int start = a[0];
 
-        for (int i =0; i < a.length; i++){
+        for (int i = 0; i < a.length; i++) {
 
-            if(a[i]<start){
-                start =a[i];
+            if (a[i] < start) {
+                start = a[i];
             }
-            if(a[i] > start){
-                result = Math.max(result, a[i]-start);
+            if (a[i] > start) {
+                result = Math.max(result, a[i] - start);
             }
 
         }
         System.out.println(result);
     }
 
-    public void fiboprac(){
-        int firstNum = 0, secondNum = 1, Sum=0 , totaldigit = 9 ;
-        for(int i = 0 ; i < totaldigit ; i++){
-            Sum = firstNum+secondNum;
-            firstNum= secondNum;
+    public void fiboprac() {
+        int firstNum = 0, secondNum = 1, Sum = 0, totaldigit = 9;
+        for (int i = 0; i < totaldigit; i++) {
+            Sum = firstNum + secondNum;
+            firstNum = secondNum;
             secondNum = Sum;
 
             System.out.println(Sum);
@@ -2039,7 +2037,7 @@ public class ArrayTasks {
     public boolean containsNearbyDuplicate(int[] nums, int k) {
         HashMap<Integer, Integer> map = new HashMap<>();
         HashSet<Integer> hashSet = new HashSet<>();
-        for(int i =0; i<nums.length; i++){
+        for (int i = 0; i < nums.length; i++) {
             if (map.containsKey(nums[i]) && (i - map.get(nums[i])) <= k) {
                 return true;
             }
@@ -2066,12 +2064,365 @@ public class ArrayTasks {
 
     public int search(int[] nums, int target) {
         int num = 0;
-        for(int i = 0 ; i< nums.length; i++){
-            if(nums[i]==target){
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == target) {
                 return i;
             }
         }
         return -1;
+    }
+
+    public int getSum(int a, int b) {
+        int ans = Math.addExact(a, b);
+        int ans2 = Integer.sum(a, b);
+        return ans2;
+    }
+
+    //{1,2,3,4,5,6}
+    public List<List<Integer>> threeSum2(int[] nums) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                for (int k = j + 1; k < nums.length; k++) {
+                    if (nums[i] + nums[j] + nums[k] == 0) {
+                        List<Integer> triplet = new ArrayList<Integer>();
+                        triplet.add(nums[i]);
+                        triplet.add(nums[j]);
+                        triplet.add(nums[k]);
+                        Collections.sort(triplet);
+                        result.add(triplet);
+                    }
+                }
+            }
+        }
+        result = new ArrayList<List<Integer>>(new LinkedHashSet<List<Integer>>(result));
+
+
+        return result;
+    }
+
+
+    public void nodeOps() {
+        int i = 0;
+        Node head;
+        Node next;
+
+    }
+
+    public List<Integer> reverseList(List<Integer> head) {
+
+        List<Integer> next = new ArrayList<>();
+        while (head != null) {
+
+
+        }
+
+        return next;
+    }
+
+    public int missingNumber(int[] nums) {
+        int n = nums.length;
+        int total = n * (n + 1) / 2;
+        int sum = 0;
+        for (int num : nums) {
+            sum += num;
+        }
+        System.out.println("the total is: " + sum);
+        return total - sum;
+    }
+
+    public int findDuplicate(int[] nums) {
+
+        /*
+        for (int i =0; i < nums.length ; i++){
+            for (int j =i+1; j < nums.length ; j++){
+                if (nums[i]==nums[j]){
+                    return nums[i];
+                }
+            }
+        }
+        return -1;
+
+         */
+        int length = nums.length;
+        HashSet<Integer> hashSet = new HashSet<>();
+        for (int i = 0; i < length; i++) {
+            if (!hashSet.add(nums[i])) {
+                return nums[i];
+            }
+        }
+        return length;
+    }
+
+    public int[] findErrorNums(int[] nums) {
+
+        /*
+
+        int num = 0 ;
+        HashSet<Integer> hashSet = new HashSet<>();
+        for (int i:nums){
+            if(hashSet.contains(i))
+                num = i;
+                hashSet.add(i);
+        }
+
+        for (int i =1; i <= nums.length; i++){
+            if(!hashSet.contains(i)){
+                return new int[]{num, i};
+            }
+        }
+        return new int[]{};
+
+
+        int num=0;
+        HashSet<Integer> hashSet = new HashSet<>();
+
+        for(int n : nums){
+            if(hashSet.contains(n))
+                num=n;
+            hashSet.add(n);
+        }
+
+        for(int i=1;i<=nums.length;i++){
+            if(!hashSet.contains(i))
+                return new int[]{num,i};
+        }
+
+        return new int[]{};
+        */
+
+
+        int[] result = new int[2];
+        int[] num2 = {1, 2, 3, 4, 5, 6, 6};
+
+        System.out.println("1st print" + Arrays.toString(nums));
+
+        int[] temp = new int[nums.length + 1];
+        int[] temp2 = new int[num2.length + 1];
+
+        System.out.println("2nd print" + Arrays.toString(temp));
+
+        for (int i = 0; i < nums.length; i++) {
+            temp[nums[i]]++;
+        }
+
+        System.out.println("3rd print" + Arrays.toString(temp));
+
+        for (int i = 0; i < num2.length; i++) {
+            temp2[num2[i]]++;
+        }
+        System.out.println("4th print" + Arrays.toString(temp2));
+        for (int i = 1; i <= nums.length; i++) {
+            if (temp[i] == 2) result[0] = i;
+            if (temp[i] == 0) result[1] = i;
+        }
+
+        return result;
+
+    }
+
+    public int[] finderror2(int[] nums) {
+        int[] result = new int[2];
+        int[] temp = new int[nums.length + 1];
+        for (int i = 0; i < nums.length; i++) {
+            temp[nums[i]]++;
+        }
+
+        for (int i = 1; i < nums.length; i++) {
+            System.out.println("@@" + i);
+            System.out.println("**" + nums[i]);
+            if (temp[i] == 2)
+                // System.out.println(i);
+                result[0] = i;
+
+            if (temp[i] == 0)
+                //  System.out.println(i);
+                result[1] = i;
+        }
+
+        return result;
+    }
+
+    public int maxProductDifference(int[] nums) {
+
+        Arrays.sort(nums);
+        int max1 = 0, max2 = 0, min1 = 0, min2 = 0, sum = 0;
+
+
+        /*
+        for (int i :nums){
+            max = Math.max(i, max);
+            System.out.println("The max number "+max);
+        }
+
+        for (int i =0; i <nums.length; i++){
+            min = Math.min(max, nums[i]);
+            System.out.println("The min number "+min);
+        }
+        */
+        for (int i = 0; i < nums.length; i++) {
+            min1 = nums[0];
+            min2 = nums[1];
+            max1 = nums[nums.length - 2];
+            max2 = nums[nums.length - 1];
+            return (max1 * max2) - (min1 * min2);
+        }
+
+        return 0;
+    }
+
+    public void practice() {
+        int num = 0;
+        for (int i = 1; i < 10; i++) {
+            num++;
+        }
+        System.out.println(num);
+    }
+
+    public void pointerCompare() {
+        int[] nums = {1, 2, 3, 4
+
+        };
+        int[] nums2 = new int[2];
+        int[] nums3 = new int[nums.length];
+        int val = 5;
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] + nums[j] == val) {
+                    nums2[0] = nums[i];
+                    nums2[1] = nums[j];
+                }
+            }
+        }
+        System.out.println("The two pointer is: " + Arrays.toString(nums2));
+
+
+        for (int i = 0; i < nums.length - 1; i++) {
+
+            if (nums[i] + nums[i + 1] == val) {
+                nums2[0] = nums[i];
+                nums2[1] = nums[i + 1];
+            }
+
+        }
+        System.out.println("The two pointer2 is: " + Arrays.toString(nums2));
+
+        // finding the sum of previous and current
+
+        System.out.println("The initial array is: " + Arrays.toString(nums));
+
+        int result = 0;
+        for (int i = 1; i < nums.length; i++) {
+            result = nums[i - 1] + nums[i];
+            nums[i] = result;
+        }
+
+        System.out.println("The sum array is: " + Arrays.toString(nums));
+
+    }
+
+    public int countMatches(List<List<String>> items, String ruleKey, String ruleValue) {
+        int value = 0;
+
+
+        List<String> list = new ArrayList<String>(Arrays.asList("", ""));
+
+        for (int i = 0; i < items.size(); i++) {
+            if (ruleKey.equals("type") && items.get(i).get(0).equals(ruleValue)) {
+                value++;
+            }
+            if (ruleKey.equals("color") && items.get(i).get(1).equals(ruleValue)) {
+                value++;
+            }
+            if (ruleKey.equals("name") && items.get(i).get(2).equals(ruleValue)) {
+                value++;
+            }
+        }
+
+        return value;
+    }
+
+    public int maxPower(String s) {
+        int result = 0;
+        int result2 = 0;
+        if (s.length() == 1) {
+            return 1;
+        }
+
+        for (int i = 1; i < s.length(); i++) {
+            if (s.charAt(i - 1) == s.charAt(i)) {
+                result++;
+            } else {
+                result = 0;
+            }
+            result2 = Math.max(result2, result + 1);
+        }
+
+
+        return result2;
+    }
+
+    public int findMaxConsecutiveOnes(int[] nums) {
+        int result = 0;
+        int result2 = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 1) {
+                result++;
+                result2 = Math.max(result2, result);
+                /*
+                if(result2<result){
+                    result2=result;
+                }
+
+                 */
+            } else {
+                result = 0;
+            }
+        }
+        return result2;
+    }
+
+    public boolean checkZeroOnes(String s) {
+        int length0 = 0, length1 = 0, maxLen0 = 0, maxLen1 = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '1') {
+                length1++;
+                length0 = 0;
+                maxLen1 = Integer.max(maxLen1, length1);
+            } else if (s.charAt(i) == '0') {
+                length0++;
+                length1 = 0;
+                maxLen0 = Integer.max(maxLen0, length0);
+            }
+        }
+        return maxLen1 > maxLen0;
+    }
+
+    public boolean checkOnesSegment(String s) {
+
+        return !s.contains("01");
+    }
+
+    public String longestCommonPrefix(String[] strs) {
+        Arrays.sort(strs);
+
+        int length = strs.length;
+
+        String firstVal = strs[0];
+        String secondVal = strs[length - 1];
+        String result = "";
+
+        for (int i = 0; i < firstVal.length(); i++) {
+            if (firstVal.charAt(i) == secondVal.charAt(i)) {
+                result += firstVal.charAt(i);
+            } else {
+                break;
+            }
+        }
+        return result;
+
     }
 
 }

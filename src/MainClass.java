@@ -2,7 +2,6 @@ import ConceptPractice.*;
 import problems.Fibonacci;
 import problems.ScannerClass;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -55,6 +54,7 @@ public class MainClass implements Runnable{
 		StringOperations stringOperations = new StringOperations();
 		StringBuilder stringBuilder = new StringBuilder();
 		MaxMin maxMin = new MaxMin();
+		Binary binary = new Binary();
 
 		/**
 		 loop.whileLoopOne();
@@ -196,6 +196,21 @@ public class MainClass implements Runnable{
 		arrayTasks.fiboprac();
 		System.out.println(arrayTasks.containsNearbyDuplicate(new int[]{1,2,3,1,2,3},2));
 		System.out.println(arrayTasks.search(new int[]{1},0));
+		System.out.println(arrayTasks.getSum(1,2));
+		System.out.println(binary.missingNumber(new int[]{3,0,1}));
+		System.out.println(arrayTasks.missingNumber(new int[]{3,0,1,4,5,6}));
+		System.out.println( "The duplicate value is: "+ arrayTasks.findDuplicate(new int[]{3,1,2,4,2}));
+		System.out.println( "The error value is: "+ Arrays.toString(arrayTasks.findErrorNums(new int[]{1,2,3,4,5,6,7,7,9})));
+		System.out.println( "The error value2 is: "+ Arrays.toString(arrayTasks.finderror2(new int[]{1,2,3,4,5,6,7,7,9})));
+		System.out.println( "The max difference is: "+ (arrayTasks.maxProductDifference(new int[]{4,2,5,9,7,4,8})));
+		arrayTasks.practice();
+		arrayTasks.pointerCompare();
+		System.out.println("The highest value is substring is: "+arrayTasks.maxPower("abbcccddddeeeeedcba"));
+		System.out.println("The max consutive is: "+arrayTasks.findMaxConsecutiveOnes(new int[]{0}));
+		System.out.println("The value of checkZeroOnes is: "+arrayTasks.checkZeroOnes("110100010"));
+		System.out.println("The value of checkOnesSegment is: "+arrayTasks.checkOnesSegment("110"));
+		System.out.println( "The max difference is: "+ (arrayTasks.longestCommonPrefix(new String[]{"flower","flow","flight","fldd" })));
+		System.out.println( "The max difference is: "+ (arrayTasks.longestCommonPrefix(new String[]{"ab", "a"})));
 	}
 
 }
