@@ -2425,6 +2425,22 @@ public class ArrayTasks {
 
     }
 
+    public int mostWordsFound(String[]sentences) {
+        int count = 0;
+        String[]abc = {"abc abc abc","abcd abcd abcd"};
+        for(int i = 0; i<abc.length;i++){
+            count =abc[i].length();
+            System.out.println(abc[i].length());
+
+        }
+        return count;
+    }
+
+    public int[] smallerNumbersThanCurrent(int[] nums) {
+
+        return 0;
+    }
+
 }
 
 
