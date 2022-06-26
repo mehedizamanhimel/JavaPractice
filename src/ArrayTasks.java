@@ -2427,18 +2427,55 @@ public class ArrayTasks {
 
     public int mostWordsFound(String[]sentences) {
         int count = 0;
+
         String[]abc = {"abc abc abc","abcd abcd abcd"};
-        for(int i = 0; i<abc.length;i++){
+        String[] val = new String[0];
+        String[] val2 = new String[0];
+        for(int i = 1; i<abc.length;i++){
+
             count =abc[i].length();
-            System.out.println(abc[i].length());
+            val2 = abc[i-1].split(" ");
+            val = abc[i].split(" ");
 
         }
+        System.out.println(Arrays.toString(val));
+        System.out.println(Arrays.toString(val2));
         return count;
     }
 
     public int[] smallerNumbersThanCurrent(int[] nums) {
 
-        return 0;
+        int[] newNums = new int[nums.length];
+        List<Integer> list = new ArrayList<>();
+
+        for(int i: nums)
+            list.add(i);
+
+        System.out.println(list);
+        Collections.sort(list);
+        System.out.println(list);
+
+        for (int i=0; i<nums.length;i++)
+            newNums[i]=list.indexOf(nums[i]);
+
+        System.out.println(Arrays.toString(newNums));
+
+
+        return newNums;
+
+    }
+
+    public int[] smallerNumbersThanCurrent2(int[] nums) {
+        int[] temp = new int[nums.length];
+        for (int i=0;i<nums.length;i++){
+            for (int j=0;j<nums.length;j++){
+                if (nums[i]>nums[j]){
+                    temp[i]++;
+                }
+            }
+        }
+        return temp;
+
     }
 
 }

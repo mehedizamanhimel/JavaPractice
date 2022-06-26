@@ -211,6 +211,10 @@ public class MainClass implements Runnable{
 		System.out.println("The value of checkOnesSegment is: "+arrayTasks.checkOnesSegment("110"));
 		System.out.println( "The max difference is: "+ (arrayTasks.longestCommonPrefix(new String[]{"flower","flow","flight","fldd" })));
 		System.out.println( "The max difference is: "+ (arrayTasks.longestCommonPrefix(new String[]{"ab", "a"})));
+
+		System.out.println( "The smallerNumbersThanCurrent is: "+ (Arrays.toString( arrayTasks.smallerNumbersThanCurrent(new int[]{8,1,2,2,3}))));
+		System.out.println( "The smallerNumbersThanCurrent2 is: "+ (Arrays.toString( arrayTasks.smallerNumbersThanCurrent2(new int[]{8,1,2,2,3}))));
+
 		System.out.println( "The max difference is: "+ (arrayTasks.mostWordsFound(new String[]{"","",""})));
 	}
 
