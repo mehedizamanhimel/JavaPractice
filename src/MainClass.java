@@ -215,10 +215,16 @@ public class MainClass implements Runnable{
 		System.out.println( "The smallerNumbersThanCurrent is: "+ (Arrays.toString( arrayTasks.smallerNumbersThanCurrent(new int[]{8,1,2,2,3}))));
 		System.out.println( "The smallerNumbersThanCurrent2 is: "+ (Arrays.toString( arrayTasks.smallerNumbersThanCurrent2(new int[]{8,1,2,2,3}))));
 
-		System.out.println( "The max difference is: "+ (arrayTasks.mostWordsFound(new String[]{"","",""})));
+		System.out.println( "The max difference is: "+ (arrayTasks.mostWordsFound(new String[]{"abcd abcd abcd abcd abcd eee","abc abc abc abcd"})));
+		System.out.println( "The max difference is: "+ (arrayTasks.mostWordsFound(new String[]{"w jrpihe zsyqn l dxchifbxlasaehj","nmmfrwyl jscqyxk a xfibiooix xolyqfdspkliyejsnksfewbjom","xnleojowaxwpyogyrayfgyuzhgtdzrsyococuqexggigtberizdzlyrdsfvryiynhg","krpwiazoulcixkkeyogizvicdkbrsiiuhizhkxdpssynfzuigvcbovm","rgmz rgztiup wqnvbucfqcyjivvoeedyxvjsmtqwpqpxmzdupfyfeewxegrlbjtsjkusyektigr","o lgsbechr lqcgfiat pkqdutzrq iveyv iqzgvyddyoqqmqerbmkxlbtmdtkinlk","hrvh efqvjilibdqxjlpmanmogiossjyxepotezo","qstd zui nbbohtuk","qsdrerdzjvhxjqchvuewevyzlkyydpeeblpc"})));
+		System.out.println( "The countValidWords is: "+ (arrayTasks.countValidWords("abcd abcd abcd")));
 	}
 
 }
+
+/*
+
+ */
 
 
 

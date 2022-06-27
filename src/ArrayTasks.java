@@ -2426,21 +2426,17 @@ public class ArrayTasks {
     }
 
     public int mostWordsFound(String[]sentences) {
-        int count = 0;
+        int max=0;
 
-        String[]abc = {"abc abc abc","abcd abcd abcd"};
-        String[] val = new String[0];
-        String[] val2 = new String[0];
-        for(int i = 1; i<abc.length;i++){
-
-            count =abc[i].length();
-            val2 = abc[i-1].split(" ");
-            val = abc[i].split(" ");
+        for(int i = 0; i<sentences.length;i++){
+           String[] wordss = sentences[i].split(" ");
+           max = Math.max(max,wordss.length);
 
         }
-        
+        System.out.println(max);
 
-        return count;
+
+        return max;
     }
 
     public int[] smallerNumbersThanCurrent(int[] nums) {
@@ -2476,6 +2472,19 @@ public class ArrayTasks {
         }
         return temp;
 
+    }
+
+    public int countValidWords(String sentence) {
+
+        if(sentence.length()==0) return 0;
+        String[] newval = sentence.strip().split("\\s+");
+        int count =0;
+        int length=newval.length;
+        for(int i=1; i<length;i++){
+            
+            count++;
+        }
+        return count;
     }
 
 }
