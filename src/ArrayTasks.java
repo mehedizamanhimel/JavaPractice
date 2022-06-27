@@ -2438,8 +2438,8 @@ public class ArrayTasks {
             val = abc[i].split(" ");
 
         }
-        System.out.println(Arrays.toString(val));
-        System.out.println(Arrays.toString(val2));
+        
+
         return count;
     }
 
