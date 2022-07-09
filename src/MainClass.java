@@ -218,6 +218,15 @@ public class MainClass implements Runnable{
 		System.out.println( "The max difference is: "+ (arrayTasks.mostWordsFound(new String[]{"abcd abcd abcd abcd abcd eee","abc abc abc abcd"})));
 		System.out.println( "The max difference is: "+ (arrayTasks.mostWordsFound(new String[]{"w jrpihe zsyqn l dxchifbxlasaehj","nmmfrwyl jscqyxk a xfibiooix xolyqfdspkliyejsnksfewbjom","xnleojowaxwpyogyrayfgyuzhgtdzrsyococuqexggigtberizdzlyrdsfvryiynhg","krpwiazoulcixkkeyogizvicdkbrsiiuhizhkxdpssynfzuigvcbovm","rgmz rgztiup wqnvbucfqcyjivvoeedyxvjsmtqwpqpxmzdupfyfeewxegrlbjtsjkusyektigr","o lgsbechr lqcgfiat pkqdutzrq iveyv iqzgvyddyoqqmqerbmkxlbtmdtkinlk","hrvh efqvjilibdqxjlpmanmogiossjyxepotezo","qstd zui nbbohtuk","qsdrerdzjvhxjqchvuewevyzlkyydpeeblpc"})));
 		System.out.println( "The countValidWords is: "+ (arrayTasks.countValidWords("abcd abcd abcd")));
+		arrayTasks.twoOutOfThree(new int[]{}, new int[]{}, new int[]{});
+		//System.out.println( "The commonChars is: "+ ( arrayTasks.commonChars(new String[]{"bella","label","roller"})));
+		System.out.println( "The minMaxGame is: "+ ( arrayTasks.minMaxGame(new int[]{1,3,5,2,4,8,2,2})));
+		System.out.println( "The minMaxGame2 is: "+ ( arrayTasks.minMaxGame(new int[]{70,38,21,22})));
+		System.out.println( "The threeConsecutiveOdds is: "+ ( arrayTasks.threeConsecutiveOdds(new int[]{2,6,4,1})));
+		System.out.println( "The threeConsecutiveOdds is: "+ ( arrayTasks.threeConsecutiveOdds(new int[]{1,2,34,3,4,5,7,23,12})));
+		System.out.println( "The threeConsecutiveOdds is: "+ ( arrayTasks.threeConsecutiveOdds(new int[]{})));
+		System.out.println( "The intersection is: "+ Arrays.toString(arrayTasks.intersection(new int[]{1,2,2,1},new int[]{2,2})));
+		System.out.println( "The intersection is: "+ Arrays.toString(arrayTasks.intersection(new int[]{4,9,5},new int[]{9,4,9,8,4})));
 	}
 
 }

@@ -2477,14 +2477,162 @@ public class ArrayTasks {
     public int countValidWords(String sentence) {
 
         if(sentence.length()==0) return 0;
-        String[] newval = sentence.strip().split("\\s+");
+        String[] newval = sentence.split("\\s+");
         int count =0;
         int length=newval.length;
         for(int i=1; i<length;i++){
-            
+
             count++;
         }
         return count;
+    }
+
+    public void twoOutOfThree(int[] nums1, int[] nums2, int[] nums3) {
+        nums1= new int[]{3,1};
+        nums2= new int[]{2,3};
+        nums3= new int[]{1,2};
+        int firstval = 0;
+        List<Integer> result = new ArrayList<>();
+        for(int i=0;i<nums1.length;i++){
+            for(int j=0;j<nums2.length;j++){
+                for(int k=0;k<nums3.length;k++){
+                    if(nums1[i]==nums2[j] && nums2[j]==nums3[k]){
+                        firstval = nums1[i];
+                        result.add(firstval);
+
+
+                    }
+                    if (nums1[i]==nums2[j]&& nums2[j]!=nums3[k]){
+                        firstval = nums1[i];
+                        result.add(firstval);
+                        if (nums1[i]!=nums2[j]&& nums2[j]==nums3[k]) {
+                            firstval = nums2[k];
+                            result.add(firstval);
+                        }
+                    }
+
+                    /*
+                    else if (nums1[i]!=nums2[j]&& nums2[j]==nums3[k]){
+                        firstval = nums2[k];
+                        result.add(firstval);
+                    }
+                     */
+
+
+                }
+            }
+        }
+
+        System.out.println("The twoOutOfThree is: "+result);
+
+    }
+
+    public void twoOutOfThree2(int[] nums1, int[] nums2, int[] nums3) {
+
+    }
+
+    public List<String> commonChars(String[] words) {
+
+        List<String> list = new ArrayList<>();
+        if(words==null||words.length==0)
+            return list;
+        String finalString="";
+
+        for(int i=0;i<words.length;i++){
+
+            for(int j=0;j<words[i].length();j++) {
+
+
+                String first = Character.toString(words[i].charAt(i));
+                String second = Character.toString(words[j].charAt(j));
+
+                System.out.println("*" + first);
+                System.out.println("**" + second);
+
+ //             if(first.contentEquals(second))
+
+                list.add(first);
+
+            }
+        }
+
+        System.out.println("#" + list);
+
+        return list;
+    }
+
+
+    public int minMaxGame(int[] nums) {
+        int min =0 , max=0 , result =0;
+        if(nums.length==1)
+            return nums[1];
+        for (int i=1;i<nums.length;i++) {
+            if (nums[i - 1] < nums[i]) {
+                min = nums[i - 1];
+                //System.out.println("**"+min);
+            }
+            else {
+                min = nums[i];
+                //System.out.println("*&*"+min);
+            }
+            /*
+            if (nums[i-2]>nums[i-1]){
+                max = nums[i-2];
+            }
+            else {
+                max = nums[i-1];
+            }
+
+             */
+
+        }
+
+
+        return min;
+    }
+
+    public boolean threeConsecutiveOdds(int[] arr) {
+
+        if(arr.length==0||arr.length==1||arr.length==2){
+            return false;
+        }
+        for(int i=2; i<arr.length;i++){
+            if(arr[i-2]%2!=0&&arr[i-1]%2!=0&&arr[i]%2!=0){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public int[] intersection(int[] nums1, int[] nums2) {
+        int[] result = new int[1];
+        int max=0, min=0;
+        for (int i=0; i<nums1.length; i++){
+            for(int j=0; j<nums2.length;j++){
+                if(nums1[i]==nums2[j]){
+                    result[0]=nums1[i];
+                    break;
+                }
+            }
+        }
+
+        return result;
+    }
+
+    public int findGCD(int[] nums) {
+        int result =0 ;
+        int length=nums.length;
+        if(length==0||length==1){
+            return nums[length];
+        }
+        Arrays.sort(nums);
+        int min=nums[0];
+        int max=nums[length-1];
+        for(int i=0;i<nums.length;i++){
+
+        }
+
+        return 0;
     }
 
 }
