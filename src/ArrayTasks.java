@@ -2562,6 +2562,21 @@ public class ArrayTasks {
     }
 
 
+    public void arrpractice_July(){
+        int[] arr = {2,3,4,5,6};
+        int first=0, second=0;
+        int val = 9;
+        for (int i=0;i<arr.length-1;i++){
+
+                if(arr[i]+arr[i+1]==val){
+                    first=arr[i];
+                    second=arr[i+1];
+                }
+
+        }
+        System.out.println(first+"!!!"+second);
+    }
+
     public int minMaxGame(int[] nums) {
         int min =0 , max=0 , result =0;
         if(nums.length==1)
@@ -2626,14 +2641,57 @@ public class ArrayTasks {
             return nums[length];
         }
         Arrays.sort(nums);
-        int min=nums[0];
-        int max=nums[length-1];
+        int min=nums[0], max=nums[length-1];
+        /*
         for(int i=0;i<nums.length;i++){
-
+            min = Math.min(min, nums[i]);
+            max = Math.max(max, nums[i]);
         }
 
-        return 0;
+         */
+        result = findval(min,max);
+        System.out.println("###"+min + "..."+max + "**"+result);
+        return result;
     }
+
+    public int findval(int min, int max){
+        if (max==0){
+            return min;
+        }
+        return findval(max, min%max);
+    }
+
+    public String gcdOfStrings_1071(String str1, String str2) {
+        String result ="";
+        for (int i=0;i<str1.length();i++){
+            for (int j=0; j<str2.length();j++){
+            }
+        }
+        return result;
+
+    }
+
+    public int lengthOfLongestSubstring(String s) {
+
+        int i=0,j=0,count=0;
+        if(s.length()==0){
+            return 0;
+        }
+        if(s.length()==1){
+            return 1;
+        }
+
+
+        return count;
+    }
+
+
+    public boolean isThree_1952(int n) {
+
+        return false;
+    }
+
+
 
 }
 
