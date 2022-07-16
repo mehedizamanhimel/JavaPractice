@@ -229,15 +229,16 @@ public class MainClass implements Runnable{
 		System.out.println( "The intersection is: "+ Arrays.toString(arrayTasks.intersection(new int[]{4,9,5},new int[]{9,4,9,8,4})));
 		System.out.println( "The findGCD is: "+ arrayTasks.findGCD(new int[]{2,5,6,9,10}));
 		System.out.println( "The findGCD is: "+ arrayTasks.findGCD(new int[]{7,5,6,8,3}));
-		System.out.println( "The gcdOfStrings is: "+ arrayTasks.gcdOfStrings_1071("ABCABC","ABC"));
-		System.out.println( "The gcdOfStrings is: "+ arrayTasks.gcdOfStrings_1071("ABABAB","ABAB"));
-		System.out.println( "The gcdOfStrings is: "+ arrayTasks.gcdOfStrings_1071("LEET","CODE"));
-		arrayTasks.arrpractice_July();
+		//System.out.println( "The gcdOfStrings is: "+ arrayTasks.gcdOfStrings_1071("ABCABC","ABC"));
+		//System.out.println( "The gcdOfStrings is: "+ arrayTasks.gcdOfStrings_1071("ABABAB","ABAB"));
+		//System.out.println( "The gcdOfStrings is: "+ arrayTasks.gcdOfStrings_1071("LEET","CODE"));
+		//arrayTasks.arrpractice_July();
 		System.out.println( "The lengthOfLongestSubstring is: "+ arrayTasks.lengthOfLongestSubstring("abcabcbb"));
 		System.out.println( "The lengthOfLongestSubstring is: "+ arrayTasks.lengthOfLongestSubstring("bbbbb"));
 		System.out.println( "The lengthOfLongestSubstring is: "+ arrayTasks.lengthOfLongestSubstring("pwwkew"));
 		System.out.println( "The lengthOfLongestSubstring is: "+ arrayTasks.lengthOfLongestSubstring(""));
 		System.out.println( "The lengthOfLongestSubstring is: "+ arrayTasks.lengthOfLongestSubstring("a"));
+		arrayTasks.rotate(new int[][]{{1,2,3},{4,5,6},{7,8,9}});
 	}
 
 }

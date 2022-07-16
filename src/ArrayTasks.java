@@ -2673,7 +2673,10 @@ public class ArrayTasks {
 
     public int lengthOfLongestSubstring(String s) {
 
+        HashSet<Character> hashSet= new HashSet<>();
+
         int i=0,j=0,count=0;
+
         if(s.length()==0){
             return 0;
         }
@@ -2681,9 +2684,22 @@ public class ArrayTasks {
             return 1;
         }
 
+        while (j<s.length()){
+            if(!hashSet.contains(s.charAt(j))) {
+                hashSet.add(s.charAt(j));
+                j++;
+                count=Math.max(count, hashSet.size());
+            }
+            else {
+                hashSet.remove(s.charAt(i));
+                i++;
+            }
+
+        }
 
         return count;
     }
+
 
 
     public boolean isThree_1952(int n) {
@@ -2691,7 +2707,55 @@ public class ArrayTasks {
         return false;
     }
 
+    // Starting of largest palindrome problem
+    public String longestPalindrome(String s) {
 
+        if (s==null||s.length()<1){
+            return "";
+        }
+        int first=0, last=0;
+        for(int i=0;i<s.length();i++){
+            int num1= palindromemethod(s,i,i);
+            int num2= palindromemethod(s,i,i+1);
+            int finalVal = Math.max(num1, num2);
+            if(finalVal > last-first){
+                first= i- (finalVal-1)/2;
+                last= i+finalVal/2;
+            }
+
+        }
+        return s.substring(first, last-1);
+    }
+
+    public int palindromemethod(String s, int left, int right){
+        if(s.length()==0||left<right){
+            return 0;
+        }
+        while(left>=0 && right <s.length() && s.charAt(left)==s.charAt(right)){
+            left--;
+            right++;
+        }
+
+        return right-left-1;
+    }
+
+    public void rotate(int[][] matrix) {
+
+        List<Integer> list= new ArrayList<>();
+
+
+        for(int i=0;i<matrix.length+1/2;i++){
+            for(int j=0;i<matrix.length/2;i++){
+
+
+            }
+
+        }
+
+
+       System.out.println(list);
+
+    }
 
 }
 
