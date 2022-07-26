@@ -1,4 +1,4 @@
-import sun.tools.tree.Node;
+
 
 import java.util.*;
 import java.util.List;
@@ -1926,7 +1926,6 @@ public class ArrayTasks {
     }
 
 
-
     public int[] shuffle(int[] nums, int n) {
 
         /*
@@ -2093,12 +2092,7 @@ public class ArrayTasks {
     }
 
 
-    public void nodeOps() {
-        int i = 0;
-        Node head;
-        Node next;
 
-    }
 
     public List<Integer> reverseList(List<Integer> head) {
 
@@ -2416,12 +2410,12 @@ public class ArrayTasks {
 
     }
 
-    public int mostWordsFound(String[]sentences) {
-        int max=0;
+    public int mostWordsFound(String[] sentences) {
+        int max = 0;
 
-        for(int i = 0; i<sentences.length;i++){
-           String[] wordss = sentences[i].split(" ");
-           max = Math.max(max,wordss.length);
+        for (int i = 0; i < sentences.length; i++) {
+            String[] wordss = sentences[i].split(" ");
+            max = Math.max(max, wordss.length);
 
         }
         System.out.println(max);
@@ -2435,15 +2429,15 @@ public class ArrayTasks {
         int[] newNums = new int[nums.length];
         List<Integer> list = new ArrayList<>();
 
-        for(int i: nums)
+        for (int i : nums)
             list.add(i);
 
         System.out.println(list);
         Collections.sort(list);
         System.out.println(list);
 
-        for (int i=0; i<nums.length;i++)
-            newNums[i]=list.indexOf(nums[i]);
+        for (int i = 0; i < nums.length; i++)
+            newNums[i] = list.indexOf(nums[i]);
 
         System.out.println(Arrays.toString(newNums));
 
@@ -2454,9 +2448,9 @@ public class ArrayTasks {
 
     public int[] smallerNumbersThanCurrent2(int[] nums) {
         int[] temp = new int[nums.length];
-        for (int i=0;i<nums.length;i++){
-            for (int j=0;j<nums.length;j++){
-                if (nums[i]>nums[j]){
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = 0; j < nums.length; j++) {
+                if (nums[i] > nums[j]) {
                     temp[i]++;
                 }
             }
@@ -2467,11 +2461,11 @@ public class ArrayTasks {
 
     public int countValidWords(String sentence) {
 
-        if(sentence.length()==0) return 0;
+        if (sentence.length() == 0) return 0;
         String[] newval = sentence.split("\\s+");
-        int count =0;
-        int length=newval.length;
-        for(int i=1; i<length;i++){
+        int count = 0;
+        int length = newval.length;
+        for (int i = 1; i < length; i++) {
 
             count++;
         }
@@ -2479,24 +2473,24 @@ public class ArrayTasks {
     }
 
     public void twoOutOfThree(int[] nums1, int[] nums2, int[] nums3) {
-        nums1= new int[]{3,1};
-        nums2= new int[]{2,3};
-        nums3= new int[]{1,2};
+        nums1 = new int[]{3, 1};
+        nums2 = new int[]{2, 3};
+        nums3 = new int[]{1, 2};
         int firstval = 0;
         List<Integer> result = new ArrayList<>();
-        for(int i=0;i<nums1.length;i++){
-            for(int j=0;j<nums2.length;j++){
-                for(int k=0;k<nums3.length;k++){
-                    if(nums1[i]==nums2[j] && nums2[j]==nums3[k]){
+        for (int i = 0; i < nums1.length; i++) {
+            for (int j = 0; j < nums2.length; j++) {
+                for (int k = 0; k < nums3.length; k++) {
+                    if (nums1[i] == nums2[j] && nums2[j] == nums3[k]) {
                         firstval = nums1[i];
                         result.add(firstval);
 
 
                     }
-                    if (nums1[i]==nums2[j]&& nums2[j]!=nums3[k]){
+                    if (nums1[i] == nums2[j] && nums2[j] != nums3[k]) {
                         firstval = nums1[i];
                         result.add(firstval);
-                        if (nums1[i]!=nums2[j]&& nums2[j]==nums3[k]) {
+                        if (nums1[i] != nums2[j] && nums2[j] == nums3[k]) {
                             firstval = nums2[k];
                             result.add(firstval);
                         }
@@ -2514,7 +2508,7 @@ public class ArrayTasks {
             }
         }
 
-        System.out.println("The twoOutOfThree is: "+result);
+        System.out.println("The twoOutOfThree is: " + result);
 
     }
 
@@ -2525,13 +2519,13 @@ public class ArrayTasks {
     public List<String> commonChars(String[] words) {
 
         List<String> list = new ArrayList<>();
-        if(words==null||words.length==0)
+        if (words == null || words.length == 0)
             return list;
-        String finalString="";
+        String finalString = "";
 
-        for(int i=0;i<words.length;i++){
+        for (int i = 0; i < words.length; i++) {
 
-            for(int j=0;j<words[i].length();j++) {
+            for (int j = 0; j < words[i].length(); j++) {
 
 
                 String first = Character.toString(words[i].charAt(i));
@@ -2540,7 +2534,7 @@ public class ArrayTasks {
                 System.out.println("*" + first);
                 System.out.println("**" + second);
 
- //             if(first.contentEquals(second))
+                //             if(first.contentEquals(second))
 
                 list.add(first);
 
@@ -2553,31 +2547,30 @@ public class ArrayTasks {
     }
 
 
-    public void arrpractice_July(){
-        int[] arr = {2,3,4,5,6};
-        int first=0, second=0;
+    public void arrpractice_July() {
+        int[] arr = {2, 3, 4, 5, 6};
+        int first = 0, second = 0;
         int val = 9;
-        for (int i=0;i<arr.length-1;i++){
+        for (int i = 0; i < arr.length - 1; i++) {
 
-                if(arr[i]+arr[i+1]==val){
-                    first=arr[i];
-                    second=arr[i+1];
-                }
+            if (arr[i] + arr[i + 1] == val) {
+                first = arr[i];
+                second = arr[i + 1];
+            }
 
         }
-        System.out.println(first+"!!!"+second);
+        System.out.println(first + "!!!" + second);
     }
 
     public int minMaxGame(int[] nums) {
-        int min =0 , max=0 , result =0;
-        if(nums.length==1)
+        int min = 0, max = 0, result = 0;
+        if (nums.length == 1)
             return nums[1];
-        for (int i=1;i<nums.length;i++) {
+        for (int i = 1; i < nums.length; i++) {
             if (nums[i - 1] < nums[i]) {
                 min = nums[i - 1];
                 //System.out.println("**"+min);
-            }
-            else {
+            } else {
                 min = nums[i];
                 //System.out.println("*&*"+min);
             }
@@ -2599,11 +2592,11 @@ public class ArrayTasks {
 
     public boolean threeConsecutiveOdds(int[] arr) {
 
-        if(arr.length==0||arr.length==1||arr.length==2){
+        if (arr.length == 0 || arr.length == 1 || arr.length == 2) {
             return false;
         }
-        for(int i=2; i<arr.length;i++){
-            if(arr[i-2]%2!=0&&arr[i-1]%2!=0&&arr[i]%2!=0){
+        for (int i = 2; i < arr.length; i++) {
+            if (arr[i - 2] % 2 != 0 && arr[i - 1] % 2 != 0 && arr[i] % 2 != 0) {
                 return true;
             }
         }
@@ -2612,11 +2605,11 @@ public class ArrayTasks {
 
     public int[] intersection(int[] nums1, int[] nums2) {
         int[] result = new int[1];
-        int max=0, min=0;
-        for (int i=0; i<nums1.length; i++){
-            for(int j=0; j<nums2.length;j++){
-                if(nums1[i]==nums2[j]){
-                    result[0]=nums1[i];
+        int max = 0, min = 0;
+        for (int i = 0; i < nums1.length; i++) {
+            for (int j = 0; j < nums2.length; j++) {
+                if (nums1[i] == nums2[j]) {
+                    result[0] = nums1[i];
                     break;
                 }
             }
@@ -2626,13 +2619,13 @@ public class ArrayTasks {
     }
 
     public int findGCD(int[] nums) {
-        int result =0 ;
-        int length=nums.length;
-        if(length==0||length==1){
+        int result = 0;
+        int length = nums.length;
+        if (length == 0 || length == 1) {
             return nums[length];
         }
         Arrays.sort(nums);
-        int min=nums[0], max=nums[length-1];
+        int min = nums[0], max = nums[length - 1];
         /*
         for(int i=0;i<nums.length;i++){
             min = Math.min(min, nums[i]);
@@ -2640,22 +2633,22 @@ public class ArrayTasks {
         }
 
          */
-        result = findval(min,max);
-        System.out.println("###"+min + "..."+max + "**"+result);
+        result = findval(min, max);
+        System.out.println("###" + min + "..." + max + "**" + result);
         return result;
     }
 
-    public int findval(int min, int max){
-        if (max==0){
+    public int findval(int min, int max) {
+        if (max == 0) {
             return min;
         }
-        return findval(max, min%max);
+        return findval(max, min % max);
     }
 
     public String gcdOfStrings_1071(String str1, String str2) {
-        String result ="";
-        for (int i=0;i<str1.length();i++){
-            for (int j=0; j<str2.length();j++){
+        String result = "";
+        for (int i = 0; i < str1.length(); i++) {
+            for (int j = 0; j < str2.length(); j++) {
             }
         }
         return result;
@@ -2664,24 +2657,23 @@ public class ArrayTasks {
 
     public int lengthOfLongestSubstring(String s) {
 
-        HashSet<Character> hashSet= new HashSet<>();
+        HashSet<Character> hashSet = new HashSet<>();
 
-        int i=0,j=0,count=0;
+        int i = 0, j = 0, count = 0;
 
-        if(s.length()==0){
+        if (s.length() == 0) {
             return 0;
         }
-        if(s.length()==1){
+        if (s.length() == 1) {
             return 1;
         }
 
-        while (j<s.length()){
-            if(!hashSet.contains(s.charAt(j))) {
+        while (j < s.length()) {
+            if (!hashSet.contains(s.charAt(j))) {
                 hashSet.add(s.charAt(j));
                 j++;
-                count=Math.max(count, hashSet.size());
-            }
-            else {
+                count = Math.max(count, hashSet.size());
+            } else {
                 hashSet.remove(s.charAt(i));
                 i++;
             }
@@ -2692,7 +2684,6 @@ public class ArrayTasks {
     }
 
 
-
     public boolean isThree_1952(int n) {
 
         return false;
@@ -2701,50 +2692,50 @@ public class ArrayTasks {
     // Starting of largest palindrome problem
     public String longestPalindrome(String s) {
 
-        if (s==null||s.length()<1){
+        if (s == null || s.length() < 1) {
             return "";
         }
-        int first=0, last=0;
-        for(int i=0;i<s.length();i++){
-            int num1= palindromemethod(s,i,i);
-            int num2= palindromemethod(s,i,i+1);
+        int first = 0, last = 0;
+        for (int i = 0; i < s.length(); i++) {
+            int num1 = palindromemethod(s, i, i);
+            int num2 = palindromemethod(s, i, i + 1);
             int finalVal = Math.max(num1, num2);
-            if(finalVal > last-first){
-                first= i- (finalVal-1)/2;
-                last= i+finalVal/2;
+            if (finalVal > last - first) {
+                first = i - (finalVal - 1) / 2;
+                last = i + finalVal / 2;
             }
 
         }
-        return s.substring(first, last-1);
+        return s.substring(first, last - 1);
     }
 
-    public int palindromemethod(String s, int left, int right){
+    public int palindromemethod(String s, int left, int right) {
 
-        if(s.length()==0||left<right){
+        if (s.length() == 0 || left < right) {
             return 0;
         }
 
-        while(left>=0 && right <s.length() && s.charAt(left)==s.charAt(right)){
+        while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
             left--;
             right++;
         }
 
-        return right-left-1;
+        return right - left - 1;
 
     }
 
     public void rotate(int[][] matrix) {
 
-        List<Integer> list= new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
 
-        for(int i=0;i<matrix.length+1/2;i++){
-            for(int j=0;i<matrix.length/2;i++){
+        for (int i = 0; i < matrix.length + 1 / 2; i++) {
+            for (int j = 0; i < matrix.length / 2; i++) {
 
             }
 
         }
 
-       System.out.println(list);
+        System.out.println(list);
 
     }
 
@@ -2757,7 +2748,7 @@ public class ArrayTasks {
         3. initialize int j for second element where j=i+1
          */
 
-        int i =0;
+        int i = 0;
 
         /*
         for (int n : nums) {
@@ -2767,18 +2758,30 @@ public class ArrayTasks {
 
          */
 
-        for(int num=0; num<nums.length;num++){
-            if(nums[num]!=0){
-                nums[i++]=nums[num];
+        for (int num = 0; num < nums.length; num++) {
+            if (nums[num] != 0) {
+                nums[i++] = nums[num];
             }
         }
 
-        while (i < nums.length){
+        while (i < nums.length) {
             nums[i++] = 0;
         }
 
         System.out.println(Arrays.toString(nums));
 
+    }
+
+    public List<Integer> targetIndices(int[] nums, int target) {
+        List<Integer> list = new ArrayList<Integer>();
+        Arrays.sort(nums);
+        for(int i=0; i<nums.length;i++){
+            if(nums[i]==target){
+                list.add(i);
+            }
+        }
+
+        return list;
     }
 
 }
