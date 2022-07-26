@@ -1925,15 +1925,6 @@ public class ArrayTasks {
         System.out.println(Arrays.toString(arr));
     }
 
-    public void moveZeroes(int[] nums) {
-        /*
-        algorithm:
-        1. run a for loop over the array.
-        2. initialize int i for first element
-        3. initialize int j for second element where j=i+1
-         */
-
-    }
 
 
     public int[] shuffle(int[] nums, int n) {
@@ -2728,32 +2719,65 @@ public class ArrayTasks {
     }
 
     public int palindromemethod(String s, int left, int right){
+
         if(s.length()==0||left<right){
             return 0;
         }
+
         while(left>=0 && right <s.length() && s.charAt(left)==s.charAt(right)){
             left--;
             right++;
         }
 
         return right-left-1;
+
     }
 
     public void rotate(int[][] matrix) {
 
         List<Integer> list= new ArrayList<>();
 
-
         for(int i=0;i<matrix.length+1/2;i++){
             for(int j=0;i<matrix.length/2;i++){
-
 
             }
 
         }
 
-
        System.out.println(list);
+
+    }
+
+
+    public void moveZeroes(int[] nums) {
+        /*
+        algorithm:
+        1. run a for loop over the array.
+        2. initialize int i for first element
+        3. initialize int j for second element where j=i+1
+         */
+
+        int i =0;
+
+        /*
+        for (int n : nums) {
+            if (n != 0)
+                nums[i++] = n;
+        }
+
+         */
+
+        for(int num=0; num<nums.length;num++){
+            if(nums[num]!=0){
+                nums[i++]=nums[num];
+            }
+        }
+
+        while (i < nums.length){
+            nums[i++] = 0;
+        }
+
+        System.out.println(Arrays.toString(nums));
 
     }
 

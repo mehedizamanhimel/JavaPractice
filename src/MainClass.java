@@ -239,6 +239,7 @@ public class MainClass implements Runnable{
 		System.out.println( "The lengthOfLongestSubstring is: "+ arrayTasks.lengthOfLongestSubstring(""));
 		System.out.println( "The lengthOfLongestSubstring is: "+ arrayTasks.lengthOfLongestSubstring("a"));
 		arrayTasks.rotate(new int[][]{{1,2,3},{4,5,6},{7,8,9}});
+		arrayTasks.moveZeroes(new int[]{0,1,0,3,12});
 	}
 
 }
