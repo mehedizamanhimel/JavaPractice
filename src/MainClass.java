@@ -243,6 +243,11 @@ public class MainClass implements Runnable{
 		System.out.println( "The targetIndices1 is: "+ arrayTasks.targetIndices(new int[]{1,2,5,2,3}, 2));
 		System.out.println( "The targetIndices2 is: "+ arrayTasks.targetIndices(new int[]{1,2,5,2,3}, 3));
 		System.out.println( "The targetIndices3 is: "+ arrayTasks.targetIndices(new int[]{1,2,5,2,3}, 5));
+		System.out.println( "The arrayRankTransform is: "+ Arrays.toString(arrayTasks.arrayRankTransform_1331(new int[]{40,10,20,30})));
+		System.out.println( "The intersection_349 is: "+ Arrays.toString(arrayTasks.intersection_349(new int[]{1,2,2,1},new int[]{2,2})));
+		System.out.println( "The canMakeArithmeticProgression is: "+ arrayTasks.canMakeArithmeticProgression(new int[]{3,5,1}));
+		System.out.println( "The canMakeArithmeticProgression is: "+ arrayTasks.canMakeArithmeticProgression(new int[]{1,2,4}));
+		System.out.println( "The canMakeArithmeticProgression is: "+ arrayTasks.canMakeArithmeticProgression(new int[]{1,100}));
 	}
 
 }

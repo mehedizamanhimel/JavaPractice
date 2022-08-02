@@ -2784,6 +2784,56 @@ public class ArrayTasks {
         return list;
     }
 
+    public int[] arrayRankTransform_1331(int[] arr) {
+        int[] length = new int[arr.length];
+        for(int i=1;i<arr.length;i++){
+            length[i]=i;
+        }
+        return length;
+    }
+
+    public int[] intersection_349(int[] nums1, int[] nums2) {
+
+        HashSet<Integer> hashSet1 = new HashSet<>();
+        HashSet<Integer> hashSet2 = new HashSet<>();
+        for (int i=0; i< nums1.length;i++){
+            hashSet1.add(nums1[i]);
+        }
+        for (int j=0; j< nums2.length;j++){
+            hashSet2.add(nums2[j]);
+        }
+        System.out.println(hashSet1);
+        System.out.println(hashSet2);
+        hashSet1.retainAll(hashSet2);
+        int[] result = new int[hashSet1.size()];
+        int id = 0;
+
+        for(int i: hashSet1){
+            result[id++] = i;
+        }
+         /*
+        for(int i=0; i< hashSet1.size(); i++){
+            result[id++] = hashSet1.contains(i);
+        }
+
+         */
+        return result;
+    }
+
+    public boolean canMakeArithmeticProgression(int[] arr) {
+        Arrays.sort(arr);
+
+        int differnce=arr[1]-arr[0];
+
+        for (int i =0; i < arr.length-1; i++){
+            int temp = arr[i+1]-arr[i];
+            if(temp!=differnce){
+                return false;
+            }
+        }
+
+        return true;
+    }
 }
 
 
