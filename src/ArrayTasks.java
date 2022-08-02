@@ -2749,14 +2749,7 @@ public class ArrayTasks {
          */
 
         int i = 0;
-
-        /*
-        for (int n : nums) {
-            if (n != 0)
-                nums[i++] = n;
-        }
-
-         */
+        
 
         for (int num = 0; num < nums.length; num++) {
             if (nums[num] != 0) {
@@ -2811,12 +2804,7 @@ public class ArrayTasks {
         for(int i: hashSet1){
             result[id++] = i;
         }
-         /*
-        for(int i=0; i< hashSet1.size(); i++){
-            result[id++] = hashSet1.contains(i);
-        }
 
-         */
         return result;
     }
 
