@@ -2823,6 +2823,29 @@ public class ArrayTasks {
         return true;
     }
 
+    public void samplePractice_1(){
+        int[] arr = {5,6,7,8,9,10,11,12,13,14,15,20,21,22,23,25,26,26};
+
+        List<Integer> list_10 = new ArrayList<>();
+        List<Integer> list_20 = new ArrayList<>();
+        List<Integer> list_30 = new ArrayList<>();
+        for (int i=0; i<arr.length;i++){
+            if (arr[i]<=10){
+                list_10.add(arr[i]);
+            }
+            else if (arr[i]<=20 && arr[i]>10){
+                list_20.add(arr[i]);
+            }
+            else if (arr[i]<=30 && arr[i]>20){
+                list_30.add(arr[i]);
+            }
+        }
+
+        System.out.println(list_10);
+        System.out.println(list_20);
+        System.out.println(list_30);
+
+    }
 
 
 }

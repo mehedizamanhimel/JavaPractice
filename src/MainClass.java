@@ -248,6 +248,7 @@ public class MainClass implements Runnable{
 		System.out.println( "The canMakeArithmeticProgression is: "+ arrayTasks.canMakeArithmeticProgression(new int[]{3,5,1}));
 		System.out.println( "The canMakeArithmeticProgression is: "+ arrayTasks.canMakeArithmeticProgression(new int[]{1,2,4}));
 		System.out.println( "The canMakeArithmeticProgression is: "+ arrayTasks.canMakeArithmeticProgression(new int[]{1,100}));
+		arrayTasks.samplePractice_1();
 	}
 
 }
