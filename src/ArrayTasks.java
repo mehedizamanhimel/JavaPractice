@@ -2850,38 +2850,23 @@ public class ArrayTasks {
     public int solution(int[] A) {
         // write your code in Java SE 11
         Arrays.sort(A);
-        int result = 0, last = 0;
-        /*
-        for (int i =0; i<A.length-1; i++){
+        int result = 0, last = 0 , last2=0;
+
+        for (int i =0; i<A.length-2; i++){
             if (A[i]<1){
                 return 1;
             }
-            if(A[i+1]-A[i]!=1){
-                result = A[i]+1;
+            if(A[i+2]-A[i+1]!=A[i+1]-A[i]){
+                result = A[i+1]+1;
                 last = Math.min(last, result);
             }
-            if(A[i+1]-A[i]==1){
-                last = A[i+1]+1;
+            if(A[i+2]-A[i+1]==A[i+1]-A[i]){
+                last = A[i+2]+1;
+                //last = Math.min(last, last2);
             }
 
         }
 
-         */
-        for (int i = 0; i < A.length; i++) {
-            if (A[i] < 1) {
-                return 1;
-            }
-
-            for (int j = i + 1; j < A.length; j++) {
-                if (A[j] - A[i] != 1) {
-                    result = A[i] + 1;
-                    last = Math.min(last, result);
-                }
-                if (A[j] - A[i] == 1) {
-                    last = A[j] + 1;
-                }
-            }
-        }
         return last;
     }
 
