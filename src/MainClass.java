@@ -1,4 +1,5 @@
 import ConceptPractice.*;
+import problems.CodilityTest;
 import problems.Fibonacci;
 import problems.ScannerClass;
 
@@ -253,6 +254,19 @@ public class MainClass implements Runnable{
 		System.out.println( "The solution is: "+ arrayTasks.solution(new int[]{1, 2,3}));
 		System.out.println( "The solution is: "+ arrayTasks.solution(new int[]{-1, -3}));
 		System.out.println( "The solution is: "+ arrayTasks.solution(new int[]{1,3,5,6,8,10,16}));
+
+		CodilityTest codilityTest = new CodilityTest();
+
+		System.out.println(codilityTest.solution(new int[]{1,1,2,3,3}, 3));
+		System.out.println(codilityTest.solution(new int[]{1,1,2,3,3}, 3));
+		System.out.println(codilityTest.solution(new int[]{1,1,2,3,3,4}, 4));
+
+		System.out.println(codilityTest.solution(new int[]{1,3}, 2));
+		System.out.println(codilityTest.solution(new int[]{0,1,3}, 2));
+		System.out.println(codilityTest.solution(new int[]{1,1,1,1,1,1,1,1,1,1,1,1,1,2}, 1));
+		System.out.println(codilityTest.solution2(14));
+		System.out.println(codilityTest.solution2(10));
+		System.out.println(codilityTest.solution2(99));
 	}
 
 }
