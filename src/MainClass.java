@@ -267,6 +267,14 @@ public class MainClass implements Runnable{
 		System.out.println(codilityTest.solution2(14));
 		System.out.println(codilityTest.solution2(10));
 		System.out.println(codilityTest.solution2(99));
+
+		System.out.println("The strStr is: "+ arrayTasks.strStr("hello","ll"));
+		System.out.println("The strStr is: "+arrayTasks.strStr("aaaaa","bba"));
+		System.out.println("The strStr is: "+arrayTasks.strStr("a","a"));
+		System.out.println("The strStr is: "+arrayTasks.strStr("abc","c"));
+		System.out.println("The addBinary_67 is: "+arrayTasks.addBinary_67("11","1"));
+		System.out.println("The addBinary_67 is: "+arrayTasks.addBinary_67("1010","1011"));
+
 	}
 
 }

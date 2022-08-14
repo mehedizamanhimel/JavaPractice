@@ -2870,6 +2870,45 @@ public class ArrayTasks {
         return last;
     }
 
+    public int strStr(String haystack, String needle) {
+
+        int result = 0;
+        if(haystack.length()==1 && needle.length()==1)
+            return result;
+        if(haystack.contains(needle))
+           // result= needle.length();
+            result = haystack.indexOf(needle);
+        else {
+            result= -1;
+        }
+        return result;
+    }
+
+    public String addBinary_67(String a, String b) {
+        StringBuilder sb = new StringBuilder();
+
+        int firstBinary = Integer.parseInt(a,2);
+        System.out.println("the first binary is:"+firstBinary);
+        int secondBinary = Integer.parseInt(b, 2);
+        System.out.println("the second int is:"+secondBinary);
+        int result = firstBinary+secondBinary;
+        System.out.println("the int sum is:"+result);
+        String first = Integer.toBinaryString(result);
+
+        return first;
+    }
+
+    public int mySqrt_69(int x) {
+        double r = Math.sqrt(x);
+        int  result = 0;
+        return ((int)Math.sqrt(x));
+    }
+
+    public int sqroot(int i){
+        if(i ==0 || i==1) return i;
+        int temp=1, result=1;
+        return 0;
+    }
 
 }
 

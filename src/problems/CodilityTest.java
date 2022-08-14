@@ -70,7 +70,7 @@ public class CodilityTest {
 
         //return right - left - 1;
 
-        return result;
+        return "result";
     }
 
 }
