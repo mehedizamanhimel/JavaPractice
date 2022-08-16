@@ -274,6 +274,10 @@ public class MainClass implements Runnable{
 		System.out.println("The strStr is: "+arrayTasks.strStr("abc","c"));
 		System.out.println("The addBinary_67 is: "+arrayTasks.addBinary_67("11","1"));
 		System.out.println("The addBinary_67 is: "+arrayTasks.addBinary_67("1010","1011"));
+		//System.out.println("The sumOddLengthSubarrays_1588 is: "+arrayTasks.sumOddLengthSubarrays_1588(new int[]{1,2,3,4}));
+		System.out.println("The sumOddLengthSubarrays_1588 is: "+arrayTasks.sumOddLengthSubarrays_1588(new int[]{1,4,2,5,3}));
+		System.out.println("The sumOddLengthSubarrays_1588 is: "+arrayTasks.sumOddLengthSubarrays_1588(new int[]{1,2}));
+		System.out.println("The sumOddLengthSubarrays_1588 is: "+arrayTasks.sumOddLengthSubarrays_1588(new int[]{10,11,12}));
 
 	}
 
