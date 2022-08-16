@@ -2910,27 +2910,6 @@ public class ArrayTasks {
         return 0;
     }
 
-    public int sumOddLengthSubarrays_1588(int[] arr) {
-        int result = 0;
-        for(int i=0;i<arr.length;i++){
-            for(int j=i;j<arr.length;j+=2){
-                for(int k=i;k<=j;k++){
-                    result+=arr[k];
-                }
-            }
-        }
-        /*
-        for (int i=1; i<arr.length; i++){
-            result=result+arr[i-1];
-            arr[i-1]=arr[i-1]+arr[i];
-            arr[i]=arr[i]+result;
-            result++;
-        }
-        */
-
-        return result;
-    }
-
 }
 
 
