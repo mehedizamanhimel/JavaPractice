@@ -2910,6 +2910,27 @@ public class ArrayTasks {
         return 0;
     }
 
+    public int[] sortedSquares_977(int[] nums) {
+
+        for(int i =0; i< nums.length; i++){
+            nums[i] = nums[i]*nums[i];
+        }
+        Arrays.sort(nums);
+
+        return nums;
+    }
+
+    public double trimMean_1619(int[] arr) {
+        double temp = 0;
+        int count=0;
+        //Arrays.sort(arr);
+        for (int i=1; i<arr.length-1;i++){
+            temp = arr[i]+arr[i+1];
+            i++;
+        }
+        return temp;
+    }
+
 }
 
 

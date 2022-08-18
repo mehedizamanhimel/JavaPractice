@@ -56,6 +56,7 @@ public class MainClass implements Runnable{
 		StringBuilder stringBuilder = new StringBuilder();
 		MaxMin maxMin = new MaxMin();
 		Binary binary = new Binary();
+		Sorting sorting= new Sorting();
 
 		/**
 		 loop.whileLoopOne();
@@ -274,7 +275,10 @@ public class MainClass implements Runnable{
 		System.out.println("The strStr is: "+arrayTasks.strStr("abc","c"));
 		System.out.println("The addBinary_67 is: "+arrayTasks.addBinary_67("11","1"));
 		System.out.println("The addBinary_67 is: "+arrayTasks.addBinary_67("1010","1011"));
-
+		System.out.println("The sortSentence_1859 is: "+sorting.sortSentence_1859("a1 b2 c3"));
+		System.out.println("The sortedSquares_977 is: "+Arrays.toString(arrayTasks.sortedSquares_977(new int[] {-4,-1,0,3,10})));
+		System.out.println("The sortedSquares_977 is: "+Arrays.toString(arrayTasks.sortedSquares_977(new int[] {-7,-3,2,3,11})));
+		System.out.println("The trimMean_1619 is: "+ arrayTasks.trimMean_1619(new int[] {5,5,5,5,5}));
 	}
 
 }
