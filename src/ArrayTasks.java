@@ -1906,23 +1906,16 @@ public class ArrayTasks {
     }
 
 
-    public void merge() {
-        int[] nums1 = {1, 2, 3, 0, 0, 0};
-        int[] nums2 = {2, 5, 6};
-        int m = 3, n = 3;
+    public void merge_88(int[] nums1, int m, int[] nums2, int n) {
 
-        int newSize = m + n;
-        int[] arr = new int[newSize];
+        
 
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                arr[i] = nums1[i];
-                //arr[j] = nums2[j];
-
-            }
-
+        for(int i=0;i<n;i++){
+            nums1[m]=nums2[i];
+            m++;
         }
-        System.out.println(Arrays.toString(arr));
+        Arrays.sort(nums1);
+        System.out.println(Arrays.toString(nums1));
     }
 
 

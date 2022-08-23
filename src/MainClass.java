@@ -184,7 +184,7 @@ public class MainClass implements Runnable{
 		System.out.println(Arrays.toString(arrayTasks.plusOne(new int[]{1,2,3,4})));
 		arrayTasks.kthSmallest(new int[][]{{1,2,3},{1,2,3}}, 5);
 		//System.out.println(Arrays.deepToString(arrayTasks.kthSmallest(new int[][]{{1},{1}}, 5)));
-		arrayTasks.merge();
+
 
 		System.out.println("the leetcode shuffle answer is: "+ Arrays.toString(arrayTasks.shuffle(new int[]{1,2,3,4,4,3,2,1},4)));
 		System.out.println("the leetcode shuffle answer is: "+ ("the maxProfit is: "+arrayTasks.maxProfit(new int[]{7,1,5,3,6,4})));
@@ -279,6 +279,7 @@ public class MainClass implements Runnable{
 		System.out.println("The sortedSquares_977 is: "+Arrays.toString(arrayTasks.sortedSquares_977(new int[] {-4,-1,0,3,10})));
 		System.out.println("The sortedSquares_977 is: "+Arrays.toString(arrayTasks.sortedSquares_977(new int[] {-7,-3,2,3,11})));
 		System.out.println("The trimMean_1619 is: "+ arrayTasks.trimMean_1619(new int[] {5,5,5,5,5}));
+		arrayTasks.merge_88(new int[]{1,2,3,0,0,0}, 3,new int[]{2,5,6}, 3);
 	}
 
 }
