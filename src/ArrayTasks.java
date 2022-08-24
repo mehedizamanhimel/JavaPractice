@@ -1908,7 +1908,7 @@ public class ArrayTasks {
 
     public void merge_88(int[] nums1, int m, int[] nums2, int n) {
 
-        
+
 
         for(int i=0;i<n;i++){
             nums1[m]=nums2[i];
@@ -2924,6 +2924,17 @@ public class ArrayTasks {
         return temp;
     }
 
+    public void merge_88_v2(int[] nums1, int m, int[] num2, int n) {
+        System.out.println(Arrays.toString(nums1));
+        System.out.println(Arrays.toString(num2));
+        for(int i =0; i<n; i++){
+            nums1[m] = num2[i];
+            m++;
+        }
+        System.out.println(Arrays.toString(nums1));
+        Arrays.sort(nums1);
+        System.out.println(Arrays.toString(nums1));
+    }
 }
 
 

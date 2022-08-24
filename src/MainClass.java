@@ -280,6 +280,7 @@ public class MainClass implements Runnable{
 		System.out.println("The sortedSquares_977 is: "+Arrays.toString(arrayTasks.sortedSquares_977(new int[] {-7,-3,2,3,11})));
 		System.out.println("The trimMean_1619 is: "+ arrayTasks.trimMean_1619(new int[] {5,5,5,5,5}));
 		arrayTasks.merge_88(new int[]{1,2,3,0,0,0}, 3,new int[]{2,5,6}, 3);
+		arrayTasks.merge_88_v2(new int[]{1,2,3,0,0,0}, 3,new int[]{2,5,6}, 3);
 	}
 
 }
