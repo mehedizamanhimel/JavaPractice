@@ -281,6 +281,22 @@ public class MainClass implements Runnable{
 		System.out.println("The trimMean_1619 is: "+ arrayTasks.trimMean_1619(new int[] {5,5,5,5,5}));
 		arrayTasks.merge_88(new int[]{1,2,3,0,0,0}, 3,new int[]{2,5,6}, 3);
 		arrayTasks.merge_88_v2(new int[]{1,2,3,0,0,0}, 3,new int[]{2,5,6}, 3);
+		System.out.println("The sumOfFlooredPairs_1862 is: "+ arrayTasks.sumOfFlooredPairs_1862(new int[] {5,5,5,5,5}));
+		System.out.println("The sumOfFlooredPairs_1862 is: "+ arrayTasks.sumOfFlooredPairs_1862(new int[] {2,5,9}));
+		System.out.println("The thirdMax_414 is: "+ arrayTasks.thirdMax_414(new int[] {9,1}));
+		System.out.println("The thirdMax_414 is: "+ arrayTasks.thirdMax_414(new int[] {9,1,11}));
+
+		System.out.println("The nextGreatestLetter_744 is: "+ arrayTasks.nextGreatestLetter_744(new char[] {'a','b'}, 'z'));
+		System.out.println("The nextGreatestLetter_744 is: "+ arrayTasks.nextGreatestLetter_744(new char[] {'c','f','j'}, 'a'));
+
+		System.out.println("The largestPerimeter_976 is: "+ arrayTasks.largestPerimeter_976(new int[] {2,2,1}));
+		System.out.println("The largestPerimeter_976 is: "+ arrayTasks.largestPerimeter_976(new int[] {2,1,1}));
+		System.out.println("The largestPerimeter_976 is: "+ arrayTasks.largestPerimeter_976(new int[] {2,3,2}));
+		System.out.println("The largestPerimeter_976 is: "+ arrayTasks.largestPerimeter_976(new int[] {3,2,3,4}));
+
+		System.out.println("The maximumWealth_1672 is: "+ arrayTasks.maximumWealth_1672(new int[][] {{3,2},{1,0}}));
+		System.out.println("The maximumWealth_1672 is: "+ arrayTasks.maximumWealth_1672(new int[][] {{2,8,7},{7,1,3},{1,9,5}}));
+
 	}
 
 }

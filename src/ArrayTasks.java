@@ -2935,6 +2935,91 @@ public class ArrayTasks {
         Arrays.sort(nums1);
         System.out.println(Arrays.toString(nums1));
     }
+
+    public int sumOfFlooredPairs_1862(int[] nums) {
+        int temp = 0;
+        int result= 0;
+        int result2= 0;
+        /*
+        for (int i=0; i<nums.length-1;i++){
+            if(nums[i]==nums[i+1])
+                result=result+nums[i];
+        }
+        */
+
+        for (int i=0; i<nums.length;i++){
+            for (int j=i+1; j<nums.length;j++){
+                System.out.println("ggg"+nums[i]+"ggg"+nums[j]);
+                temp = Math.floorDiv (nums[i],nums[j]);
+                System.out.println("ffff"+temp);
+                result2= result2+temp;
+            }
+        }
+
+        //return result+nums[nums.length-1];
+        return result2;
+
+    }
+
+    public int thirdMax_414(int[] nums) {
+        SortedSet<Integer> set = new TreeSet<>();
+        for (int i: nums){
+            set.add(i);
+        }
+        if (set.size()==1){
+            return set.first();
+        }
+        if (set.size()==2){
+            return set.last();
+        }
+        set.remove(set.last());
+        set.remove(set.last());
+        return set.last();
+    }
+
+    public char nextGreatestLetter_744(char[] letters, char target) {
+        char result=0;
+
+        for (char c: letters){
+            if(c > target){
+                return c;
+            }
+        }
+
+        return letters[0];
+    }
+
+    public String[] findRestaurant_599(String[] list1, String[] list2) {
+
+        return null;
+    }
+
+    public int largestPerimeter_976(int[] nums) {
+        Arrays.sort(nums);
+        for (int i = nums.length - 3; i >= 0; --i){
+            if(nums[i]+nums[i+1]>nums[i+2]){
+                return nums[i]+nums[i+1]+nums[i+2];
+            }
+        }
+        return 0;
+    }
+
+    public int maximumWealth_1672(int[][] accounts) {
+        int max =0;
+        //int result =0;
+        for(int i=0; i<accounts.length; i++){
+            int result =0;
+            for(int j=0; j<accounts[i].length ; j++){
+                    result+=accounts[i][j];
+            }
+            //max = result > max ? result : max;
+            if(result>max){
+                max=result;
+
+            }
+        }
+        return max;
+    }
 }
 
 
