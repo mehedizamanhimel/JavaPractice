@@ -297,6 +297,13 @@ public class MainClass implements Runnable{
 		System.out.println("The maximumWealth_1672 is: "+ arrayTasks.maximumWealth_1672(new int[][] {{3,2},{1,0}}));
 		System.out.println("The maximumWealth_1672 is: "+ arrayTasks.maximumWealth_1672(new int[][] {{2,8,7},{7,1,3},{1,9,5}}));
 
+		System.out.println("The canBeIncreasing_1909 is: "+ arrayTasks.canBeIncreasing_1909(new int[] {1,2,10,5,7}));
+		System.out.println("The canBeIncreasing_1909 is: "+ arrayTasks.canBeIncreasing_1909(new int[] {2,3,1,2}));
+
+		System.out.println("The isValid_20 is: "+ arrayTasks.isValid_20("()"));
+		System.out.println("The isValid_20 is: "+ arrayTasks.isValid_20("(){}[]"));
+		System.out.println("The isValid_20 is: "+ arrayTasks.isValid_20("(]"));
+
 	}
 
 }

@@ -3020,6 +3020,57 @@ public class ArrayTasks {
         }
         return max;
     }
+
+    public boolean canBeIncreasing_1909(int[] nums) {
+        Arrays.sort(nums);
+
+        HashSet<Integer> hashSet = new HashSet();
+
+        for(int i =0; i < nums.length; i++){
+            for(int j =i+1; j < nums.length; j++){
+                if (hashSet.add(nums[j]-nums[i])){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public boolean isValid_20(String s) {
+
+        StringBuilder stringBuilder = new StringBuilder();
+        StringOperations stringOperations = new StringOperations();
+        StringBuffer stringBuffer = new StringBuffer();
+        Stack<Character> deque = new Stack<>();
+        System.out.println("The initial stack is: "+s);
+        char c;
+        for(int i =0 ; i < s.length(); i++){
+            c = s.charAt(i);
+            if(c=='('||c=='{'||c=='['){
+                deque.push(c);
+            }
+
+            else {
+                if(deque.empty()){
+                    return false;
+                }
+                if(c==')'&&deque.peek()!='('){
+                    return false;
+                }
+                if(c=='{'&&deque.peek()!='}'){
+                    return false;
+                }
+                if(c==']'&&deque.peek()!='['){
+                    return false;
+                }
+                deque.pop();
+
+            }
+        }
+
+        return deque.empty();
+    }
+
 }
 
 
