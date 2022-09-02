@@ -2465,45 +2465,6 @@ public class ArrayTasks {
         return count;
     }
 
-    public void twoOutOfThree(int[] nums1, int[] nums2, int[] nums3) {
-        nums1 = new int[]{3, 1};
-        nums2 = new int[]{2, 3};
-        nums3 = new int[]{1, 2};
-        int firstval = 0;
-        List<Integer> result = new ArrayList<>();
-        for (int i = 0; i < nums1.length; i++) {
-            for (int j = 0; j < nums2.length; j++) {
-                for (int k = 0; k < nums3.length; k++) {
-                    if (nums1[i] == nums2[j] && nums2[j] == nums3[k]) {
-                        firstval = nums1[i];
-                        result.add(firstval);
-
-
-                    }
-                    if (nums1[i] == nums2[j] && nums2[j] != nums3[k]) {
-                        firstval = nums1[i];
-                        result.add(firstval);
-                        if (nums1[i] != nums2[j] && nums2[j] == nums3[k]) {
-                            firstval = nums2[k];
-                            result.add(firstval);
-                        }
-                    }
-
-                    /*
-                    else if (nums1[i]!=nums2[j]&& nums2[j]==nums3[k]){
-                        firstval = nums2[k];
-                        result.add(firstval);
-                    }
-                     */
-
-
-                }
-            }
-        }
-
-        System.out.println("The twoOutOfThree is: " + result);
-
-    }
 
     public void twoOutOfThree2(int[] nums1, int[] nums2, int[] nums3) {
 
@@ -3038,37 +2999,75 @@ public class ArrayTasks {
 
     public boolean isValid_20(String s) {
 
-        StringBuilder stringBuilder = new StringBuilder();
-        StringOperations stringOperations = new StringOperations();
-        StringBuffer stringBuffer = new StringBuffer();
         Stack<Character> deque = new Stack<>();
-        System.out.println("The initial stack is: "+s);
         char c;
+
         for(int i =0 ; i < s.length(); i++){
             c = s.charAt(i);
-            if(c=='('||c=='{'||c=='['){
+            if(c=='('||c=='{'||c=='[')
+            {
                 deque.push(c);
+                System.out.println("The second stack is: "+deque);
             }
 
             else {
-                if(deque.empty()){
+                if(deque.empty())
                     return false;
-                }
-                if(c==')'&&deque.peek()!='('){
+
+                if(c==')' && deque.peek()!='(')
                     return false;
-                }
-                if(c=='{'&&deque.peek()!='}'){
+                if(c==']' && deque.peek()!='[')
                     return false;
-                }
-                if(c==']'&&deque.peek()!='['){
+                if(c=='}' && deque.peek()!='{')
                     return false;
-                }
                 deque.pop();
 
             }
         }
-
         return deque.empty();
+    }
+
+    public List<Integer> twoOutOfThree_2032(int[] nums1, int[] nums2, int[] nums3) {
+
+        HashSet<Integer> set1 = new HashSet<>();
+        HashSet<Integer> result = new HashSet<>();
+        HashSet<Integer> temp = new HashSet<>();
+        //ListNode<Integer> listNode = new ListNode<>();
+        LinkedList<Integer> list = new LinkedList<>();
+
+
+
+        for(int i:nums1){
+            if(temp.add(i)){
+                if(!set1.add(i)){
+                    result.add(i);
+                }
+            }
+        }
+
+        temp.clear();
+        for(int i: nums2){
+            if(temp.add(i)){
+                if(!set1.add(i)){
+                    result.add(i);
+                }
+            }
+        }
+
+        temp.clear();
+        for(int i: nums3){
+            if(temp.add(i)){
+                if(!set1.add(i)){
+                    result.add(i);
+                }
+            }
+        }
+
+        System.out.println("name\tage");
+        System.out.println("himel\t37");
+        System.out.println("ruma\t34");
+
+        return new ArrayList<>(result);
     }
 
 }

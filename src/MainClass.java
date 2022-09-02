@@ -57,6 +57,7 @@ public class MainClass implements Runnable{
 		MaxMin maxMin = new MaxMin();
 		Binary binary = new Binary();
 		Sorting sorting= new Sorting();
+		StackOperations stackOperations = new StackOperations();
 
 		/**
 		 loop.whileLoopOne();
@@ -220,7 +221,7 @@ public class MainClass implements Runnable{
 		System.out.println( "The max difference is: "+ (arrayTasks.mostWordsFound(new String[]{"abcd abcd abcd abcd abcd eee","abc abc abc abcd"})));
 		System.out.println( "The max difference is: "+ (arrayTasks.mostWordsFound(new String[]{"w jrpihe zsyqn l dxchifbxlasaehj","nmmfrwyl jscqyxk a xfibiooix xolyqfdspkliyejsnksfewbjom","xnleojowaxwpyogyrayfgyuzhgtdzrsyococuqexggigtberizdzlyrdsfvryiynhg","krpwiazoulcixkkeyogizvicdkbrsiiuhizhkxdpssynfzuigvcbovm","rgmz rgztiup wqnvbucfqcyjivvoeedyxvjsmtqwpqpxmzdupfyfeewxegrlbjtsjkusyektigr","o lgsbechr lqcgfiat pkqdutzrq iveyv iqzgvyddyoqqmqerbmkxlbtmdtkinlk","hrvh efqvjilibdqxjlpmanmogiossjyxepotezo","qstd zui nbbohtuk","qsdrerdzjvhxjqchvuewevyzlkyydpeeblpc"})));
 		System.out.println( "The countValidWords is: "+ (arrayTasks.countValidWords("abcd abcd abcd")));
-		arrayTasks.twoOutOfThree(new int[]{}, new int[]{}, new int[]{});
+
 		//System.out.println( "The commonChars is: "+ ( arrayTasks.commonChars(new String[]{"bella","label","roller"})));
 		System.out.println( "The minMaxGame is: "+ ( arrayTasks.minMaxGame(new int[]{1,3,5,2,4,8,2,2})));
 		System.out.println( "The minMaxGame2 is: "+ ( arrayTasks.minMaxGame(new int[]{70,38,21,22})));
@@ -300,10 +301,26 @@ public class MainClass implements Runnable{
 		System.out.println("The canBeIncreasing_1909 is: "+ arrayTasks.canBeIncreasing_1909(new int[] {1,2,10,5,7}));
 		System.out.println("The canBeIncreasing_1909 is: "+ arrayTasks.canBeIncreasing_1909(new int[] {2,3,1,2}));
 
-		System.out.println("The isValid_20 is: "+ arrayTasks.isValid_20("()"));
-		System.out.println("The isValid_20 is: "+ arrayTasks.isValid_20("(){}[]"));
-		System.out.println("The isValid_20 is: "+ arrayTasks.isValid_20("(]"));
+		//System.out.println("The isValid_20 is: "+ arrayTasks.isValid_20("()"));
+		//System.out.println("The isValid_20 is: "+ arrayTasks.isValid_20("(){}[]"));
+		//System.out.println("The isValid_20 is: "+ arrayTasks.isValid_20("(]"));
+		System.out.println("The isValid_20 is: "+ arrayTasks.isValid_20("[(({})}]"));
 
+		stackOperations.StackOne();
+
+
+		System.out.println(arrayTasks.twoOutOfThree_2032(new int[]{1,1,3,2}, new int[]{2,3}, new int[]{3}));
+		System.out.println(arrayTasks.twoOutOfThree_2032(new int[]{1,2,2}, new int[]{4,3,3}, new int[]{5}));
+
+		System.out.println("The findTheDifference_389 is: "+sorting.findTheDifference_389("abc","abcd"));
+		//System.out.println("The findTheDifference_389 is: "+sorting.findTheDifference_389("","a"));
+
+		System.out.println("The intersect_350 is: "+Arrays.toString(sorting.intersect_350(new int[]{1,2,2,1}, new int[]{2,2})));
+		System.out.println("The intersect_350 is: "+Arrays.toString(sorting.intersect_350(new int[]{4,9,5}, new int[]{9,4,9,8,4})));
+
+
+		System.out.println("The intersection_2248 is: "+ sorting.intersection_2248(new int[][]{{3,1,2,4,5},{1,2,3,4},{3,4,5,6}}));
+		System.out.println("The intersection_2248 is: "+ sorting.intersection_2248(new int[][]{{1,2,3},{4,5}}));
 	}
 
 }

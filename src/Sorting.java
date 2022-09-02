@@ -1,3 +1,8 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+
 public class Sorting {
 
     public String sortSentence_1859(String s) {
@@ -9,4 +14,64 @@ public class Sorting {
         }
         return str3;
     }
+
+    public char findTheDifference_389(String s, String t) {
+
+        char result = 0;
+
+        for(char cs : s.toCharArray()) result ^= cs;
+        System.out.println("888"+result);
+        for(char ct : t.toCharArray()) result ^= ct;
+        System.out.println("000"+result);
+
+        return result;
+    }
+
+    public int[] intersect_350(int[] nums1, int[] nums2) {
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
+        List<Integer> list = new ArrayList<>();
+
+        for(int i=0, j=0; i<nums1.length && j<nums2.length;){
+            if (nums1[i]==nums2[j]){
+                list.add(nums1[i]);
+                i++;
+                j++;
+            }
+            else if(nums1[i]<nums2[j])
+                i++;
+
+            else
+                j++;
+
+        }
+
+        int[] result = new int[list.size()];
+        for (int i =0; i<list.size();i++){
+            result[i]=list.get(i);
+        }
+
+        return result;
+    }
+
+    public List<Integer> intersection_2248(int[][] nums) {
+        List<Integer> list = new ArrayList<>();
+        int[] arr = new int[1001];
+        for(int i=0; i<nums.length; i++){
+            for(int j=0; j<nums[i].length; j++){
+            arr[nums[i][j]]++;
+            }
+        }
+        System.out.println("the intersection_2248 is:"+Arrays.toString(arr));
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] == nums.length){
+                list.add(i);
+            }
+        }
+
+        return list;
+
+
+    }
+
 }
