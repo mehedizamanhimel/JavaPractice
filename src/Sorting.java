@@ -56,22 +56,26 @@ public class Sorting {
 
     public List<Integer> intersection_2248(int[][] nums) {
         List<Integer> list = new ArrayList<>();
-        int[] arr = new int[1001];
+        int[] arr = new int[10];
         for(int i=0; i<nums.length; i++){
             for(int j=0; j<nums[i].length; j++){
             arr[nums[i][j]]++;
             }
         }
+
         System.out.println("the intersection_2248 is:"+Arrays.toString(arr));
         for (int i = 1; i < arr.length; i++) {
             if (arr[i] == nums.length){
                 list.add(i);
             }
         }
+        return list;
+    }
+
+    public List<List<Integer>> findDifference(int[] nums1, int[] nums2) {
+        List<List<Integer>> list = new ArrayList<>();
 
         return list;
-
-
     }
 
 }

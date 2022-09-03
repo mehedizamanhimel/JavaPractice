@@ -321,6 +321,7 @@ public class MainClass implements Runnable{
 
 		System.out.println("The intersection_2248 is: "+ sorting.intersection_2248(new int[][]{{3,1,2,4,5},{1,2,3,4},{3,4,5,6}}));
 		System.out.println("The intersection_2248 is: "+ sorting.intersection_2248(new int[][]{{1,2,3},{4,5}}));
+		System.out.println("The intersection_2248 is: "+ sorting.intersection_2248(new int[][]{{1,2},{2,3}}));
 	}
 
 }
