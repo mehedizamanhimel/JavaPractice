@@ -72,8 +72,38 @@ public class Sorting {
         return list;
     }
 
-    public List<List<Integer>> findDifference(int[] nums1, int[] nums2) {
-        List<List<Integer>> list = new ArrayList<>();
+    public List<List<Integer>> findDifference_2215(int[] nums1, int[] nums2) {
+        List<List<Integer>> list = new ArrayList<List<Integer>>();
+
+        HashSet<Integer> set1 = new HashSet<>();
+        HashSet<Integer> set2 = new HashSet<>();
+
+        List<Integer> list1 = new ArrayList<>();
+        List<Integer> list2 = new ArrayList<>();
+
+        for(int i:nums1){
+            set1.add(i);
+        }
+
+        for(int i:nums2){
+            set2.add(i);
+        }
+
+
+        for(int n1 : set1){
+            if (!set2.contains(n1)){
+                list1.add(n1);
+            }
+        }
+
+        for(int n2 : set2){
+            if (!set1.contains(n2)){
+                list2.add(n2);
+            }
+        }
+
+        list.add(list1);
+        list.add(list2);
 
         return list;
     }
