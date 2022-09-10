@@ -325,6 +325,12 @@ public class MainClass implements Runnable{
 
 		System.out.println("The findDifference_2215 is: "+ sorting.findDifference_2215(new int[]{1,2,3},new int[]{2,4,6}));
 		System.out.println("The findDifference_2215 is: "+ sorting.findDifference_2215(new int[]{1,2,3,3},new int[]{1,1,2,2}));
+
+		System.out.println("The distributeCandies_575 is: "+ arrayTasks.distributeCandies_575_hashset(new int[] {1,1,2,2,3,3}));
+		System.out.println("The distributeCandies_575 is: "+ arrayTasks.distributeCandies_575_hashset(new int[] {1,1,2,3}));
+		System.out.println("The distributeCandies_575 is: "+ arrayTasks.distributeCandies_575_hashset(new int[] {6,6,6,6}));
+		System.out.println("The distributeCandies_575 is: "+ arrayTasks.distributeCandies_575_hashset(new int[] {1,1,1,1,2,2,2,3,3,3}));
+		System.out.println("The distributeCandies_575 is: "+ arrayTasks.distributeCandies_575_hashset(new int[] {0,0,0,4}));
 	}
 
 }

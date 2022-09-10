@@ -2643,40 +2643,7 @@ public class ArrayTasks {
         return false;
     }
 
-    // Starting of largest palindrome problem
-    public String longestPalindrome(String s) {
 
-        if (s == null || s.length() < 1) {
-            return "";
-        }
-        int first = 0, last = 0;
-        for (int i = 0; i < s.length(); i++) {
-            int num1 = palindromemethod(s, i, i);
-            int num2 = palindromemethod(s, i, i + 1);
-            int finalVal = Math.max(num1, num2);
-            if (finalVal > last - first) {
-                first = i - (finalVal - 1) / 2;
-                last = i + finalVal / 2;
-            }
-
-        }
-        return s.substring(first, last - 1);
-    }
-
-    public int palindromemethod(String s, int left, int right) {
-
-        if (s.length() == 0 || left < right) {
-            return 0;
-        }
-
-        while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
-            left--;
-            right++;
-        }
-
-        return right - left - 1;
-
-    }
 
     public void rotate(int[][] matrix) {
 
@@ -3069,6 +3036,90 @@ public class ArrayTasks {
 
         return new ArrayList<>(result);
     }
+
+    public int minDeletion_2216(int[] nums) {
+        int count = 0;
+        int size = nums.length;
+        for(int i=0; i< nums.length-1;i++){
+            if ((i-count) % 2 == 0 && nums[i]==nums[i+1]){
+                count++;
+            }
+        }
+
+        return 0;
+    }
+
+    // Starting of largest palindrome problem
+    public String longestPalindrome(String s) {
+
+        if (s == null || s.length() < 1) {
+            return "";
+        }
+        int first = 0, last = 0;
+        for (int i = 0; i < s.length(); i++) {
+            int num1 = palindromemethod(s, i, i);
+            int num2 = palindromemethod(s, i, i + 1);
+            int finalVal = Math.max(num1, num2);
+            if (finalVal > last - first) {
+                first = i - (finalVal - 1) / 2;
+                last = i + finalVal / 2;
+            }
+
+        }
+        return s.substring(first, last + 1);
+    }
+
+    public int palindromemethod(String s, int left, int right) {
+
+
+        while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
+            left--;
+            right++;
+        }
+
+        return right - left - 1;
+
+    }
+
+    public int distributeCandies_575(int[] candyType) {
+        int temp=1;
+
+        for(int i=0; i< candyType.length ;i++) {
+            for(int j=0; j< i;j++) {
+                if (candyType[i] != candyType[j]) {
+                    temp += 1;
+                }
+            }
+        }
+
+        return Math.min(temp, candyType.length/2);
+    }
+
+    public int distributeCandies_575_(int[] candyType) {
+        Arrays.sort(candyType);
+        int advisedCandy = candyType.length/2;
+        int temp=1;
+
+        for(int i=0; i< candyType.length-1 && temp < candyType.length/2;i++) {
+            if(candyType[i]!=candyType[i+1]){
+                temp+=1;
+            }
+        }
+
+        return Math.min(temp, advisedCandy);
+    }
+
+    public int distributeCandies_575_hashset(int[] candyType) {
+        HashSet<Integer> set = new HashSet<>();
+        int totalcandy= candyType.length;
+
+        for(int i=0; i< totalcandy ;i++) {
+            set.add(candyType[i]);
+        }
+
+        return Math.min(set.size(), totalcandy/2);
+    }
+
 
 }
 
