@@ -3111,15 +3111,27 @@ public class ArrayTasks {
 
     public int distributeCandies_575_hashset(int[] candyType) {
         HashSet<Integer> set = new HashSet<>();
+
         int totalcandy= candyType.length;
 
         for(int i=0; i< totalcandy ;i++) {
             set.add(candyType[i]);
         }
-
         return Math.min(set.size(), totalcandy/2);
     }
 
+    public String[] findRelativeRanks_506(int[] score) {
+        String[] result = new String[score.length];
+
+        HashMap<Integer, Integer> hashMap = new HashMap<>();
+
+        if(score.length==0) return null;
+        for(int i =0; i<score.length; i++){
+            hashMap.put(score[i], i);
+        }
+        Arrays.sort(score);
+        return result;
+    }
 
 }
 
