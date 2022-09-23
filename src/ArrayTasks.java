@@ -3133,6 +3133,65 @@ public class ArrayTasks {
         return result;
     }
 
+    public int sumOddLengthSubarrays_1588(int[] arr) {
+        int result = 0;
+        for(int i=0;i<arr.length;i++){
+            for(int j=i;j<arr.length;j+=2){
+                for(int k=i;k<=j;k++){
+                    result+=arr[k];
+                }
+            }
+        }
+        return result;
+    }
+
+    public boolean isPowerOfFour_342(int n) {
+        return helper((double) n);
+
+    }
+    public boolean helper(double n){
+        // int result = temp/2;
+        //int temp= n/2;
+        if(n==1||n==4) return true;
+        if(n<4) return false;
+        else return helper(n/4);
+    }
+
+    public boolean isPowerOfTwo_231(int n) {
+        //return helper2((double) n);
+        if(n<1)
+            return false;
+        if(n==1)
+            return true;
+        if(n%2==0)
+            return isPowerOfTwo_231(n/2);
+        else
+            return false;
+
+    }
+
+
+    public boolean isPowerOfThree_326(int n) {
+
+        //return helper3( n);
+        if(n<1)
+            return false;
+
+        while (n%3==0)
+            n=n/3;
+
+        return n==1;
+    }
+
+    public boolean helper3(int n){
+
+        if(n<1)
+            return false;
+
+        while (n%3==0)
+            n=n/3;
+        return n==1;
+    }
 }
 
 

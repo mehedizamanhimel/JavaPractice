@@ -315,22 +315,37 @@ public class MainClass implements Runnable{
 		System.out.println("The findTheDifference_389 is: "+sorting.findTheDifference_389("abc","abcd"));
 		//System.out.println("The findTheDifference_389 is: "+sorting.findTheDifference_389("","a"));
 
-		System.out.println("The intersect_350 is: "+Arrays.toString(sorting.intersect_350(new int[]{1,2,2,1}, new int[]{2,2})));
+		System.out.println("\nThe intersect_350 is: "+Arrays.toString(sorting.intersect_350(new int[]{1,2,2,1}, new int[]{2,2})));
 		System.out.println("The intersect_350 is: "+Arrays.toString(sorting.intersect_350(new int[]{4,9,5}, new int[]{9,4,9,8,4})));
 
 
-		System.out.println("The intersection_2248 is: "+ sorting.intersection_2248(new int[][]{{3,1,2,4,5},{1,2,3,4},{3,4,5,6}}));
+		System.out.println("\nThe intersection_2248 is: "+ sorting.intersection_2248(new int[][]{{3,1,2,4,5},{1,2,3,4},{3,4,5,6}}));
 		System.out.println("The intersection_2248 is: "+ sorting.intersection_2248(new int[][]{{1,2,3},{4,5}}));
 		System.out.println("The intersection_2248 is: "+ sorting.intersection_2248(new int[][]{{1,2},{2,3}}));
 
-		System.out.println("The findDifference_2215 is: "+ sorting.findDifference_2215(new int[]{1,2,3},new int[]{2,4,6}));
+		System.out.println("\nThe findDifference_2215 is: "+ sorting.findDifference_2215(new int[]{1,2,3},new int[]{2,4,6}));
 		System.out.println("The findDifference_2215 is: "+ sorting.findDifference_2215(new int[]{1,2,3,3},new int[]{1,1,2,2}));
 
-		System.out.println("The distributeCandies_575 is: "+ arrayTasks.distributeCandies_575_hashset(new int[] {1,1,2,2,3,3}));
+		System.out.println("\nThe distributeCandies_575 is: "+ arrayTasks.distributeCandies_575_hashset(new int[] {1,1,2,2,3,3}));
 		System.out.println("The distributeCandies_575 is: "+ arrayTasks.distributeCandies_575_hashset(new int[] {1,1,2,3}));
 		System.out.println("The distributeCandies_575 is: "+ arrayTasks.distributeCandies_575_hashset(new int[] {6,6,6,6}));
 		System.out.println("The distributeCandies_575 is: "+ arrayTasks.distributeCandies_575_hashset(new int[] {1,1,1,1,2,2,2,3,3,3}));
 		System.out.println("The distributeCandies_575 is: "+ arrayTasks.distributeCandies_575_hashset(new int[] {0,0,0,4}));
+		System.out.println("The distributeCandies_575 is: "+ arrayTasks.sumOddLengthSubarrays_1588(new int[] {1,4,2,5,3}));
+
+		System.out.println("\nThe isPowerOfFour_342 is: "+ arrayTasks.isPowerOfFour_342(16));
+		System.out.println("The isPowerOfFour_342 is: "+ arrayTasks.isPowerOfFour_342(5));
+		System.out.println("The isPowerOfFour_342 is: "+ arrayTasks.isPowerOfFour_342(3));
+		System.out.println("The isPowerOfFour_342 is: "+ arrayTasks.isPowerOfFour_342(1));
+
+		System.out.println("\nThe isPowerOfTwo_231 is: "+ arrayTasks.isPowerOfTwo_231(1));
+		System.out.println("The isPowerOfTwo_231 is: "+ arrayTasks.isPowerOfTwo_231(16));
+		System.out.println("The isPowerOfTwo_231 is: "+ arrayTasks.isPowerOfTwo_231(3));
+
+		System.out.println("\nThe isPowerOfThree_326 is: "+ arrayTasks.isPowerOfThree_326(27));
+		System.out.println("The isPowerOfThree_326 is: "+ arrayTasks.isPowerOfThree_326(0));
+		System.out.println("The isPowerOfThree_326 is: "+ arrayTasks.isPowerOfThree_326(-1));
+
 	}
 
 }
