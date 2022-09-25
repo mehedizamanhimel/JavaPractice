@@ -346,6 +346,16 @@ public class MainClass implements Runnable{
 		System.out.println("The isPowerOfThree_326 is: "+ arrayTasks.isPowerOfThree_326(0));
 		System.out.println("The isPowerOfThree_326 is: "+ arrayTasks.isPowerOfThree_326(-1));
 
+		System.out.println("\nThe reverseWords_557 is: "+ stringBuilder.reverseWords_557("abc"));
+
+		System.out.println("\nThe validPalindrome_680 is: "+ arrayTasks.validPalindrome_680("aba"));
+		System.out.println("The validPalindrome_680 is: "+ arrayTasks.validPalindrome_680("abc"));
+		System.out.println("The validPalindrome_680 is: "+ arrayTasks.validPalindrome_680("abca"));
+		System.out.println("The validPalindrome_680 is: "+ arrayTasks.validPalindrome_680("a"));
+
+		System.out.println("\nThe convertToBase7 is: "+ arrayTasks.convertToBase7(-7));
+		System.out.println("The convertToBase7 is: "+ arrayTasks.convertToBase7(7));
+		System.out.println("The convertToBase7 is: "+ arrayTasks.convertToBase7(100));
 	}
 
 }

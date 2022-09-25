@@ -21,4 +21,15 @@ public class StringBuilder {
             }
         }
     }
+
+    public String reverseWords_557(String s) {
+        StringBuilder stringBuilder = new StringBuilder();
+        char[] charArray = s.toCharArray();
+        int arrLength = s.length();
+        String result = "";
+        for(int stringIndex= 0; stringIndex>=arrLength; stringIndex++){
+
+        }
+        return result;
+    }
 }

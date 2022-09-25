@@ -3192,6 +3192,49 @@ public class ArrayTasks {
             n=n/3;
         return n==1;
     }
+
+    public boolean validPalindrome_680(String s) {
+
+        for(int i=0, j=s.length()-1;i<j;){
+            if(s.charAt(i)==s.charAt(j)){
+                i++;
+                j--;
+                continue;
+            }
+            else {
+                return validPalindrome_680_helper(s, i+1, j)||validPalindrome_680_helper(s, i, j-1);
+            }
+        }
+        return true;
+    }
+
+    private boolean validPalindrome_680_helper(String s, int fromIndex, int toIndex) {
+        while (fromIndex<toIndex){
+            if(s.charAt(fromIndex)!=s.charAt(toIndex)) {
+                return false;
+            }
+            fromIndex++;
+            toIndex--;
+        }
+        return true;
+    }
+
+    public String convertToBase7(int num) {
+        String result="", negative="", zero="0";
+        if(num==0){
+            return zero;
+        }
+        if(num<0){
+            negative="-";
+        }
+        num= Math.abs(num);
+        while (num>0){
+            result = num%7+result;
+            num/=7;
+        }
+        return negative+result;
+
+    }
 }
 
 
