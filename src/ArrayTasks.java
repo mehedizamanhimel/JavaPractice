@@ -3235,6 +3235,41 @@ public class ArrayTasks {
         return negative+result;
 
     }
+
+    public boolean divisorGame_1025(int n) {
+        if(n%2!=0){
+            return false;
+        }
+        return true;
+    }
+
+    public boolean isSubsequence_392(String s, String t) {
+        int i=0,j=0;
+        while (i<s.length()&&j<t.length()){
+            if(s.charAt(i)==t.charAt(j)){
+                i++;
+                j++;
+            }
+            else {
+                j++;
+            }
+        }
+
+        return i==s.length();
+    }
+
+    public int numMatchingSubseq_792(String s, String[] words) {
+        int i=0,j=0;
+        while (i<s.length()&&j<words.length){
+            //if(s.charAt(i)==words.charAt(j)){
+            if(s.contains(words[i])){
+                i++;
+                j++;
+            }
+
+        }
+        return i;
+    }
 }
 
 

@@ -134,7 +134,7 @@ public class MainClass implements Runnable{
 		arrayTasks.arraychangeViaInput();
 		arrayTasks.rubyTest();
 		arrayTasks.leetcode_One();
-		 **/
+
 
 
 		arrayTasks.fullPhase();
@@ -150,7 +150,7 @@ public class MainClass implements Runnable{
 		arrayTasks.TestingALoop(5);
 		System.out.println("the recurssion value is: "+arrayTasks.TestingALoop(4));
 
-
+		 **/
 		//arrayTasks.replaceDuplicatewithDash(new int[]{1, 2, 3, 5});
 
 		//System.out.println("the final array is: "+arrayTasks.replaceDuplicatewithDash(new int[]{1, 2, 3, 5}));
@@ -356,6 +356,17 @@ public class MainClass implements Runnable{
 		System.out.println("\nThe convertToBase7 is: "+ arrayTasks.convertToBase7(-7));
 		System.out.println("The convertToBase7 is: "+ arrayTasks.convertToBase7(7));
 		System.out.println("The convertToBase7 is: "+ arrayTasks.convertToBase7(100));
+
+		System.out.println("\nThe divisorGame_1025 is: "+ arrayTasks.divisorGame_1025(100));
+		System.out.println("The divisorGame_1025 is: "+ arrayTasks.divisorGame_1025(2));
+		System.out.println("The divisorGame_1025 is: "+ arrayTasks.divisorGame_1025(3));
+
+		System.out.println("\nThe isSubsequence_392 is: "+ arrayTasks.isSubsequence_392("abc","ahbgdc"));
+		System.out.println("The isSubsequence_392 is: "+ arrayTasks.isSubsequence_392("axc","ahbgdc"));
+
+		System.out.println("\nThe numMatchingSubseq_792 is: "+ arrayTasks.numMatchingSubseq_792("abc", new String[] {"a","bb","acd","ace"}));
+		System.out.println("The numMatchingSubseq_792 is: "+ arrayTasks.numMatchingSubseq_792("axc",new String[] {"ahjpjau","ja","ahbwzgqnuk","tnmlanowax"}));
+
 	}
 
 }
