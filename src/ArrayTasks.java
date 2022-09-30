@@ -3270,6 +3270,17 @@ public class ArrayTasks {
         }
         return i;
     }
+
+    public int maxArea(int[] height) {
+        int length = height.length;
+        int left = 0;
+        int right = length-1;
+        
+        for(int i=1; i<height.length; i++){
+
+        }
+        return 0;
+    }
 }
 
 
