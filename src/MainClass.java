@@ -1,6 +1,7 @@
 import ConceptPractice.*;
 import problems.CodilityTest;
 import problems.Fibonacci;
+import problems.MathProblems;
 import problems.ScannerClass;
 
 import java.util.ArrayList;
@@ -58,6 +59,7 @@ public class MainClass implements Runnable{
 		Binary binary = new Binary();
 		Sorting sorting= new Sorting();
 		StackOperations stackOperations = new StackOperations();
+		MathProblems mathProblems = new MathProblems();
 
 		/**
 		 loop.whileLoopOne();
@@ -364,8 +366,11 @@ public class MainClass implements Runnable{
 		System.out.println("\nThe isSubsequence_392 is: "+ arrayTasks.isSubsequence_392("abc","ahbgdc"));
 		System.out.println("The isSubsequence_392 is: "+ arrayTasks.isSubsequence_392("axc","ahbgdc"));
 
-		System.out.println("\nThe numMatchingSubseq_792 is: "+ arrayTasks.numMatchingSubseq_792("abc", new String[] {"a","bb","acd","ace"}));
-		System.out.println("The numMatchingSubseq_792 is: "+ arrayTasks.numMatchingSubseq_792("axc",new String[] {"ahjpjau","ja","ahbwzgqnuk","tnmlanowax"}));
+		//System.out.println("\nThe numMatchingSubseq_792 is: "+ arrayTasks.numMatchingSubseq_792("abc", new String[] {"a","bb","acd","ace"}));
+		//System.out.println("The numMatchingSubseq_792 is: "+ arrayTasks.numMatchingSubseq_792("axc",new String[] {"ahjpjau","ja","ahbwzgqnuk","tnmlanowax"}));
+
+		System.out.println("\nThe sum_2235 is: "+ mathProblems.sum_2235(12,5));
+		System.out.println("The sum_2235 is: "+ mathProblems.sum_2235(-10,4));
 
 	}
 
