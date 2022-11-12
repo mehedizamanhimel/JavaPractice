@@ -372,6 +372,8 @@ public class MainClass implements Runnable{
 		System.out.println("\nThe sum_2235 is: "+ mathProblems.sum_2235(12,5));
 		System.out.println("The sum_2235 is: "+ mathProblems.sum_2235(-10,4));
 
+		arrayTasks.sortColors_75(new int[]{4,1,2,5});
+
 	}
 
 }
