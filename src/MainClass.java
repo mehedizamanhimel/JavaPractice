@@ -61,6 +61,8 @@ public class MainClass implements Runnable{
 		StackOperations stackOperations = new StackOperations();
 		MathProblems mathProblems = new MathProblems();
 
+		MIU_Problem_Solution miu = new MIU_Problem_Solution();
+
 		/**
 		 loop.whileLoopOne();
 		 loop.DoWhileLoop();
@@ -373,6 +375,10 @@ public class MainClass implements Runnable{
 		System.out.println("The sum_2235 is: "+ mathProblems.sum_2235(-10,4));
 
 		arrayTasks.sortColors_75(new int[]{4,1,2,5});
+
+
+		System.out.println("the result for centered problem  is: "+miu.return_centered(new int[]{}));
+		System.out.println("the result for centered problem  is: "+miu.return_centered(new int[]{10}));
 
 	}
 

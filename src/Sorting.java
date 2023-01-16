@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
+import java.util.*;
 import java.util.List;
 
 public class Sorting {
@@ -107,5 +105,23 @@ public class Sorting {
 
         return list;
     }
+
+
+    public String[] findRelativeRanks_506(int[] score) {
+        String[] result = new String[score.length];
+        ArrayList<String> arrayList = new ArrayList<>();
+        HashMap hashMap = new HashMap();
+        hashMap.put(1,"Gold Medal");
+        hashMap.put(2,"Silver Medal");
+        hashMap.put(3,"Bronze Medal");
+
+        for(int i = 0; i < score.length ; i++){
+
+        }
+
+        return result;
+    }
+
+
 
 }
