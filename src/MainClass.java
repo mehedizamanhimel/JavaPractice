@@ -1,4 +1,5 @@
 import ConceptPractice.*;
+import org.omg.Messaging.SyncScopeHelper;
 import problems.CodilityTest;
 import problems.Fibonacci;
 import problems.MathProblems;
@@ -62,6 +63,8 @@ public class MainClass implements Runnable{
 		MathProblems mathProblems = new MathProblems();
 
 		MIU_Problem_Solution miu = new MIU_Problem_Solution();
+
+		CreateAPI createAPI = new CreateAPI();
 
 		/**
 		 loop.whileLoopOne();
@@ -377,9 +380,16 @@ public class MainClass implements Runnable{
 		arrayTasks.sortColors_75(new int[]{4,1,2,5});
 
 
-		System.out.println("the result for centered problem  is: "+miu.return_centered(new int[]{}));
-		System.out.println("the result for centered problem  is: "+miu.return_centered(new int[]{10}));
+		//System.out.println("the result for centered problem  is: "+miu.return_centered(new int[]{}));
+		//System.out.println("the result for centered problem  is: "+miu.return_centered(new int[]{10}));
+		System.out.println("The max int is"+Integer.MAX_VALUE);
+		System.out.println("The min int is"+Integer.MIN_VALUE);
+		System.out.println("The max int is"+Integer.MIN_VALUE);
+		System.out.println("The findRelativeRanks_506 is: "+ Arrays.toString(sorting.findRelativeRanks_506(new int[]{1})));
+		System.out.println("The findRelativeRanks_506 is: "+ Arrays.toString( sorting.findRelativeRanks_506(new int[]{2,1})));
 
+
+		System.out.println(createAPI.getJSON());
 	}
 
 }

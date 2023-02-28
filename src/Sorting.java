@@ -108,16 +108,30 @@ public class Sorting {
 
 
     public String[] findRelativeRanks_506(int[] score) {
+        Arrays.sort(score);
         String[] result = new String[score.length];
-        ArrayList<String> arrayList = new ArrayList<>();
-        HashMap hashMap = new HashMap();
-        hashMap.put(1,"Gold Medal");
-        hashMap.put(2,"Silver Medal");
-        hashMap.put(3,"Bronze Medal");
+        List<Integer> arrayList = new ArrayList<>();
+        HashMap<Integer, String> hashMap = new HashMap<>();
 
-        for(int i = 0; i < score.length ; i++){
+        
 
+        for (int i =0 ; i< score.length; i++){
+            arrayList.add(score[i]);
         }
+
+
+        if(score.length==1){
+            result[0] = "Gold Star";
+            return result;
+        }
+
+        if(score.length==2){
+            result[0] = "Gold Star";
+            result[1] = "Silver Star";
+            return result;
+        }
+
+
 
         return result;
     }
