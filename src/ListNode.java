@@ -44,20 +44,38 @@ public class ListNode {
         return head3;
     }
 
-    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-        ListNode ls = new ListNode();
-
+    public ListNode mergeTwoLists_21(ListNode list1, ListNode list2) {
         if (list1==null) return list2;
         if (list2==null) return list1;
+
         System.out.println(list1);
 
-        /*
-        while (list1!= null && list1!= null){
-
+        if(list1.val < list2.val){
+            list1.next = mergeTwoLists_21(list1.next, list2);
+            return list1;
         }
-         */
 
-        return ls;
+        else {
+            list2.next = mergeTwoLists_21(list1, list2.next);
+            return list2;
+        }
     }
 
+
+    public ListNode sortList_148(ListNode head) {
+
+        return null;
+    }
+
+
+    public Node deleteDuplicates_83(Node head) {
+
+        Node abc = head;
+        if(abc == null) return abc;
+        while (abc!=null){
+            while (abc.nex )
+
+        }
+        return null;
+    }
 }

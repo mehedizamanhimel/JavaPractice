@@ -1,4 +1,5 @@
 import ConceptPractice.*;
+import com.hackerrank.Javaproblems;
 import org.omg.Messaging.SyncScopeHelper;
 import problems.CodilityTest;
 import problems.Fibonacci;
@@ -64,7 +65,7 @@ public class MainClass implements Runnable{
 
 		MIU_Problem_Solution miu = new MIU_Problem_Solution();
 
-		CreateAPI createAPI = new CreateAPI();
+		Javaproblems javaproblems = new Javaproblems();
 
 		/**
 		 loop.whileLoopOne();
@@ -388,8 +389,10 @@ public class MainClass implements Runnable{
 		System.out.println("The findRelativeRanks_506 is: "+ Arrays.toString(sorting.findRelativeRanks_506(new int[]{1})));
 		System.out.println("The findRelativeRanks_506 is: "+ Arrays.toString( sorting.findRelativeRanks_506(new int[]{2,1})));
 
+		ListNode ls = new ListNode();
+		ls.mergeTwoLists_21(new ListNode() , new ListNode());
 
-		System.out.println(createAPI.getJSON());
+		javaproblems.Java_String_Introduction();
 	}
 
 }
