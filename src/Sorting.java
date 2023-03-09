@@ -136,6 +136,40 @@ public class Sorting {
         return result;
     }
 
+    public boolean isAnagram_242(String s, String t) {
+
+        int[] counter = new int[26];
+
+        if(s == null || t == null) {
+            return false;
+        }
+
+        if(s.length()!=t.length()){
+            return false;
+        }
+
+        for(int i = 0; i < s.length(); i++){
+
+            counter[s.charAt(i)-'a']++;
+            counter[t.charAt(i)-'a']--;
+            //System.out.println(Arrays.toString(counter));
+        }
+
+        // Above iteration provides us with count array having all values to zero then we can say we found an anagram.
+        // Every element of count has to be equal to 0.
+        // If it is greater than 0 it means s has a character whose occurrence is greater than its occurrence in t.
+        // And if its less than 0 then, s has a character whose occurrence is smaller than its occurrence in t.
+
+        System.out.println(Arrays.toString(counter));
+        for(int i: counter){
+            if(i != 0)
+                return false;
+        }
+
+        return true;
+
+    }
+
 
 
 }

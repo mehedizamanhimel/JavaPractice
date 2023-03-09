@@ -390,11 +390,23 @@ public class MainClass implements Runnable{
 		System.out.println("The findRelativeRanks_506 is: "+ Arrays.toString( sorting.findRelativeRanks_506(new int[]{2,1})));
 
 		ListNode ls = new ListNode();
-		ls.mergeTwoLists_21(new ListNode() , new ListNode());
+		//ls.mergeTwoLists_21(new ListNode() , new ListNode());
 
 		javaproblems.Java_String_Introduction();
-	}
 
+		Recurssion recurssion = new Recurssion();
+		System.out.println("the recurssion result is: "+recurssion.result(2,2));
+		System.out.println(sorting.isAnagram_242("acc","bca"));
+
+
+
+
+		int x=9;
+		int h=10;
+		int z=++x+h++;
+		System.out.print(x+""+h+""+z);
+
+	}
 }
 
 /*

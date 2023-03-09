@@ -50,7 +50,7 @@ public class ListNode {
 
         System.out.println(list1);
 
-        if(list1.val < list2.val){
+        if(list1.size < list2.size){
             list1.next = mergeTwoLists_21(list1.next, list2);
             return list1;
         }
@@ -73,7 +73,6 @@ public class ListNode {
         Node abc = head;
         if(abc == null) return abc;
         while (abc!=null){
-            while (abc.nex )
 
         }
         return null;
