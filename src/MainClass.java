@@ -380,7 +380,6 @@ public class MainClass implements Runnable{
 
 		arrayTasks.sortColors_75(new int[]{4,1,2,5});
 
-
 		//System.out.println("the result for centered problem  is: "+miu.return_centered(new int[]{}));
 		//System.out.println("the result for centered problem  is: "+miu.return_centered(new int[]{10}));
 		System.out.println("The max int is"+Integer.MAX_VALUE);
@@ -397,8 +396,6 @@ public class MainClass implements Runnable{
 		Recurssion recurssion = new Recurssion();
 		System.out.println("the recurssion result is: "+recurssion.result(2,2));
 		System.out.println(sorting.isAnagram_242("acc","bca"));
-
-
 
 
 		int x=9;
