@@ -108,7 +108,38 @@ public class StringOperations {
         return String.valueOf(cset);
     }
 
-    public void StringOps() {
+    public boolean rotateString_796(String s, String goal) {
+        /*
+        if(s.length()!=goal.length()){
+            return false;
+        }
+
+        if(s.equals(goal)==true) {
+            return true;
+        }
+
+        for(int i=0;i<s.length();i++)
+        {
+            s=s.substring(1)+s.substring(0,1);
+            if(s.equals(goal)==true)
+                return true;
+
+        }
+
+        return false;
+
+         */
+
+        return (s.length()==goal.length() && (s+s).contains(goal));
+
+        /*
+        another method
+
+        return s.concat(s).contains(goal) && s.length() == goal.length();
+
+         */
+
+
 
     }
 }

@@ -201,7 +201,7 @@ public class MainClass implements Runnable{
 		arrayTasks.maxProfit(new int[]{1});
 		maxMin.maxmin1();
 		maxMin.finding_lowest_highest();
-		stringOperations.StringOps();
+
 		System.out.println("the leetcode shuffle answer is: "+ ("the maxProfit is: "+arrayTasks.maximumDifference(new int[]{7,1,5,4})));
 		arrayTasks.arrayMaxMinTest();
 		arrayTasks.fiboprac();
@@ -385,8 +385,12 @@ public class MainClass implements Runnable{
 		System.out.println("The max int is"+Integer.MAX_VALUE);
 		System.out.println("The min int is"+Integer.MIN_VALUE);
 		System.out.println("The max int is"+Integer.MIN_VALUE);
+
+		/*
 		System.out.println("The findRelativeRanks_506 is: "+ Arrays.toString(sorting.findRelativeRanks_506(new int[]{1})));
 		System.out.println("The findRelativeRanks_506 is: "+ Arrays.toString( sorting.findRelativeRanks_506(new int[]{2,1})));
+
+
 
 		ListNode ls = new ListNode();
 		//ls.mergeTwoLists_21(new ListNode() , new ListNode());
@@ -401,8 +405,18 @@ public class MainClass implements Runnable{
 		int x=9;
 		int h=10;
 		int z=++x+h++;
-		System.out.print(x+""+h+""+z);
+		System.out.println(x+""+h+""+z);
 
+		*/
+
+		Oop_Inheritance oop2 = new Oop_Inheritance();
+		Oop_Three oop3 = new Oop_Three();
+		oop2.printing_One();
+		oop2.printing_Two();
+		oop3.print_oop_in_1();
+
+		System.out.println("The rotateString_796 result is: "+stringOperations.rotateString_796("abcde","cdeab"));
+		System.out.println("The rotateString_796 result is: "+stringOperations.rotateString_796("abcde","csdfab"));
 	}
 }
 
