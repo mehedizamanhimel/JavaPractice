@@ -6,8 +6,10 @@ import problems.Fibonacci;
 import problems.MathProblems;
 import problems.ScannerClass;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 
 public class MainClass implements Runnable{
 
@@ -417,6 +419,15 @@ public class MainClass implements Runnable{
 
 		System.out.println("The rotateString_796 result is: "+stringOperations.rotateString_796("abcde","cdeab"));
 		System.out.println("The rotateString_796 result is: "+stringOperations.rotateString_796("abcde","csdfab"));
+
+		MathOperations mathOperations = new MathOperations();
+
+		System.out.println(mathOperations.floor(9));
+
+		Date date = new Date();
+		SimpleDateFormat format = new SimpleDateFormat("E dd.MM.yy 'at' hh:mm:ss a zzz D");
+
+		System.out.println("current date and time is: "+format.format(date));
 	}
 }
 

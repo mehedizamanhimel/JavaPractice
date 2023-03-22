@@ -137,9 +137,12 @@ public class StringOperations {
 
         return s.concat(s).contains(goal) && s.length() == goal.length();
 
-         */
+        */
 
+    }
 
+    public boolean repeatedSubstringPattern_459(String s) {
 
+        return false;
     }
 }
