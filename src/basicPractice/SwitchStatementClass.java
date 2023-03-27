@@ -1,3 +1,4 @@
+package basicPractice;
 
 public class SwitchStatementClass {
 	

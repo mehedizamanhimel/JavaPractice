@@ -1,13 +1,13 @@
 import ConceptPractice.*;
+import basicPractice.*;
+import basicPractice.WhileLoop;
 import com.hackerrank.Javaproblems;
-import org.omg.Messaging.SyncScopeHelper;
 import problems.CodilityTest;
 import problems.Fibonacci;
 import problems.MathProblems;
 import problems.ScannerClass;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 
@@ -428,6 +428,19 @@ public class MainClass implements Runnable{
 		SimpleDateFormat format = new SimpleDateFormat("E dd.MM.yy 'at' hh:mm:ss a zzz D");
 
 		System.out.println("current date and time is: "+format.format(date));
+
+		WhileLoop whileLoop1 = new WhileLoop();
+		whileLoop1.While_First();
+		whileLoop1.while_second();
+
+		loop.DoWhileLoop();
+		loop.whileLoopOne();
+
+		Array array = new Array();
+		int[] answer = {1,2,3,4,5,6,7,8,9};
+		array.printresult(answer);
+		int[][] abcd = {{1,1},{2,2}};
+		array.accessData_multi_dimension(abcd);
 	}
 }
 

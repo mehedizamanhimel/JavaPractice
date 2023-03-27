@@ -1,3 +1,5 @@
+package basicPractice;
+
 public class Switch {
 
     public void switchOne(int caseSize){
