@@ -34,23 +34,36 @@ public class Array {
 
     public void accessData_multi_dimension(int [][] a){
 
-       int mularray3[][]=new int[5][6];
+       int mularray3[][]=new int[5][5];
+
+       mularray3[0][0]=11;
+       mularray3[1][1]=22;
+       mularray3[2][2]=33;
+       mularray3[3][3]=44;
+       mularray3[4][4]=55;
+
        int mularray2[][]={{2,2},{3,3}};
        int mularray[][]={{5,5},{6,6}};
 
        System.out.println("The first array is: ");
-       array_multi_dimension(mularray);
+        accessTheArray(mularray);
 
         System.out.println("\n"+"The second array is: ");
-        array_multi_dimension(mularray2);
+        accessTheArray(mularray2);
 
         System.out.println("\n"+"The third array is: ");
-        array_multi_dimension(a);
+        accessTheArray(mularray3);
 
 
     }
 
-
-
+    public void accessTheArray(int[][] mArray){
+        for (int i = 0; i < mArray.length; i++){
+            for(int j=0; j <mArray[i].length;j++){
+                System.out.print(mArray[i][j]+"\t");
+            }
+            System.out.println("");
+        }
+    }
 
 }
