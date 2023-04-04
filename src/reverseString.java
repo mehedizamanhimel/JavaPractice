@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class reverseString {
@@ -92,6 +93,22 @@ public class reverseString {
         StringBuffer cd = new StringBuffer(value);
         bc = cd.reverse();
         System.out.println(bc);
+
+    }
+
+    public void reverseString_344(char[] s) {
+
+        // approach 01
+        char[] t = new char[s.length];
+        for (int i =0 , j = s.length-1; i<s.length; i++, j--){
+            t[j]=s[i];
+        }
+
+        //System.out.println("The result of reverseString_344 is: "+ Arrays.toString(t));
+
+        // approach 02
+        int start = 0;
+        int end = s.length-1;
 
     }
 }

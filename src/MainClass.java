@@ -441,6 +441,8 @@ public class MainClass implements Runnable{
 		array.printresult(answer);
 		int[][] abcd = {{1,1},{2,2}};
 		array.accessData_multi_dimension(abcd);
+
+		reverse.reverseString_344(new char[]{'h','e','l','l','o'});
 	}
 }
 
