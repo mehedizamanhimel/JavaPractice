@@ -47,7 +47,7 @@ public class reverseString {
         System.out.println("The result is: "+reverse);
     }
 
-    public void reverseInt(int a){
+    public void reverseInt(String a){
 
         String b = Integer.toString(a);
         String c= "";
@@ -61,7 +61,8 @@ public class reverseString {
     }
 
     public void reverseIntTwo(int a){
-/** using a recursion
+/**
+    using a recursion
         int d = 0;
         int e=0;
         if (a<10){
@@ -77,10 +78,12 @@ public class reverseString {
         int b;
         int c=0;
         int d;
+        String str = "";
         while (a!=0){
             b = a%10;
             c= c*10 + b;
             a= a/10;
+            reverseInt(str);
         }
 
         System.out.println(c);
@@ -100,11 +103,11 @@ public class reverseString {
 
         // approach 01
         char[] t = new char[s.length];
-        for (int i =0 , j = s.length-1; i<s.length; i++, j--){
+        for (int i =0 , j = s.length-1; i<s.length ; i++, j--){
             t[j]=s[i];
         }
 
-        //System.out.println("The result of reverseString_344 is: "+ Arrays.toString(t));
+        System.out.println("The result of reverseString_344 is: "+ Arrays.toString(t));
 
         // approach 02
         int start = 0;
