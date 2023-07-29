@@ -47,7 +47,7 @@ public class reverseString {
         System.out.println("The result is: "+reverse);
     }
 
-    public void reverseInt(String a){
+    public void reverseInt(int a){
 
         String b = Integer.toString(a);
         String c= "";
@@ -83,7 +83,7 @@ public class reverseString {
             b = a%10;
             c= c*10 + b;
             a= a/10;
-            reverseInt(str);
+            //reverseInt(str);
         }
 
         System.out.println(c);

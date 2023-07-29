@@ -3299,6 +3299,37 @@ public class ArrayTasks {
         nums[y] = temp;
     }
 
+    public static int findSumOfTwoLargestAdjacent_MIU(int[] numbers) {
+        int largestSum = Integer.MIN_VALUE;
+        //int largestSum = 0;
+        System.out.println("the initial largestSum is: "+ largestSum);
+
+        for (int i = 0; i < numbers.length - 1; i++) {
+            int currentSum = numbers[i] + numbers[i + 1];
+            System.out.println("the second largestSum is: "+largestSum);
+            System.out.println("the initial current sum is: "+currentSum);
+            if (currentSum > largestSum) {
+                largestSum = currentSum;
+            }
+        }
+
+        return largestSum;
+    }
+
+    public int adjucentTwoSum(int[] nums){
+        int lowestvalue =0;
+
+        for(int i=0; i<nums.length-1;i++){
+            int num=nums[i]+nums[i+1];
+            if (lowestvalue<num){
+                lowestvalue=num;
+
+            }
+        }
+
+        return lowestvalue;
+    }
+
 }
 
 
