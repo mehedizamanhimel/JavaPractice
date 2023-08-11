@@ -446,6 +446,8 @@ public class MainClass implements Runnable{
 
 		System.out.println("The result of largest two adjucent sum is: "+arrayTasks.findSumOfTwoLargestAdjacent_MIU(new int[]{3,4,8,9 , -55, -44}));
 		System.out.println("The result of adjucentTwoSum is: "+arrayTasks.adjucentTwoSum(new int[]{6,4,8,9 , 1, 2}));
+
+		javaproblems.fizzBuzz(15);
 	}
 }
 
