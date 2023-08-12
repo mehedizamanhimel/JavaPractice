@@ -448,6 +448,7 @@ public class MainClass implements Runnable{
 		System.out.println("The result of adjucentTwoSum is: "+arrayTasks.adjucentTwoSum(new int[]{6,4,8,9 , 1, 2}));
 
 		javaproblems.fizzBuzz(15);
+		javaproblems.verify_String();
 	}
 }
 

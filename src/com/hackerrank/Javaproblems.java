@@ -45,4 +45,20 @@ public class Javaproblems {
         }
 
     }
+
+    public void verify_String(){
+        String A = "hello";
+        String B = "java";
+
+        System.out.println(A.length()+B.length());
+        //System.out.println(mys1.compareTo(mys2));
+        if (A.compareTo(B) > 0)
+            System.out.println("Yes");
+        else
+            System.out.println("No");
+        System.out.println(A.substring(0,1).toUpperCase()+A.substring(1)+" "+B.substring(0,1).toUpperCase()+B.substring(1));
+        
+    }
+
+
 }
