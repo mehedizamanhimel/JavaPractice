@@ -1,5 +1,8 @@
 package com.hackerrank;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 public class Javaproblems {
@@ -59,6 +62,70 @@ public class Javaproblems {
         System.out.println(A.substring(0,1).toUpperCase()+A.substring(1)+" "+B.substring(0,1).toUpperCase()+B.substring(1));
         
     }
+
+    public void String_Review(){
+
+        Scanner scan = new Scanner(System.in);
+        int T = scan.nextInt();
+        scan.nextLine();
+        for (int i = 0; i<T; i++){
+            String input = scan.next();
+            String_Review2(input);
+        }
+        scan.close();
+    }
+
+    public void String_Review2(String string){
+
+        StringBuilder even = new StringBuilder();
+        StringBuilder odd = new StringBuilder();
+
+        for(int i = 0; i<string.length(); i++){
+            if(i%2==0){
+                even.append(string.charAt(i));
+            }
+            else {
+                odd.append(string.charAt(i));
+            }
+        }
+        System.out.println(even +" "+ odd);
+    }
+
+    public void String_Review3(String string){
+
+        StringBuilder even = new StringBuilder();
+        StringBuilder odd = new StringBuilder();
+
+        for(int i = 0; i<string.length(); i++){
+            if(i%2==0){
+                even.append(string.charAt(i));
+            }
+            else {
+                odd.append(string.charAt(i));
+            }
+        }
+        System.out.println(even +" "+ odd);
+    }
+
+    public void reverseArray(){
+        List<Integer> list1 = new ArrayList<>(4);
+        list1.add(1);
+        list1.add(2);
+        list1.add(3);
+        list1.add(4);
+        list1.add(5);
+        list1.add(6);
+        System.out.println(list1);
+        Collections.reverse(list1);
+        System.out.println(list1);
+        String arr="";
+        for (int i : list1){
+
+            System.out.print(i+" ");
+        }
+        //System.out.println(arr);
+    }
+
 
 
 }

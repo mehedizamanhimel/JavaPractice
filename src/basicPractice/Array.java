@@ -1,5 +1,7 @@
 package basicPractice;
 
+import java.util.Arrays;
+
 public class Array {
 
     public void arrays_taskOne(){
@@ -64,6 +66,24 @@ public class Array {
             }
             System.out.println("");
         }
+    }
+
+    public void array_basic(){
+        int[] array1;
+        int[] array2 = new int[5];
+        int[] array3 = {1,2,3,4,5};
+        String array4[] = {"a", "b"};
+
+        Arrays.sort(array3);
+
+        System.out.print("[");
+        for(int i =0; i < array3.length;i++){
+            System.out.print(array3[i]);
+            if (i<array3.length-1){
+                System.out.print(", ");
+            }
+        }
+        System.out.print("]");
     }
 
 }

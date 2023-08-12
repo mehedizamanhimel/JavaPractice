@@ -449,6 +449,14 @@ public class MainClass implements Runnable{
 
 		javaproblems.fizzBuzz(15);
 		javaproblems.verify_String();
+		array.array_basic();
+		//javaproblems.String_Review();
+		//javaproblems.String_Review2("helo");
+
+		javaproblems.String_Review3("hackerrank");
+		javaproblems.reverseArray();
+
+
 	}
 }
 
