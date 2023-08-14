@@ -120,10 +120,23 @@ public class Javaproblems {
         System.out.println(list1);
         String arr="";
         for (int i : list1){
-
             System.out.print(i+" ");
         }
         //System.out.println(arr);
+    }
+
+    public void Map_dictionary(){
+
+    }
+
+    public void findXOR(){
+        int i = 11 ;
+        int j = 100 ;
+        int result= i^j;
+
+        int result2 = Integer.max(i^j, j^i);
+        System.out.println("the findXOR is: "+result);
+        System.out.println("the findXOR2 is: "+result2);
     }
 
 

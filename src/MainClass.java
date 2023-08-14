@@ -455,6 +455,7 @@ public class MainClass implements Runnable{
 
 		javaproblems.String_Review3("hackerrank");
 		javaproblems.reverseArray();
+		javaproblems.findXOR();
 
 
 	}
