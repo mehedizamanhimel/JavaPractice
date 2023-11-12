@@ -1,9 +1,6 @@
 package com.hackerrank;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Javaproblems {
 
@@ -126,6 +123,24 @@ public class Javaproblems {
     }
 
     public void Map_dictionary(){
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        HashMap<String, Integer> directory = new HashMap<>();
+        for(int i = 0; i < n; i++){
+            String name = in.next();
+            int phone = in.nextInt();
+            // Write code here
+            directory.put(name, phone);
+
+        }
+        while(in.hasNext()){
+            String s = in.next();
+            // Write code here
+
+
+        }
+        in.close();
+
 
     }
 
@@ -137,6 +152,7 @@ public class Javaproblems {
         int result2 = Integer.max(i^j, j^i);
         System.out.println("the findXOR is: "+result);
         System.out.println("the findXOR2 is: "+result2);
+
     }
 
 

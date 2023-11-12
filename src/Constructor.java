@@ -35,4 +35,11 @@ public class Constructor {
         //y = this.abd;
         System.out.println("From constructor S n i: "+y);
     }
+
+    public Constructor(int i, double v, String string) {
+    }
+
+    public int Constructor(int i, float f, String S){
+        return i+1;
+    }
 }

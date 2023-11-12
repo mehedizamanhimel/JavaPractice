@@ -1,6 +1,6 @@
 package LeetCode;
 
-public class Medium {
+public class Leetcode_Medium {
 
     public int reverse_007(int x) {
 

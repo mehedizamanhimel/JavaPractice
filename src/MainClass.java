@@ -1,4 +1,5 @@
 import ConceptPractice.*;
+import LeetCode.LeetCode_Easy;
 import basicPractice.*;
 import basicPractice.WhileLoop;
 import com.hackerrank.Javaproblems;
@@ -68,6 +69,8 @@ public class MainClass implements Runnable{
 		MIU_Problem_Solution miu = new MIU_Problem_Solution();
 
 		Javaproblems javaproblems = new Javaproblems();
+
+		LeetCode_Easy leetCodeEasy = new LeetCode_Easy();
 
 		/**
 		 loop.whileLoopOne();
@@ -388,6 +391,7 @@ public class MainClass implements Runnable{
 		System.out.println("The min int is"+Integer.MIN_VALUE);
 		System.out.println("The max int is"+Integer.MIN_VALUE);
 
+
 		/*
 		System.out.println("The findRelativeRanks_506 is: "+ Arrays.toString(sorting.findRelativeRanks_506(new int[]{1})));
 		System.out.println("The findRelativeRanks_506 is: "+ Arrays.toString( sorting.findRelativeRanks_506(new int[]{2,1})));
@@ -457,7 +461,20 @@ public class MainClass implements Runnable{
 		javaproblems.reverseArray();
 		javaproblems.findXOR();
 
+		//leetCodeEasy.merge_88(new int[]{1,2,3,0,0,0}, 3, new int[] {4,5,6,7}, 3);
+		leetCodeEasy.merge_88_V2(new int[]{1,2,3,0,0,0}, 3, new int[] {4,5,6,7}, 3);
+		leetCodeEasy.merge_88_V2(new int[]{5}, 1, new int[] {}, 0);
+		//leetCodeEasy.merge_88_V2(new int[]{}, 0, new int[] {3}, 1);
 
+		//Constructor constructor_oct23 = new Constructor(5, 5.6, "String");
+		System.out.println("The constructor result is: "+ new Constructor(5,5.6,"String"));
+
+		SetterGetter setterGetter = new SetterGetter();
+
+		setterGetter.setName("this is a name");
+		System.out.println("the settergetter name is :"+setterGetter.getName());
+		setterGetter.setNumber(566);
+		System.out.println("the settergetter number is :"+setterGetter.getNumber());
 	}
 }
 
