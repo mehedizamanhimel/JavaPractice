@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Stack;
+import java.util.*;
 
 public class StringOperations {
 
@@ -144,5 +141,14 @@ public class StringOperations {
     public boolean repeatedSubstringPattern_459(String s) {
 
         return false;
+    }
+
+    public void CountWords(){
+
+        String str = "this is a sample string";
+        int wordcount = new StringTokenizer(str).countTokens();
+
+        System.out.println("the total word count is: " + wordcount);
+
     }
 }

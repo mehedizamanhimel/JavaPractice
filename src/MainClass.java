@@ -397,8 +397,6 @@ public class MainClass implements Runnable{
 		System.out.println("The findRelativeRanks_506 is: "+ Arrays.toString( sorting.findRelativeRanks_506(new int[]{2,1})));
 
 
-
-		ListNode ls = new ListNode();
 		//ls.mergeTwoLists_21(new ListNode() , new ListNode());
 
 		javaproblems.Java_String_Introduction();
@@ -475,6 +473,24 @@ public class MainClass implements Runnable{
 		System.out.println("the settergetter name is :"+setterGetter.getName());
 		setterGetter.setNumber(566);
 		System.out.println("the settergetter number is :"+setterGetter.getNumber());
+
+		System.out.println("The ans of problem number 70 is: "+leetCodeEasy.returnStairs_70(1));
+		leetCodeEasy.fibonacci();
+
+		ListNode node1 = new ListNode(10);
+		ListNode node2 = new ListNode(20);
+		ListNode node3 = new ListNode(30);
+		node1.next=node2;
+		node2.next=node3;
+
+		ListNode currentNode = node1;
+		while (currentNode!=null){
+			System.out.println("the listnode value is : "+currentNode.val);
+			currentNode=currentNode.next;
+
+		}
+
+
 	}
 }
 
