@@ -1,0 +1,39 @@
+# Maven
+target/
+!target/.gitkeep
+
+# Compiled class files
+*.class
+
+# IDE files
+/.idea/
+*.iml
+.classpath
+.project
+.settings/
+
+# macOS
+.DS_Store
+
+# Build artifacts
+out/
+
+# Logs
+*.log
+
+# Maven wrapper
+.mvn/
+
+# Eclipse
+.settings/
+
+# IntelliJ
+*.ipr
+*.iws
+
+# VS Code
+.vscode/
+
+# Temporary files
+*~
+# Files to ignore for source control
