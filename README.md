@@ -9,7 +9,7 @@ A personal Java practice repository containing algorithm exercises, data structu
   - `ConceptPractice/` — concept-focused examples for statements, operators, loops, and file handling.
   - `LeetCode/` — LeetCode-style problem implementations and practice methods.
   - `basicPractice/` — basic Java practice examples for loops, switch statements, and collections.
-  - `com/hackerrank/` — hackerrank practice class examples.
+  - `com/hackerrank/` — HackerRank practice class examples.
   - `problems/` — problem-solving examples such as Fibonacci, Codility tests, and math problems.
 
 ## Highlights
@@ -22,7 +22,7 @@ A personal Java practice repository containing algorithm exercises, data structu
 
 ## Build & Run
 
-This project is now Maven-compatible. Use these commands from the repository root:
+This project is Maven-compatible. Use these commands from the repository root:
 
 ```bash
 mvn clean package
@@ -35,7 +35,7 @@ Or run directly with Maven:
 mvn exec:java
 ```
 
-If you want to compile and run without Maven:
+If you prefer to compile and run without Maven:
 
 ```bash
 find src -name '*.java' > sources.txt
@@ -45,6 +45,6 @@ java -cp out MainClass
 
 ## Notes
 
-- This repository is organized as a plain Java source tree without a build tool configuration.
-- The `src/` directory contains both top-level classes and package-based source directories.
 - `MainClass` is the primary driver used to run examples across multiple practice classes.
+- The `src/` directory contains both top-level classes and package-based source directories.
+- Both Maven and direct `javac` compilation are supported.
