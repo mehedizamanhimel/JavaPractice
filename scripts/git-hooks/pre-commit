@@ -1,0 +1,79 @@
+#!/usr/bin/env bash
+#
+# Pre-commit test agent: runs every JUnit test before a commit is created.
+# If any test fails, or the code does not compile, the commit is cancelled.
+#
+# It tests exactly what is being committed: the staged files are copied to a
+# temporary folder and the tests run there, so unstaged edits cannot affect the result.
+#
+# Results are stored in .test-results/ (ignored by git):
+#   latest.log           full Maven output of the last run
+#   latest-reports/      JUnit XML and per-test output of the last run
+#   history.log          one line per run: time, branch, result, test counts
+#   runs/                logs of the last 20 runs
+#
+# Install once per clone:   sh scripts/install-hooks.sh
+# Skip once (emergencies):  git commit --no-verify
+
+set -u
+
+repo_root="$(git rev-parse --show-toplevel)" || exit 1
+results_dir="$repo_root/.test-results"
+mkdir -p "$results_dir/runs"
+
+if ! command -v mvn >/dev/null 2>&1; then
+    echo "pre-commit: 'mvn' (Maven) was not found on PATH, so the tests cannot run." >&2
+    echo "pre-commit: install Maven, or skip this check once with: git commit --no-verify" >&2
+    exit 1
+fi
+
+timestamp="$(date +%Y-%m-%d_%H-%M-%S)"
+branch="$(git symbolic-ref --short -q HEAD || echo detached)"
+run_log="$results_dir/runs/$timestamp.log"
+
+# Export the staged snapshot (the index) to a temporary folder.
+snapshot="$(mktemp -d "${TMPDIR:-/tmp}/precommit-tests.XXXXXX")" || exit 1
+trap 'rm -rf "$snapshot"' EXIT
+git checkout-index --all --prefix="$snapshot/"
+
+echo "pre-commit: running all unit tests on the staged changes..."
+start=$(date +%s)
+(cd "$snapshot" && mvn -B -ntp test) >"$run_log" 2>&1
+status=$?
+duration=$(( $(date +%s) - start ))
+
+cp "$run_log" "$results_dir/latest.log"
+rm -rf "$results_dir/latest-reports"
+if [ -d "$snapshot/target/surefire-reports" ]; then
+    cp -R "$snapshot/target/surefire-reports" "$results_dir/latest-reports"
+fi
+
+# Maven prints the overall totals on the last "Tests run:" line without "-- in <class>".
+summary="$(grep -E 'Tests run: [0-9]+, Failures: [0-9]+, Errors: [0-9]+, Skipped: [0-9]+$' "$run_log" \
+    | tail -1 | sed -E 's/^\[[A-Z]+\] +//')"
+[ -n "$summary" ] || summary="no tests ran (build failed before testing)"
+
+if [ $status -eq 0 ]; then result="PASSED"; else result="FAILED"; fi
+printf '%s  %-7s %-40s %s  (%ss)\n' "$timestamp" "$result" "$branch" "$summary" "$duration" \
+    >>"$results_dir/history.log"
+
+# Keep only the 20 most recent run logs.
+ls -1t "$results_dir/runs"/*.log 2>/dev/null | tail -n +21 | while read -r old; do rm -f "$old"; done
+
+if [ $status -eq 0 ]; then
+    echo "pre-commit: tests passed: $summary (${duration}s)"
+    exit 0
+fi
+
+echo "" >&2
+echo "pre-commit: COMMIT BLOCKED, the tests did not pass." >&2
+echo "pre-commit: $summary" >&2
+# Failing tests are listed under "[ERROR] Failures:" / "[ERROR] Errors:" as indented lines;
+# compile errors appear as "[ERROR] /path/File.java:[line,col] message".
+failures="$(grep -E '^\[ERROR\]   [^ ]|^\[ERROR\] .*\.java:\[' "$run_log" | sed "s|$snapshot/||" | awk '!seen[$0]++' | head -30)"
+if [ -n "$failures" ]; then
+    echo "$failures" >&2
+fi
+echo "pre-commit: full log: .test-results/latest.log" >&2
+echo "pre-commit: fix the problem and commit again (or skip once with: git commit --no-verify)" >&2
+exit 1
