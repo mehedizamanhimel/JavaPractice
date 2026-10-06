@@ -21,6 +21,15 @@ public class MathProblems {
         hs.put('D',500);
         hs.put('M',1000);
         int count = 0;
+        for (int i = 0; i < s.length(); i++) {
+            int value = hs.get(s.charAt(i));
+            // a smaller numeral before a larger one is subtracted (IV = 4)
+            if (i + 1 < s.length() && value < hs.get(s.charAt(i + 1))) {
+                count -= value;
+            } else {
+                count += value;
+            }
+        }
 
         return count;
     }

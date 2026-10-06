@@ -8,16 +8,7 @@ public class CodilityTest {
             if (A[i] + 1 < A[i + 1])
                 return false;
         }
-        if (A[0] != 1 && A[n - 1] != K)
-            return false;
-
-        if (A[0] == 1 && A[n - 1] != K)
-            return false;
-
-
-
-        else
-            return true;
+        return A[0] == 1 && A[n - 1] == K;
     }
 
 

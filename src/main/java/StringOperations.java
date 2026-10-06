@@ -37,29 +37,10 @@ public class StringOperations {
     }
 
     public boolean arrayStringsAreEqual(String[] word1, String[] word2) {
-        /*
-        if(str1.length()==0 && str2.length()==0){
-            return false;
-        }
-        */
         String str2 = String.join("", word2);
         String str1 = String.join("", word1);
 
-        boolean bul = false;
-        System.out.println(str1);
-        System.out.println(str2);
-        for(int i = 0 ; i < str1.length(); i ++){
-            for(int j = 0 ; j < str2.length(); j ++){
-                if(str1.charAt(i)!=str2.charAt(j)){
-                    bul= false;
-                }
-                else {
-                    bul = true;
-                }
-            }
-            //break;
-        }
-        return bul;
+        return str1.equals(str2);
     }
 
     public String restoreString(String s, int[] indices) {
@@ -139,8 +120,9 @@ public class StringOperations {
     }
 
     public boolean repeatedSubstringPattern_459(String s) {
-
-        return false;
+        // s is built from a repeated block iff it appears inside (s+s) with the first and last chars removed
+        String doubled = s + s;
+        return doubled.substring(1, doubled.length() - 1).contains(s);
     }
 
     public void CountWords(){

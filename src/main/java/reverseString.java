@@ -10,8 +10,6 @@ public class reverseString {
             reverse = reverse + abcd.charAt(i);
         }
 
-        Scanner scanner = new Scanner(System.in);
-        reverse = scanner.nextLine();
         return reverse;
     }
 
@@ -49,7 +47,7 @@ public class reverseString {
 
     public void reverseInt(int a){
 
-        String b = Integer.toString(a);
+        String b = Integer.toString(Math.abs(a));
         String c= "";
         int d;
 
@@ -57,7 +55,7 @@ public class reverseString {
             c = c+ b.charAt(i);
         }
         d = Integer.parseInt(c);
-        System.out.println(d);
+        System.out.println(a < 0 ? -d : d);
     }
 
     public void reverseIntTwo(int a){
@@ -101,17 +99,15 @@ public class reverseString {
 
     public void reverseString_344(char[] s) {
 
-        // approach 01
-        char[] t = new char[s.length];
-        for (int i =0 , j = s.length-1; i<s.length ; i++, j--){
-            t[j]=s[i];
-        }
-
-        System.out.println("The result of reverseString_344 is: "+ Arrays.toString(t));
-
-        // approach 02
+        // two pointers, reverses the array in place
         int start = 0;
         int end = s.length-1;
+        while (start < end) {
+            char temp = s[start];
+            s[start++] = s[end];
+            s[end--] = temp;
+        }
 
+        System.out.println("The result of reverseString_344 is: "+ Arrays.toString(s));
     }
 }

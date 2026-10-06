@@ -4,16 +4,15 @@ public class Leetcode_Medium {
 
     public int reverse_007(int x) {
 
-        if(x> Integer.MAX_VALUE || x<Integer.MIN_VALUE)
-            return 0;
-
-
-        int res = x%10;
-        int res2 = res;
-        for(int i =0; i< x; i++){
-
+        long reversed = 0;
+        while (x != 0) {
+            reversed = reversed * 10 + x % 10;
+            x /= 10;
         }
 
-        return 0;
+        if(reversed > Integer.MAX_VALUE || reversed < Integer.MIN_VALUE)
+            return 0;
+
+        return (int) reversed;
     }
 }

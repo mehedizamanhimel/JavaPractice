@@ -637,7 +637,7 @@ public class ArrayTasks {
         int temp2 = 0;
         int max = arrayListOne.get(0);
 
-        for (int i = 0; i < arrayListOne.size(); i++) {
+        for (int i = 0; i < arrayListOne.size() - 1; i++) {
             System.out.print(" //the regular value: " + arrayListOne.get(i));
             System.out.println(" //the +1 value: " + arrayListOne.get(i + 1));
 
@@ -1702,7 +1702,7 @@ public class ArrayTasks {
         if (nums.length == 0)
             return 0;
         int i = 0;
-        for (int j = 1; j < nums.length; i++) {
+        for (int j = 1; j < nums.length; j++) {
             if (nums[j] != nums[i]) {
                 i++;
                 nums[i] = nums[j];
@@ -1816,7 +1816,7 @@ public class ArrayTasks {
                     count += 1;
                 }
             }
-            if (count >= majorityCount) {
+            if (count > majorityCount) {
                 return nums[i];
             }
         }
@@ -1865,7 +1865,7 @@ public class ArrayTasks {
 
         }
         System.out.println(Arrays.toString(head));
-        return head;
+        return Arrays.copyOf(head, i);
     }
 
 
@@ -1878,18 +1878,15 @@ public class ArrayTasks {
         for (int i = n - 1; i >= 0; i--) {
             if (digits[i] < 9) {
                 digits[i]++;
-                break;
+                return digits;
             }
-//            digits[i]=0;
+            digits[i] = 0;
         }
 
-        /*
-        int[] newNumber = new int [n+1];
+        // every digit was 9, e.g. 999 -> 1000
+        int[] newNumber = new int[n + 1];
         newNumber[0] = 1;
         return newNumber;
-        */
-
-        return digits;
     }
 
     public int kthSmallest(int[][] mat, int k) {
@@ -2012,9 +2009,27 @@ public class ArrayTasks {
     }
 
     public List<List<Integer>> threeSum(int[] nums) {
-
-
-        return null;
+        List<List<Integer>> result = new ArrayList<>();
+        Arrays.sort(nums);
+        for (int i = 0; i < nums.length - 2; i++) {
+            if (i > 0 && nums[i] == nums[i - 1]) continue;
+            int left = i + 1, right = nums.length - 1;
+            while (left < right) {
+                int sum = nums[i] + nums[left] + nums[right];
+                if (sum == 0) {
+                    result.add(Arrays.asList(nums[i], nums[left], nums[right]));
+                    while (left < right && nums[left] == nums[left + 1]) left++;
+                    while (left < right && nums[right] == nums[right - 1]) right--;
+                    left++;
+                    right--;
+                } else if (sum < 0) {
+                    left++;
+                } else {
+                    right--;
+                }
+            }
+        }
+        return result;
     }
 
     public boolean containsNearbyDuplicate(int[] nums, int k) {
@@ -2090,9 +2105,11 @@ public class ArrayTasks {
     public List<Integer> reverseList(List<Integer> head) {
 
         List<Integer> next = new ArrayList<>();
-        while (head != null) {
-
-
+        if (head == null) {
+            return next;
+        }
+        for (int i = head.size() - 1; i >= 0; i--) {
+            next.add(head.get(i));
         }
 
         return next;
@@ -2206,9 +2223,7 @@ public class ArrayTasks {
             temp[nums[i]]++;
         }
 
-        for (int i = 1; i < nums.length; i++) {
-            System.out.println("@@" + i);
-            System.out.println("**" + nums[i]);
+        for (int i = 1; i <= nums.length; i++) {
             if (temp[i] == 2)
                 // System.out.println(i);
                 result[0] = i;
@@ -2454,13 +2469,13 @@ public class ArrayTasks {
 
     public int countValidWords(String sentence) {
 
-        if (sentence.length() == 0) return 0;
-        String[] newval = sentence.split("\\s+");
+        if (sentence.trim().length() == 0) return 0;
+        String[] newval = sentence.trim().split("\\s+");
         int count = 0;
-        int length = newval.length;
-        for (int i = 1; i < length; i++) {
-
-            count++;
+        for (String token : newval) {
+            if (token.matches("([a-z]+(-[a-z]+)?)?[!.,]?") && !token.isEmpty()) {
+                count++;
+            }
         }
         return count;
     }
@@ -2475,28 +2490,24 @@ public class ArrayTasks {
         List<String> list = new ArrayList<>();
         if (words == null || words.length == 0)
             return list;
-        String finalString = "";
 
-        for (int i = 0; i < words.length; i++) {
-
-            for (int j = 0; j < words[i].length(); j++) {
-
-
-                String first = Character.toString(words[i].charAt(i));
-                String second = Character.toString(words[j].charAt(j));
-
-                System.out.println("*" + first);
-                System.out.println("**" + second);
-
-                //             if(first.contentEquals(second))
-
-                list.add(first);
-
+        int[] minCount = new int[26];
+        Arrays.fill(minCount, Integer.MAX_VALUE);
+        for (String word : words) {
+            int[] count = new int[26];
+            for (char c : word.toCharArray()) {
+                count[c - 'a']++;
+            }
+            for (int i = 0; i < 26; i++) {
+                minCount[i] = Math.min(minCount[i], count[i]);
             }
         }
 
-        System.out.println("#" + list);
-
+        for (int i = 0; i < 26; i++) {
+            for (int j = 0; j < minCount[i]; j++) {
+                list.add(Character.toString((char) ('a' + i)));
+            }
+        }
         return list;
     }
 
@@ -2517,31 +2528,19 @@ public class ArrayTasks {
     }
 
     public int minMaxGame(int[] nums) {
-        int min = 0, max = 0, result = 0;
-        if (nums.length == 1)
-            return nums[1];
-        for (int i = 1; i < nums.length; i++) {
-            if (nums[i - 1] < nums[i]) {
-                min = nums[i - 1];
-                //System.out.println("**"+min);
-            } else {
-                min = nums[i];
-                //System.out.println("*&*"+min);
+        int[] current = nums;
+        while (current.length > 1) {
+            int[] next = new int[current.length / 2];
+            for (int i = 0; i < next.length; i++) {
+                if (i % 2 == 0) {
+                    next[i] = Math.min(current[2 * i], current[2 * i + 1]);
+                } else {
+                    next[i] = Math.max(current[2 * i], current[2 * i + 1]);
+                }
             }
-            /*
-            if (nums[i-2]>nums[i-1]){
-                max = nums[i-2];
-            }
-            else {
-                max = nums[i-1];
-            }
-
-             */
-
+            current = next;
         }
-
-
-        return min;
+        return current[0];
     }
 
     public boolean threeConsecutiveOdds(int[] arr) {
@@ -2575,8 +2574,8 @@ public class ArrayTasks {
     public int findGCD(int[] nums) {
         int result = 0;
         int length = nums.length;
-        if (length == 0 || length == 1) {
-            return nums[length];
+        if (length == 1) {
+            return nums[0];
         }
         Arrays.sort(nums);
         int min = nums[0], max = nums[length - 1];
@@ -2600,12 +2599,10 @@ public class ArrayTasks {
     }
 
     public String gcdOfStrings_1071(String str1, String str2) {
-        String result = "";
-        for (int i = 0; i < str1.length(); i++) {
-            for (int j = 0; j < str2.length(); j++) {
-            }
+        if (!(str1 + str2).equals(str2 + str1)) {
+            return "";
         }
-        return result;
+        return str1.substring(0, findval(str1.length(), str2.length()));
 
     }
 
@@ -2639,8 +2636,17 @@ public class ArrayTasks {
 
 
     public boolean isThree_1952(int n) {
-
-        return false;
+        // exactly three divisors means n is the square of a prime
+        int root = (int) Math.sqrt(n);
+        if (root * root != n || root < 2) {
+            return false;
+        }
+        for (int i = 2; i * i <= root; i++) {
+            if (root % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
 
@@ -2699,11 +2705,17 @@ public class ArrayTasks {
     }
 
     public int[] arrayRankTransform_1331(int[] arr) {
-        int[] length = new int[arr.length];
-        for(int i=1;i<arr.length;i++){
-            length[i]=i;
+        int[] sorted = arr.clone();
+        Arrays.sort(sorted);
+        HashMap<Integer, Integer> rank = new HashMap<>();
+        for (int value : sorted) {
+            rank.putIfAbsent(value, rank.size() + 1);
         }
-        return length;
+        int[] result = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            result[i] = rank.get(arr[i]);
+        }
+        return result;
     }
 
     public int[] intersection_349(int[] nums1, int[] nums2) {
@@ -2793,30 +2805,21 @@ public class ArrayTasks {
 
     public int strStr(String haystack, String needle) {
 
-        int result = 0;
-        if(haystack.length()==1 && needle.length()==1)
-            return result;
-        if(haystack.contains(needle))
-           // result= needle.length();
-            result = haystack.indexOf(needle);
-        else {
-            result= -1;
-        }
-        return result;
+        return haystack.indexOf(needle);
     }
 
     public String addBinary_67(String a, String b) {
-        StringBuilder sb = new StringBuilder();
-
-        int firstBinary = Integer.parseInt(a,2);
-        System.out.println("the first binary is:"+firstBinary);
-        int secondBinary = Integer.parseInt(b, 2);
-        System.out.println("the second int is:"+secondBinary);
-        int result = firstBinary+secondBinary;
-        System.out.println("the int sum is:"+result);
-        String first = Integer.toBinaryString(result);
-
-        return first;
+        // digit by digit, so inputs longer than 31 bits do not overflow
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        int i = a.length() - 1, j = b.length() - 1, carry = 0;
+        while (i >= 0 || j >= 0 || carry != 0) {
+            int sum = carry;
+            if (i >= 0) sum += a.charAt(i--) - '0';
+            if (j >= 0) sum += b.charAt(j--) - '0';
+            sb.append(sum % 2);
+            carry = sum / 2;
+        }
+        return sb.reverse().toString();
     }
 
     public int mySqrt_69(int x) {
@@ -2827,8 +2830,19 @@ public class ArrayTasks {
 
     public int sqroot(int i){
         if(i ==0 || i==1) return i;
-        int temp=1, result=1;
-        return 0;
+        // binary search for the largest r with r*r <= i
+        long low = 1, high = i;
+        int result = 1;
+        while (low <= high) {
+            long mid = (low + high) / 2;
+            if (mid * mid <= i) {
+                result = (int) mid;
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        return result;
     }
 
     public int[] sortedSquares_977(int[] nums) {
@@ -2842,14 +2856,14 @@ public class ArrayTasks {
     }
 
     public double trimMean_1619(int[] arr) {
-        double temp = 0;
-        int count=0;
-        //Arrays.sort(arr);
-        for (int i=1; i<arr.length-1;i++){
-            temp = arr[i]+arr[i+1];
-            i++;
+        int[] sorted = arr.clone();
+        Arrays.sort(sorted);
+        int trim = sorted.length / 20; // remove the smallest and largest 5%
+        double sum = 0;
+        for (int i = trim; i < sorted.length - trim; i++) {
+            sum += sorted[i];
         }
-        return temp;
+        return sum / (sorted.length - 2 * trim);
     }
 
     public void merge_88_v2(int[] nums1, int m, int[] num2, int n) {
@@ -2865,27 +2879,14 @@ public class ArrayTasks {
     }
 
     public int sumOfFlooredPairs_1862(int[] nums) {
-        int temp = 0;
-        int result= 0;
-        int result2= 0;
-        /*
-        for (int i=0; i<nums.length-1;i++){
-            if(nums[i]==nums[i+1])
-                result=result+nums[i];
-        }
-        */
-
-        for (int i=0; i<nums.length;i++){
-            for (int j=i+1; j<nums.length;j++){
-                System.out.println("ggg"+nums[i]+"ggg"+nums[j]);
-                temp = Math.floorDiv (nums[i],nums[j]);
-                System.out.println("ffff"+temp);
-                result2= result2+temp;
+        final int mod = 1_000_000_007;
+        long result = 0;
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = 0; j < nums.length; j++) {
+                result = (result + nums[i] / nums[j]) % mod;
             }
         }
-
-        //return result+nums[nums.length-1];
-        return result2;
+        return (int) result;
 
     }
 
@@ -2918,8 +2919,24 @@ public class ArrayTasks {
     }
 
     public String[] findRestaurant_599(String[] list1, String[] list2) {
-
-        return null;
+        HashMap<String, Integer> index = new HashMap<>();
+        for (int i = 0; i < list1.length; i++) {
+            index.put(list1[i], i);
+        }
+        List<String> result = new ArrayList<>();
+        int minSum = Integer.MAX_VALUE;
+        for (int j = 0; j < list2.length; j++) {
+            Integer i = index.get(list2[j]);
+            if (i == null) continue;
+            if (i + j < minSum) {
+                minSum = i + j;
+                result.clear();
+                result.add(list2[j]);
+            } else if (i + j == minSum) {
+                result.add(list2[j]);
+            }
+        }
+        return result.toArray(new String[0]);
     }
 
     public int largestPerimeter_976(int[] nums) {
@@ -2950,18 +2967,20 @@ public class ArrayTasks {
     }
 
     public boolean canBeIncreasing_1909(int[] nums) {
-        Arrays.sort(nums);
-
-        HashSet<Integer> hashSet = new HashSet();
-
-        for(int i =0; i < nums.length; i++){
-            for(int j =i+1; j < nums.length; j++){
-                if (hashSet.add(nums[j]-nums[i])){
-                    return true;
+        boolean removed = false;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] <= nums[i - 1]) {
+                if (removed) {
+                    return false;
+                }
+                removed = true;
+                // drop nums[i-1] when possible, otherwise drop nums[i]
+                if (i > 1 && nums[i] <= nums[i - 2]) {
+                    nums[i] = nums[i - 1];
                 }
             }
         }
-        return false;
+        return true;
     }
 
     public boolean isValid_20(String s) {
@@ -3039,14 +3058,14 @@ public class ArrayTasks {
 
     public int minDeletion_2216(int[] nums) {
         int count = 0;
-        int size = nums.length;
         for(int i=0; i< nums.length-1;i++){
             if ((i-count) % 2 == 0 && nums[i]==nums[i+1]){
                 count++;
             }
         }
 
-        return 0;
+        // the remaining array must have an even length
+        return count + (nums.length - count) % 2;
     }
 
     // Starting of largest palindrome problem
@@ -3082,17 +3101,12 @@ public class ArrayTasks {
     }
 
     public int distributeCandies_575(int[] candyType) {
-        int temp=1;
-
-        for(int i=0; i< candyType.length ;i++) {
-            for(int j=0; j< i;j++) {
-                if (candyType[i] != candyType[j]) {
-                    temp += 1;
-                }
-            }
+        HashSet<Integer> types = new HashSet<>();
+        for (int candy : candyType) {
+            types.add(candy);
         }
 
-        return Math.min(temp, candyType.length/2);
+        return Math.min(types.size(), candyType.length/2);
     }
 
     public int distributeCandies_575_(int[] candyType) {
@@ -3123,13 +3137,20 @@ public class ArrayTasks {
     public String[] findRelativeRanks_506(int[] score) {
         String[] result = new String[score.length];
 
-        HashMap<Integer, Integer> hashMap = new HashMap<>();
-
-        if(score.length==0) return null;
-        for(int i =0; i<score.length; i++){
-            hashMap.put(score[i], i);
+        if(score.length==0) return result;
+        int[] sorted = score.clone();
+        Arrays.sort(sorted);
+        HashMap<Integer, Integer> place = new HashMap<>();
+        for (int i = sorted.length - 1, rank = 1; i >= 0; i--, rank++) {
+            place.put(sorted[i], rank);
         }
-        Arrays.sort(score);
+        for (int i = 0; i < score.length; i++) {
+            int rank = place.get(score[i]);
+            if (rank == 1) result[i] = "Gold Medal";
+            else if (rank == 2) result[i] = "Silver Medal";
+            else if (rank == 3) result[i] = "Bronze Medal";
+            else result[i] = String.valueOf(rank);
+        }
         return result;
     }
 
@@ -3259,34 +3280,41 @@ public class ArrayTasks {
     }
 
     public int numMatchingSubseq_792(String s, String[] words) {
-        int i=0,j=0;
-        while (i<s.length()&&j<words.length){
-            //if(s.charAt(i)==words.charAt(j)){
-            if(s.contains(words[i])){
-                i++;
-                j++;
+        int count = 0;
+        for (String word : words) {
+            if (isSubsequence_392(word, s)) {
+                count++;
             }
-
         }
-        return i;
+        return count;
     }
 
     public int maxArea(int[] height) {
-        int length = height.length;
         int left = 0;
-        int right = length-1;
-        
-        for(int i=1; i<height.length; i++){
-
+        int right = height.length-1;
+        int max = 0;
+        while (left < right) {
+            int area = Math.min(height[left], height[right]) * (right - left);
+            max = Math.max(max, area);
+            if (height[left] < height[right]) {
+                left++;
+            } else {
+                right--;
+            }
         }
-        return 0;
+        return max;
     }
 
     public void sortColors_75(int[] nums) {
-
-        for(int i =0; i< nums.length-1;i++){
-            if(nums[i]>nums[i+1]){
-                nums[i] =nums[i+1];
+        // Dutch national flag: 0s before low, 2s after high
+        int low = 0, mid = 0, high = nums.length - 1;
+        while (mid <= high) {
+            if (nums[mid] == 0) {
+                sortColors_75_swap(low++, mid++, nums);
+            } else if (nums[mid] == 2) {
+                sortColors_75_swap(mid, high--, nums);
+            } else {
+                mid++;
             }
         }
         System.out.println(Arrays.toString(nums));

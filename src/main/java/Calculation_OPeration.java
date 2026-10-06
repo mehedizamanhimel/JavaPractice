@@ -14,12 +14,12 @@ public class Calculation_OPeration {
         int number2 = 0;
         int sum=0;
 
-        for (int i = 0; i <= a.length; i++) {
+        for (int i = 0; i < a.length; i++) {
 
             number = a[i];
             number2 = number % 2;
             if (number2 == 0) {
-                    sum = sum+number2;
+                    sum = sum+number;
             }
             else {
                 System.out.println("nothing to do");

@@ -6,31 +6,16 @@ public class LeetCode_Easy {
 
     public void merge_88(int[] nums1, int m, int[] nums2, int n) {
 
-        int pointer1 = m - 1;
-        int pointer2 = n - 1;
-        int pointer3 = nums1.length-1;
-
         int[] result = new int[m+n];
-        if (nums1.length > nums2.length && nums2.length ==0){
-            System.out.println(Arrays.toString(nums1));
+        int i = 0, j = 0, k = 0;
+        while (i < m && j < n) {
+            result[k++] = nums1[i] <= nums2[j] ? nums1[i++] : nums2[j++];
         }
+        while (i < m) result[k++] = nums1[i++];
+        while (j < n) result[k++] = nums2[j++];
 
-        if (nums1.length < nums2.length && nums1.length ==0){
-            System.out.println(Arrays.toString(nums2));
-        }
-
-        for (int i =0 ; i < m;i++){
-            result[i] = nums1[i];
-        }
-
-        System.out.println("The first iteration is: "+Arrays.toString(result));
-
-        for (int i =m+1 ; i < n+m-1 ; i++){
-            result[i] = nums2[i];
-        }
-
-
-        System.out.println("The second iteration is: "+Arrays.toString(result));
+        System.arraycopy(result, 0, nums1, 0, m + n);
+        System.out.println("The merged array is: "+Arrays.toString(nums1));
     }
 
     public void merge_88_V2(int[] nums1, int m, int[] nums2, int n) {
