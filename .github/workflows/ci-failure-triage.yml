@@ -1,0 +1,132 @@
+name: CI failure triage
+
+# When the "Unit tests" workflow fails, Claude reads the failing test reports and the code,
+# finds the likely cause and posts a diagnosis with a suggested fix:
+#   - as a comment on the pull request, if the commit belongs to one
+#   - otherwise as a comment on the commit
+# It only advises: it has read-only access to the repository and never pushes code.
+#
+# Setup: add an ANTHROPIC_API_KEY repository secret
+# (Settings -> Secrets and variables -> Actions). Without it this workflow does nothing.
+
+on:
+  workflow_run:
+    workflows: ["Unit tests"]
+    types: [completed]
+
+permissions:
+  contents: write        # needed only to create commit comments; the job never pushes
+  pull-requests: write
+  actions: read          # download the test reports from the failed run
+
+jobs:
+  triage:
+    # Only failed runs, and never for forks: fork code must not run next to the API key.
+    if: >-
+      github.event.workflow_run.conclusion == 'failure' &&
+      github.event.workflow_run.head_repository.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check for API key
+        id: key
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -n "$ANTHROPIC_API_KEY" ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::notice::ANTHROPIC_API_KEY secret is not set; skipping CI failure triage."
+            echo "present=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Check out the failing commit
+        if: steps.key.outputs.present == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+
+      - name: Download test reports from the failed run
+        if: steps.key.outputs.present == 'true'
+        uses: actions/download-artifact@v4
+        continue-on-error: true   # a compile error produces no reports
+        with:
+          name: test-reports
+          path: ci-reports
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+
+      - name: Set up JDK 17
+        if: steps.key.outputs.present == 'true'
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+
+      - name: Diagnose the failure with Claude
+        if: steps.key.outputs.present == 'true'
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ github.token }}
+          claude_args: >-
+            --max-turns 25
+            --allowedTools "Read,Glob,Grep,Write,Bash(mvn:*)"
+          prompt: |
+            The "Unit tests" GitHub Actions workflow failed on commit ${{ github.event.workflow_run.head_sha }}
+            (branch ${{ github.event.workflow_run.head_branch }}). The repository is checked out at that commit.
+
+            This is a Maven project with JUnit 5 tests in src/test/java; the code under test is in src/main/java.
+            Surefire reports from the failed run are in ci-reports/surefire-reports/ (TEST-*.xml and *-output.txt).
+            If that folder is missing, the build probably failed before the tests ran: reproduce it with
+            `mvn -B -ntp verify`. The build also fails when JaCoCo line coverage drops below the
+            `coverage.minimum` property in pom.xml.
+
+            Your job:
+            1. Find every failing test, or the compile or coverage error.
+            2. For each one, read the test and the code it exercises and work out the root cause. Decide whether
+               the production code or the test is wrong. Do not guess: confirm it by reading the code, and run
+               single tests with `mvn -B -ntp -q test -Dtest=ClassName#method` when that helps.
+            3. Write your findings to triage-report.md in the repository root, in GitHub Markdown, with:
+               - a one-line summary
+               - for each failure: the test name, the error, the root cause (with file:line), and a suggested fix
+                 as a small diff
+            Keep it concise. Do not change any other file. Do not commit or push anything.
+
+      - name: Post the diagnosis
+        if: steps.key.outputs.present == 'true' && always()
+        uses: actions/github-script@v7
+        env:
+          RUN_URL: ${{ github.event.workflow_run.html_url }}
+          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+        with:
+          script: |
+            const fs = require('fs');
+            let report = fs.existsSync('triage-report.md')
+              ? fs.readFileSync('triage-report.md', 'utf8')
+              : '_Claude could not produce a diagnosis; see the workflow logs._';
+            const body = [
+              '## 🔍 Unit tests failed: automated triage',
+              '',
+              `Failed run: ${process.env.RUN_URL}`,
+              '',
+              report.slice(0, 60000),
+              '',
+              '---',
+              '_Generated by [Claude Code](https://claude.ai/code). This is a suggestion: verify it before applying._',
+            ].join('\n');
+
+            const prs = context.payload.workflow_run.pull_requests || [];
+            if (prs.length > 0) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner, repo: context.repo.repo,
+                issue_number: prs[0].number, body,
+              });
+            } else {
+              await github.rest.repos.createCommitComment({
+                owner: context.repo.owner, repo: context.repo.repo,
+                commit_sha: process.env.HEAD_SHA, body,
+              });
+            }

@@ -75,6 +75,13 @@ Failing tests are annotated on the commit or PR, and the test and coverage repor
 the `test-reports` artifact. To block merges on red tests, mark the **JUnit tests (Java 17)** check
 as required in the repository's branch protection settings.
 
+**AI failure triage.** `.github/workflows/ci-failure-triage.yml` runs when the unit tests fail. Claude
+reads the failing test reports and the code, finds the likely root cause and posts a diagnosis with a
+suggested fix as a comment on the pull request (or on the commit when there is no PR). It only advises:
+it never pushes code, and it does not run for pull requests from forks. To turn it on, add an
+`ANTHROPIC_API_KEY` repository secret (Settings → Secrets and variables → Actions); without the
+secret the workflow does nothing.
+
 Optional local check before pushing:
 
 ```bash
