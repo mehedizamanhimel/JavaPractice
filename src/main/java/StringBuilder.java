@@ -23,13 +23,11 @@ public class StringBuilder {
     }
 
     public String reverseWords_557(String s) {
-        StringBuilder stringBuilder = new StringBuilder();
-        char[] charArray = s.toCharArray();
-        int arrLength = s.length();
-        String result = "";
-        for(int stringIndex= 0; stringIndex>=arrLength; stringIndex++){
-
+        // this class shadows java.lang.StringBuilder, so name the JDK one explicitly
+        String[] words = s.split(" ");
+        for (int i = 0; i < words.length; i++) {
+            words[i] = new java.lang.StringBuilder(words[i]).reverse().toString();
         }
-        return result;
+        return String.join(" ", words);
     }
 }

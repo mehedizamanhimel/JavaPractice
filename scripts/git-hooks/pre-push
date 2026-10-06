@@ -1,0 +1,9 @@
+#!/bin/sh
+# Runs the unit tests before every `git push`. Install with:
+#   git config core.hooksPath scripts/git-hooks
+# Skip once with: git push --no-verify
+echo "pre-push: running unit tests..."
+if ! mvn -B -q -ntp test; then
+    echo "pre-push: tests failed, push aborted. See target/surefire-reports/ for details." >&2
+    exit 1
+fi

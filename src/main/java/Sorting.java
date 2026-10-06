@@ -4,13 +4,13 @@ import java.util.List;
 public class Sorting {
 
     public String sortSentence_1859(String s) {
-        String str="", str2="", str3="";
-        for(int i=0; i<s.length();i++){
-            str2 = s.replaceAll(" ","\n");
-            str3 = s.replaceAll("\\D+"," ");
-
+        String[] words = s.split(" ");
+        String[] ordered = new String[words.length];
+        for (String word : words) {
+            int position = word.charAt(word.length() - 1) - '1';
+            ordered[position] = word.substring(0, word.length() - 1);
         }
-        return str3;
+        return String.join(" ", ordered);
     }
 
     public char findTheDifference_389(String s, String t) {
@@ -54,7 +54,7 @@ public class Sorting {
 
     public List<Integer> intersection_2248(int[][] nums) {
         List<Integer> list = new ArrayList<>();
-        int[] arr = new int[10];
+        int[] arr = new int[1001]; // LeetCode 2248: 1 <= nums[i][j] <= 1000
         for(int i=0; i<nums.length; i++){
             for(int j=0; j<nums[i].length; j++){
             arr[nums[i][j]]++;
@@ -108,31 +108,18 @@ public class Sorting {
 
 
     public String[] findRelativeRanks_506(int[] score) {
-        Arrays.sort(score);
         String[] result = new String[score.length];
-        List<Integer> arrayList = new ArrayList<>();
-        HashMap<Integer, String> hashMap = new HashMap<>();
-
-        
-
-        for (int i =0 ; i< score.length; i++){
-            arrayList.add(score[i]);
+        Integer[] order = new Integer[score.length];
+        for (int i = 0; i < score.length; i++) {
+            order[i] = i;
         }
+        // athlete indexes, highest score first
+        Arrays.sort(order, (a, b) -> Integer.compare(score[b], score[a]));
 
-
-        if(score.length==1){
-            result[0] = "Gold Star";
-            return result;
+        String[] medals = {"Gold Medal", "Silver Medal", "Bronze Medal"};
+        for (int rank = 0; rank < order.length; rank++) {
+            result[order[rank]] = rank < 3 ? medals[rank] : String.valueOf(rank + 1);
         }
-
-        if(score.length==2){
-            result[0] = "Gold Star";
-            result[1] = "Silver Star";
-            return result;
-        }
-
-
-
         return result;
     }
 
