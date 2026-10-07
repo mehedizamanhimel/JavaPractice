@@ -10,4 +10,8 @@ public class Binary {
         return number;
     }
 
+
+    public void sampleFunction() {
+        System.out.println("This is a sample function.");
+    }
 }
