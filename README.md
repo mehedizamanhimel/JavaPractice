@@ -82,11 +82,26 @@ it never pushes code, and it does not run for pull requests from forks. To turn 
 `ANTHROPIC_API_KEY` repository secret (Settings → Secrets and variables → Actions); without the
 secret the workflow does nothing.
 
-Optional local check before pushing:
+### Pre-commit test agent
+
+Every `git commit` runs all unit tests first, and the commit is cancelled if any test fails or the
+code does not compile. Turn it on once per clone:
 
 ```bash
-git config core.hooksPath scripts/git-hooks   # runs `mvn test` before every git push
+sh scripts/install-hooks.sh
 ```
+
+- It tests exactly what you are committing: the staged files are copied to a temporary folder and
+  tested there, so unstaged edits do not affect the result.
+- Results are stored in `.test-results/` (ignored by git):
+  - `history.log`: one line per commit attempt (time, PASSED/FAILED, branch, test counts, duration)
+  - `latest.log`: the full Maven output of the last run
+  - `latest-reports/`: JUnit XML and per-test output of the last run
+  - `runs/`: logs of the last 20 runs
+- When a commit is blocked, the failing tests (or compile errors) are printed in the terminal.
+- To skip the check once in an emergency: `git commit --no-verify`. CI still runs the tests on push.
+- Maven (`mvn`) must be installed and on your PATH. On Windows, commit from Git Bash or an IDE that
+  uses Git for Windows.
 
 ### Known gaps
 

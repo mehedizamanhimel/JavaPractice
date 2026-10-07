@@ -37,3 +37,6 @@ out/
 # Temporary files
 *~
 # Files to ignore for source control
+
+# Pre-commit test results (scripts/git-hooks/pre-commit)
+.test-results/
