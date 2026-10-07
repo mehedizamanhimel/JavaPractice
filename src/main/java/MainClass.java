@@ -492,6 +492,11 @@ public class MainClass implements Runnable{
 
 
 	}
+
+	// returns the larger of two numbers
+	public static int maxOfTwo(int a, int b) {
+		return a > b ? a : b;
+	}
 }
 
 /*
